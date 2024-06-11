@@ -24,7 +24,8 @@ date_default_timezone_set("Asia/Bangkok");
 | a PHP script and you can easily do that on your own.
 |
 */
-$base  = "http://" . $_SERVER['HTTP_HOST'];
+//$base  = "http://" . $_SERVER['HTTP_HOST'];
+$base="https://swccenter.azurewebsites.net/";
 $base .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 $config['base_url'] = $base;
 
