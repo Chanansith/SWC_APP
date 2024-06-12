@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = '20.188.106.180';
 
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
+$db['default']['username'] = 'swc_user1';
+$db['default']['password'] = 'p[lpB*oKyP4CocxK';
 $db['default']['database'] = 'dblogistic';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['port'] = '3306';
