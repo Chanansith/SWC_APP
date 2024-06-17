@@ -48,25 +48,51 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'swccenter-server.mysql.database.azure.com';
 
-$db['default']['username'] = 'vojnlucynm';
-$db['default']['password'] = '$M3L2dazLQ4X$SPZ';
-$db['default']['database'] = 'swc_logictic';
-$db['default']['dbdriver'] = 'mysqli';
-$db['default']['port'] = '3306';
-$db['default']['dbprefix'] = '';
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
-$db['default']['encrypt']["ssl_ca"] = '';
-$db['default']['encrypt']["ssl_verify"] = FALSE;
+$db['default'] = array(
+    'dsn'      => '',
+    'hostname' => 'swccenter-server.mysql.database.azure.com',  // หรือ host ของ MySQL
+    'username' => 'vojnlucynm',   // ชื่อผู้ใช้ MySQL
+    'password' => '$M3L2dazLQ4X$SPZ',   // รหัสผ่าน MySQL
+    'database' => 'swc_logictic',   // ชื่อฐานข้อมูล MySQL
+    'dbdriver' => 'mysqli',     // ประเภทของ driver ที่ใช้ (mysqli สำหรับ MySQL)
+    'dbprefix' => '',
+    'pconnect' => FALSE,
+    'db_debug' => (ENVIRONMENT !== 'production'),
+    'cache_on' => FALSE,
+    'cachedir' => '',
+    'char_set' => 'utf8',
+    'dbcollat' => 'utf8_general_ci',
+    'swap_pre' => '',
+    'encrypt'  => array(
+        'ssl_verify' => TRUE   // เปิดใช้งาน SSL/TLS
+    ),
+    'compress' => FALSE,
+    'stricton' => FALSE,
+    'failover' => array(),
+    'save_queries' => TRUE
+);
+
+
+// $db['default']['hostname'] = 'swccenter-server.mysql.database.azure.com';
+
+// $db['default']['username'] = 'vojnlucynm';
+// $db['default']['password'] = '$M3L2dazLQ4X$SPZ';
+// $db['default']['database'] = 'swc_logictic';
+// $db['default']['dbdriver'] = 'mysqli';
+// $db['default']['port'] = '3306';
+// $db['default']['dbprefix'] = '';
+// $db['default']['pconnect'] = TRUE;
+// $db['default']['db_debug'] = TRUE;
+// $db['default']['cache_on'] = FALSE;
+// $db['default']['cachedir'] = '';
+// $db['default']['char_set'] = 'utf8';
+// $db['default']['dbcollat'] = 'utf8_general_ci';
+// $db['default']['swap_pre'] = '';
+// $db['default']['autoinit'] = TRUE;
+// $db['default']['stricton'] = FALSE;
+// $db['default']['encrypt']["ssl_ca"] = '';
+// $db['default']['encrypt']["ssl_verify"] = FALSE;
 /* End of file database.php */
 /* Location: ./application/config/database.php */
 
