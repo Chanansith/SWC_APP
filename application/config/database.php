@@ -48,11 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '20.188.106.180';
+$db['default']['hostname'] = 'swccenter-server.mysql.database.azure.com';
 
-$db['default']['username'] = 'swc_user1';
-$db['default']['password'] = 'p[lpB*oKyP4CocxK';
-$db['default']['database'] = 'dblogistic';
+$db['default']['username'] = 'vojnlucynm';
+$db['default']['password'] = '$M3L2dazLQ4X$SPZ';
+$db['default']['database'] = 'swccenter-database';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['port'] = '3306';
 $db['default']['dbprefix'] = '';
