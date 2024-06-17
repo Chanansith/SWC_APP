@@ -65,6 +65,7 @@ $db['default'] = array(
     'dbcollat' => 'utf8_general_ci',
     'swap_pre' => '',
     'encrypt'  => array(
+		'ssl_ca' => '/var/www/html/DigiCertGlobalRootG2.crt.pem',
         'ssl_verify' => TRUE   // เปิดใช้งาน SSL/TLS
     ),
     'compress' => FALSE,
