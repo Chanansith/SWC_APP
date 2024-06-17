@@ -52,7 +52,7 @@ $db['default']['hostname'] = 'swccenter-server.mysql.database.azure.com';
 
 $db['default']['username'] = 'vojnlucynm';
 $db['default']['password'] = '$M3L2dazLQ4X$SPZ';
-$db['default']['database'] = 'swccenter-database';
+$db['default']['database'] = 'swc_logistic';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['port'] = '3306';
 $db['default']['dbprefix'] = '';
