@@ -52,7 +52,7 @@ $db['default']['hostname'] = 'swccenter-server.mysql.database.azure.com';
 
 $db['default']['username'] = 'vojnlucynm';
 $db['default']['password'] = '$M3L2dazLQ4X$SPZ';
-$db['default']['database'] = 'swc_logistic';
+$db['default']['database'] = 'swc_logictic';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['port'] = '3306';
 $db['default']['dbprefix'] = '';
@@ -65,7 +65,9 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
-
+$db['default']['encrypt']["ssl_ca"] = '';
+$db['default']['encrypt']["ssl_verify"] = FALSE;
 /* End of file database.php */
 /* Location: ./application/config/database.php */
+
+?>
