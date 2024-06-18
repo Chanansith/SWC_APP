@@ -1,5 +1,6 @@
 <?php
 
 echo "ready";
+phpinfo();
 
 ?>
