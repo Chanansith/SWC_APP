@@ -54,7 +54,7 @@ $db['default'] = array(
     'hostname' => 'swccenter-server.mysql.database.azure.com',  // หรือ host ของ MySQL
     'username' => 'vojnlucynm',   // ชื่อผู้ใช้ MySQL
     'password' => '$M3L2dazLQ4X$SPZ',   // รหัสผ่าน MySQL
-    'database' => 'swc_logictic',   // ชื่อฐานข้อมูล MySQL
+    'database' => 'swc_logistic',   // ชื่อฐานข้อมูล MySQL
     'dbdriver' => 'mysqli',     // ประเภทของ driver ที่ใช้ (mysqli สำหรับ MySQL)
     'dbprefix' => '',
     'pconnect' => FALSE,
@@ -65,7 +65,7 @@ $db['default'] = array(
     'dbcollat' => 'utf8_general_ci',
     'swap_pre' => '',
     'encrypt'  => array(
-		'ssl_ca' => 'config/certificates/DigiCertGlobalRootCA.crt.pem',
+		'ssl_ca' => 'cer/DigiCertGlobalRootCA.crt.pem',
         'ssl_verify' => TRUE   // เปิดใช้งาน SSL/TLS
     ),
     'compress' => FALSE,
