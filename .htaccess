@@ -1,8 +1,17 @@
 DirectoryIndex index.php
 RewriteEngine on
- 
-RewriteCond $1 !^(index\.php|(.*)\.swf|forums|images|css|downloads|jquery|js|robots\.txt|favicon\.ico)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ ./index.php?$1 [L,QSA]
+
+RewriteCond $1! ^ (index\.php | (.*)\.swf | forums | images | css | downloads | jquery | js | robots\.txt | favicon\.ico)
+RewriteCond % { REQUEST_FILENAME }!-f
+RewriteCond % { REQUEST_FILENAME }!-d
+RewriteRule ^ (.*) $. / index.php ? $1[L, QSA]
 php_value max_input_vars 200000
+
+location / {
+    try_files $uri $uri / /index.php?$query_string;
+}
+
+location~ * \.(ico | css | js | gif | jpe ? g | png) $ {
+    expires max;
+    log_not_found off;
+}
