@@ -53,6 +53,7 @@ $route['logout'] = 'user/logout';
 $route['userListing'] = 'user/userListing';
 $route['userListing/(:num)'] = "user/userListing/$1";
 $route['register'] = "login/addNew";
+$route['register2'] = "index.php/login/addNew";
 $route['registersuccess/(:num)'] = "login/registerSuccess/$1";
 $route['registershipping'] = "login/addNewShipUser";
 $route['saveadduser'] = "login/addNewUser";
