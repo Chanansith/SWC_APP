@@ -58,7 +58,7 @@
       <span class="state">Log in</span>
     </button>
   </form>
-  <footer><a target="blank" href="<?php echo(base_url_api) ?>index.php/registershipping">ลงทะเบียน</a></footer>
+  <footer><a target="blank" href="<?php echo(base_url_api) ?>registershipping">ลงทะเบียน</a></footer>
   </p>
 </div>
     <div class="container">
