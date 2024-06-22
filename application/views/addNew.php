@@ -259,7 +259,7 @@
 </div>
 
 <script>
-    var base_url="<?php echo base_url() ?>";
+    var base_url="<?php echo base_url() ?>index.php/";
     var provinceid=0;
     var amphureid=0;
     var lat=0;
