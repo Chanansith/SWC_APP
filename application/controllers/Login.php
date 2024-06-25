@@ -32,6 +32,10 @@ class Login extends BaseController
     {
         $this->load->view('transport/translogin');
     }
+
+    public function testecho(){
+        echo "test echo";
+    }
     /**
      * This function used to check the user is logged in or not
      */
