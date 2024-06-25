@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            <i class="fa fa-users"></i>สัญญาจัดเก็บมูลฝอยติดเชื้อ:Contract for disposal IMW 
+            <i class="fa fa-users"></i> สัญญาจัดเก็บมูลฝอยติดเชื้อ:Contract for disposal IMW 
             <small>Add</small>
         </h1>
         <ol class="breadcrumb">
@@ -103,7 +103,7 @@
                                     <div class="form-group">
                                         <label for="Contract_type">ราคาค่าขนส่ง/ค่าจัดเก็บ</label>
                                         <input type="number" class="form-control required" id="ship_price" name="ship_price" value="0">
-                                       บาท/กิโลกรัม
+                                       บาท/กิโลกรัม 
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -127,7 +127,7 @@
                                         }
                                     ?>
                                         </select>
-                                       kg กิโลกรัม
+                                       kg (กิโลกรัม)
                                     </div>
                                 </div>
                                 <div class="col-md-6">
