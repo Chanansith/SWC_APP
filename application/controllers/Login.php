@@ -24,6 +24,10 @@ class Login extends BaseController
         $this->isLoggedIn();
     }
     
+    public function hn()
+    {
+        $this->load->view('login');
+    }
     public function disposal()
     {
         $this->load->view('disposal/disposallogin');
