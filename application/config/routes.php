@@ -53,6 +53,7 @@ $route['logout'] = 'user/logout';
 $route['userListing'] = 'user/userListing';
 $route['userListing/(:num)'] = "user/userListing/$1";
 $route['register'] = "login/addNew";
+$route['register2'] = "index.php/login/addNew";
 $route['registersuccess/(:num)'] = "login/registerSuccess/$1";
 $route['registershipping'] = "login/addNewShipUser";
 $route['saveadduser'] = "login/addNewUser";
@@ -68,15 +69,7 @@ $route['pageNotFound'] = "user/pageNotFound";
 $route['checkEmailExists'] = "user/checkEmailExists";
 
 
-$route['addNewCondition']="cost/addNewCondition";
-$route['editCondition_cost/(:num)/(:num)'] = "cost/editCondition_cost/$1/$2";
-$route['editOldCondition']="cost/editOldCondition";
-$route['deleteCondition_cost']="cost/deleteCondition_cost";
-$route['addRegis_depart/(:num)/(:num)'] = "cost/addregis_depart/$1/$2";
-$route['addNewRegis_depart'] = "cost/addNewRegis_depart";
-$route['editRegis_depart/(:num)/(:num)'] = "cost/editRegis_depart/$1/$2";
-$route['editOldRegis_depart'] = "cost/editOldRegis_depart";
-$route['deleteRegis_depart']="cost/deleteRegis_depart";
+
 
 
 

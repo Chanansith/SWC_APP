@@ -20,7 +20,7 @@
   <body>
 
   <div class="wrapper">
-  <form class="login" action="<?php echo base_url(); ?>login/checkLogin" method="post">
+  <form class="login" action="<?php echo base_url(); ?>index.php/login/checkLogin" method="post">
   <?php $this->load->helper('form'); ?>
         <div class="row">
             <div class="col-md-12">
@@ -58,7 +58,7 @@
       <span class="state">Log in</span>
     </button>
   </form>
-  <footer><a target="blank" href="http://20.188.106.180/logistic/register">ลงทะเบียน</a></footer>
+  <footer><a target="blank" href="<?php echo(base_url_api) ?>registershipping">ลงทะเบียน</a></footer>
   </p>
 </div>
     <div class="container">

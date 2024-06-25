@@ -97,7 +97,7 @@
 
             </li>
             <li class="dropdown">
-              <a href="login" class="dropdown-toggle" >
+              <a href="index.php/login" class="dropdown-toggle" >
                  สมัครสมาชิก/เข้าสู่ระบบ
               </a>
 
