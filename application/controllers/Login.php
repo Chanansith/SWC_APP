@@ -104,7 +104,7 @@ class Login extends BaseController
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
               
-                 redirect('index.php/login');
+                 redirect('index.php/login/hn');
             }
         }
     }
