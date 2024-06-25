@@ -53,7 +53,7 @@ class Login extends BaseController
         }
         else
         {
-            redirect('/dashboard');
+            redirect('index.php/dashboard');
         }
     }
     
@@ -97,14 +97,14 @@ class Login extends BaseController
                     $this->session->set_userdata($sessionArray);
                     unset($_SESSION["error"]);
                     //echo "success";
-                    redirect('/Dashboard');
+                    redirect('index.php/Dashboard');
                                     }
             }
             else
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
               
-                 redirect('/login');
+                 redirect('index.php/login');
             }
         }
     }
@@ -142,14 +142,14 @@ class Login extends BaseController
                     $this->session->set_userdata($sessionArray);
                     unset($_SESSION["error"]);
                     //echo "success";
-                    redirect('/Disposal');
+                    redirect('index.php/Disposal');
                                     }
             }
             else
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
               
-                 redirect('/login/disposal');
+                 redirect('index.php/login/disposal');
             }
         }
     }
@@ -190,14 +190,14 @@ class Login extends BaseController
                     unset($_SESSION["error"]);
               
                     //echo "success";
-                    redirect('/transport');
+                    redirect('index.php/transport');
                                     }
             }
             else
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
               
-                 redirect('/login/transport');
+                 redirect('index.php/login/transport');
             }
         }
     }
