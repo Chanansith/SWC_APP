@@ -84,6 +84,8 @@ class Login extends BaseController
             
             if(count($result) > 0)
             {
+
+                
                 foreach ($result as $res)
                 {
                     $sessionArray = array('userId'=>$res->id,                    
@@ -96,9 +98,10 @@ class Login extends BaseController
                                     
                     $this->session->set_userdata($sessionArray);
                     unset($_SESSION["error"]);
-                    echo "success";
-                   // redirect('index.php/dashboard');
+                    //echo "success";
+                    
                 }
+                redirect(base_url_api.'index.php/dashboard');
             }
             else
             {
