@@ -172,13 +172,13 @@
                 </a>
               </li>
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>contract/add">
+                <a href="<?php echo base_url_api; ?>contract/add">
                   <i class="fa fa-plus-circle"></i>
                   <span>สร้างสัญญา</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>contract">
+                <a href="<?php echo base_url_api; ?>contract">
                   <i class="fa fa-cubes"></i>
                   <span>รายการสัญญา</span>
                 </a>
@@ -186,20 +186,20 @@
             </ul> 
           </li>
           <li class="treeview">
-            <a href="<?php echo base_url(); ?>car">
+            <a href="<?php echo base_url_api; ?>car">
               <!-- <i class="fa fa-cubes"></i> -->
               <span>งานขนส่ง</span>
                <i class="fa fa-angle-right pull-right"></i> 
             </a>
             <ul class="treeview-menu">
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>ship/create">
+                <a href="<?php echo base_url_api; ?>ship/create">
                   <i class="fa fa-plus-circle"></i>
                   <span>สร้าง</span>
                 </a>
               </li>
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>ship/list">
+                <a href="<?php echo base_url_api; ?>ship/list">
                   <i class="fa fa-cubes"></i>
                   <span>รายการ</span>
                 </a>
@@ -214,7 +214,7 @@
             </a>
             <ul class="treeview-menu">
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>reportCost">
+                <a href="<?php echo base_url_api; ?>report">
                   <!-- <i class="fa fa-cubes"></i> -->
                   <span>xx</span>
                 </a>
