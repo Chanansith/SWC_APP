@@ -85,7 +85,7 @@
                     <a href="<?php echo base_url(); ?>loadChangePass" class="btn btn-default btn-flat"><i class="fa fa-key"></i> Change Password</a>
                   </div> -->
                   <div class="pull-right">
-                    <a href="<?php echo base_url(); ?>logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                    <a href="<?php echo base_url_api; ?>logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
                   </div>
                 </li>
               </ul>
@@ -122,7 +122,7 @@
         <ul class="sidebar-menu">
           <li class="header">MAIN NAVIGATION</li>
           <!-- <li class="treeview">
-            <a href="<?php echo base_url(); ?>dashboard">
+            <a href="<?php echo base_url_api; ?>dashboard">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
             </a>
           </li> -->
@@ -159,14 +159,14 @@
           ?>
 
           <li class="treeview">
-            <a href="<?php echo base_url(); ?>car">
+            <a href="<?php echo base_url_api; ?>contract">
               <!-- <i class="fa fa-cubes"></i> -->
               <span>สัญญา</span>
                <i class="fa fa-angle-right pull-right"></i> 
             </a>
             <ul class="treeview-menu">
             <li class="treeview">
-                <a href="<?php echo base_url(); ?>contract/add">
+                <a href="<?php echo base_url_api; ?>contract/add">
                   <i class="fa fa-plus-circle"></i>
                   <span>สร้าง Request</span>
                 </a>
