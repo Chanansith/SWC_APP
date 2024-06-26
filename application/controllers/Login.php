@@ -1,5 +1,4 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
-
 require APPPATH . '/libraries/BaseController.php';
 
 class Login extends BaseController
@@ -101,7 +100,7 @@ class Login extends BaseController
                     //echo "success";
                     
                 }
-                redirect(base_url_api.'index.php/dashboard');
+                redirect('index.php/dashboard');
             }
             else
             {

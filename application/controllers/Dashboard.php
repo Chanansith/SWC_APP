@@ -17,7 +17,7 @@ class Dashboard extends BaseController
             $this->loadThis();
         } else {
        
-            $this->global['pageTitle'] = 'ผู้ใช้';
+            $this->global['pageTitle'] = 'HN';
              $data['documents'] =null;
             $this->loadViews("dashboard", $this->global, $data, NULL);
         }
