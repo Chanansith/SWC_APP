@@ -97,7 +97,7 @@ class Login extends BaseController
                     $this->session->set_userdata($sessionArray);
                     unset($_SESSION["error"]);
                     //echo "success";
-                    redirect('index.php/Dashboard');
+                    redirect('index.php/dashboard');
                                     }
             }
             else
