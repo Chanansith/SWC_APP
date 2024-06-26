@@ -96,9 +96,9 @@ class Login extends BaseController
                                     
                     $this->session->set_userdata($sessionArray);
                     unset($_SESSION["error"]);
-                    //echo "success";
-                    redirect('index.php/dashboard');
-                                    }
+                    echo "success";
+                   // redirect('index.php/dashboard');
+                }
             }
             else
             {
@@ -450,7 +450,7 @@ class Login extends BaseController
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                     }
                     
-                    redirect('register');
+                    redirect('index.php/register');
                 }else{
                     //$this->session->set_flashdata('error', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
                     $this->form_validation->set_message('is_unique', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
@@ -531,7 +531,7 @@ class Login extends BaseController
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                     }
                     
-                    redirect('registershipping');
+                    redirect('index.php/registershipping');
                 }else {
                    // $this->session->set_flashdata('error', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
                     $this->form_validation->set_message('is_unique', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
@@ -655,7 +655,7 @@ class Login extends BaseController
         }
         else
         {
-            redirect('/login');
+            redirect("/index.php/login/hn");
         }
     }
     
@@ -699,7 +699,7 @@ class Login extends BaseController
             
             setFlashData($status, $message);
 
-            redirect("/login");
+            redirect("/index.php/login/hn");
         }
     }
 
