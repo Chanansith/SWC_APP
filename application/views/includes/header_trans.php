@@ -50,7 +50,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="<?php echo base_url(); ?>transport/dashboard" class="logo">
+      <a href="<?php echo base_url_api; ?>transport/dashboard" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>SWC</b></span>
         <!-- logo for regular state and mobile devices -->

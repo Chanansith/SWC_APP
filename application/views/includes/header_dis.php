@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title><?php echo $pageTitle; ?></title>
+  <title>DISPOSAL</title>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <!-- Bootstrap 3.3.4 -->
   <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -50,7 +50,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="<?php echo base_url(); ?>disposal" class="logo">
+      <a href="<?php echo base_url_api; ?>disposal" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>DISPOSAL</b></span>
         <!-- logo for regular state and mobile devices -->
