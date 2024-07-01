@@ -102,7 +102,7 @@ class Login extends BaseController
                 }
                 
                 //redirect('index.php/dashboard');
-                echo "<script>window.location.href='index.php/dashboard'</script>";
+                echo "<a href='index.php/dashboard' class='btn btn-success'>ถัดไป</a>";
             }
             else
             {
