@@ -146,8 +146,10 @@ class Login extends BaseController
                     $this->session->set_userdata($sessionArray);
                     unset($_SESSION["error"]);
                     //echo "success";
-                    redirect('index.php/Disposal');
+                 
                                     }
+
+                        echo "<a href=".base_url()."index.php/Disposal class='btn btn-success'>ถัดไป</a>";
             }
             else
             {
@@ -194,8 +196,9 @@ class Login extends BaseController
                     unset($_SESSION["error"]);
               
                     //echo "success";
-                    redirect('index.php/transport');
+                  
                                     }
+                echo "<a href=".base_url()."index.php/transport class='btn btn-success'>ถัดไป</a>";
             }
             else
             {
