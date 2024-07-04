@@ -20,7 +20,7 @@
   <body>
 
   <div class="wrapper">
-  <form class="login" action="<?php echo base_url(); ?>login/checktransport" method="post">
+  <form class="login" action="<?php echo base_url_api; ?>login/checktransport" method="post">
   <?php $this->load->helper('form'); ?>
         <div class="row">
             <div class="col-md-12">
