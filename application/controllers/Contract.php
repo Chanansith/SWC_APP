@@ -44,8 +44,6 @@ class Contract extends Admin_Controller
     * this function is called from the datatable ajax function
     */
   
-	
-   
 	function add()
     {
       
@@ -66,10 +64,6 @@ class Contract extends Admin_Controller
 		$response = array();
 
 		$this->form_validation->set_rules('contract_code', 'contract_code', 'trim|required');
-		
-
-	
-
         if ($this->form_validation->run() == TRUE) {
 
 			$contract_date=$this->input->post('contract_date');
