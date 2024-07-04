@@ -136,10 +136,10 @@ class Login extends BaseController
                 foreach ($result as $res)
                 {
                     $sessionArray = array('userId'=>$res->id,                    
-                                            'role'=>"disposaal",
+                                            'role'=>"disposal",
                                             'roleText'=>"",
-                                            'name'=>$res->companyname	,
-                                            'code'=>$res->code,
+                                            'name'=>$res->disposal_name,
+                                            'code'=>$res->id,
                                             'isLoggedIn' => TRUE
                                     );
                                     
