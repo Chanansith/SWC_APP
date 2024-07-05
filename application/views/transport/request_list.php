@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-xs-12 text-right">
         <div class="form-group">
-          <a class="btn btn-primary" href="<?php echo base_url(); ?>contract/add"><i class="fa fa-plus"></i> เพิ่ม</a>
+         
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@
                  
                     <td class="text-center">
                    
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url() . 'editContract/' . $record->requestid; ?>"><i class="fa fa-pencil"></i></a>
+                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'editContract/' . $record->requestid; ?>"><i class="fa fa-pencil"></i></a>
                      
                     </td>
                   </tr>
