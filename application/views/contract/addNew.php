@@ -194,6 +194,8 @@ var trip_rate=0;
     $(document).ready(function(){
 	
 	var addContractForm = $("#addContract");
+
+       
 	
         $('#ship_price').on('input',function(e){
         

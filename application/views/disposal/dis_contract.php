@@ -8,8 +8,8 @@
       <small>Add, Edit, Delete</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
-      <li><a href="<?= base_url('Contract') ?>"> Contract</a></li>
+      <li><a href="<?= base_url_api.'dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
+      <li><a href="<?= base_url_api.'Contract') ?>"> Contract</a></li>
     </ol>
   </section>
   <section class="content">

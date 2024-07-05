@@ -79,14 +79,14 @@ class Contract extends Admin_Controller
 				'trip_rate' => $this->input->post('trip_rate'),
 				'contract_amount' => $this->input->post('contract_amount'),
 				'contract_create_name' => $this->input->post('contract_create_name'),
-        	
-        	
         	);
 
         	$create = $this->contract_model->create($data);
         	if($create == true) {
-        		$response['success'] = true;
-        		$response['messages'] = 'Succesfully created';
+				redirect( base_url_api.'contract', 'refresh');
+        		// $response['success'] = true;
+        		// $response['messages'] = 'Succesfully created';
+			
         	}
         	else {
         		$response['success'] = false;

@@ -155,7 +155,7 @@ class Login extends BaseController
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
               
-                 redirect('index.php/login/disposal');
+                 redirect(base_url_api. 'login/disposal');
             }
         }
     }
