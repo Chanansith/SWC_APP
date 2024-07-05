@@ -96,7 +96,7 @@ class Admin_Controller extends MY_Controller
 
 	function loadDisposalViews($viewName = "", $headerInfo = NULL, $pageInfo = NULL, $footerInfo = NULL){
 
-        $this->load->view('includes/header_trans', $headerInfo);
+        $this->load->view('includes/header_dis', $headerInfo);
         $this->load->view($viewName, $pageInfo);
         $this->load->view('includes/footer', $footerInfo);
     }
