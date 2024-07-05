@@ -145,11 +145,10 @@ class Login extends BaseController
                                     
                     $this->session->set_userdata($sessionArray);
                     unset($_SESSION["error"]);
-                    redirect( base_url_api.'disposal', 'refresh');                
+                    //redirect( base_url_api.'disposal', 'refresh');                
                  
                                     }
-
-                       // echo "<a href=".base_url()."index.php/Disposal class='btn btn-success'>ถัดไป</a>";
+                       echo "<a href=".base_url_api."disposal class='btn btn-success'>ถัดไป</a>";
             }
             else
             {
