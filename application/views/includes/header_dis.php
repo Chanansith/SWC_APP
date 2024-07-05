@@ -85,7 +85,7 @@
                     <a href="<?php echo base_url(); ?>loadChangePass" class="btn btn-default btn-flat"><i class="fa fa-key"></i> Change Password</a>
                   </div> -->
                   <div class="pull-right">
-                    <a href="<?php echo base_url(); ?>disposal/signout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                    <a href="<?php echo base_url_api; ?>disposal/signout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
                   </div>
                 </li>
               </ul>
@@ -170,7 +170,7 @@
               </li>
              
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>disposal/contract">
+                <a href="<?php echo base_url_api; ?>disposal/contract">
                   <i class="fa fa-cubes"></i>
                   <span>รายการสัญญา</span>
                 </a>
@@ -178,7 +178,7 @@
             </ul> 
           </li>
           <li class="treeview">
-            <a href="<?php echo base_url(); ?>car">
+            <a href="<?php echo base_url_api; ?>car">
               <!-- <i class="fa fa-cubes"></i> -->
               <span>งานขนส่ง</span>
                <i class="fa fa-angle-right pull-right"></i> 
@@ -186,7 +186,7 @@
             <ul class="treeview-menu">
              
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>ship/list">
+                <a href="<?php echo base_url_api; ?>ship/list">
                   <i class="fa fa-cubes"></i>
                   <span>รายการ</span>
                 </a>
@@ -201,7 +201,7 @@
             </a>
             <ul class="treeview-menu">
               <li class="treeview">
-                <a href="<?php echo base_url(); ?>reportCost">
+                <a href="<?php echo base_url_api; ?>reportCost">
                   <!-- <i class="fa fa-cubes"></i> -->
                   <span>xx</span>
                 </a>
