@@ -67,99 +67,84 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="id_card_number">บริษัทขนส่ง</label>
-                                        <?php 
-                                       
-                                        ?>
-                                        <select class="form-control required" id="transportid" name="transportid">
-                                        <?php
-                                        foreach($transportlist as $trans){
-                                          
-                                             echo "<option value='".$trans->id."'>".$trans->full_name."</option>";
-                                        }
-                                    ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="birth_date">แหล่งจำกัด/ศูนย์บำบัด</label>
-                                        <select class="form-control required" id="disposalid" name="disposalid">
-                                        <?php
-                                        foreach($disposallist as $disp){
-                                          
-                                             echo "<option value='".$disp->id."'>".$disp->disposal_name."</option>";
-                                        }
-                                    ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                           
+                               
+                               <div class="col-md-6">
+                                   <div class="form-group">
+                                       <label for="address">ราคาค่าขนส่ง/ค่าจัดเก็บ</label>
+                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                   </div>
+                               </div>
+                           </div>
                             <div class="row">
+                               
+                               <div class="col-md-6">
+                                   <div class="form-group">
+                                       <label for="address">ปริมาณขยะ</label>
+                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                   </div>
+                               </div>
+                           </div>
+                            <div class="row">
+                               
+                               <div class="col-md-6">
+                                   <div class="form-group">
+                                       <label for="address">จำนวนเงินต่อสัญญา</label>
+                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                   </div>
+                               </div>
+                           </div>
+                            <div class="row">
+                               
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Contract_type">ราคาค่าขนส่ง/ค่าจัดเก็บ</label>
-                                        <input type="number" class="form-control required" id="ship_price" name="ship_price" value="0">
-                                       บาท/กิโลกรัม 
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="address">ปริมาณมูลฝอยติดเชื่อ</label>
+                                        <label for="address">จำนวนเงินที่จ่าย</label>
                                         <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
+                               
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Contract_type">ขนาดรถบรรทุก</label>
-                                        <select class="form-control required" id="size_amount" name="size_amount">
-                                          <option value="0">--กรุณาเลือก--</option>
-                                      <?php
-                                        
-                                        foreach($sizelist as $size){
-                                          
-                                             echo "<option value='".$size->size_amount."'>".$size->size_name."</option>";
-                                        }
-                                    ?>
-                                        </select>
-                                       kg (กิโลกรัม)
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="address">จำนวนเที่ยวรถที่ขนต่อสัญญา</label>
-                                        <input type="number" class="form-control required" id="trip_rate" name="trip_rate" readonly>
+                                        <label for="address">จำนวนเงินที่เหลือ</label>
+                                        <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
+                              
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="address">แนบหลักฐานการจ่ายบิล</label>
+                                      <input type="file" class="form-control required" id="attach_file" name="attach_file">
+                                  </div>
+                              </div>
+                          </div>
+                            <div class="row">
+                              
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="Contract_type">จำนวนเงินต่อสัญญา</label>
-                                        <input type="text" class="form-control required" id="contract_amount" name="contract_amount" readonly>
-                                       บาท
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="address">เจ้าหน้าที่ผู้ทำสัญญา</label>
+                                        <label for="address">เจ้าหน้าที่ผู้จ่ายบิล</label>
                                         <input type="text" class="form-control required" id="contract_create_name" name="contract_create_name">
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="row">
+                              
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="address">รายละเอียดอื่นๆ</label>
+                                      <textarea rows="5" name="other_detail"></textarea>
+                                  </div>
+                              </div>
+                          </div>
 
                         </div><!-- /.box-body -->
 
                         <div class="box-footer">
-                            <input type="submit" class="btn btn-primary" value="Confirm" />
-                            <input type="reset" class="btn btn-default" value="Reset" />
+                        <input type="button" class="btn btn-warning" value="Preview Data" />
+                            <input type="submit" class="btn btn-warning" value="Submit" />
+                          
                         </div>
                     </form>
                 </div>
