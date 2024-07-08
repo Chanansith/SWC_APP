@@ -56,9 +56,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="first_name">วันที่</label>
-                                        <input type="text" class="form-control date" id="contract_date" name="contract_date" readonly>
+                                        <input type="text" class="form-control date" id="pay_date" name="pay_date" required >
                                     </div>
                                 </div>
+                               
+                            </div>
+                            <div class="row">
+                             
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="last_name">สัญญาเลขที่</label>
