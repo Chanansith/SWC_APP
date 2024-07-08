@@ -14,6 +14,7 @@ class SourceUser extends Admin_Controller
 
 		$this->load->model('contract_model');
 		$this->load->model('transport_model');
+		$this->load->model('truck_model');
 		$this->load->model('disposal_model');
         $this->load->model('log_model');
     }
@@ -26,13 +27,14 @@ class SourceUser extends Admin_Controller
         echo "index";
     }
   
-    public function fetchDataById($id) 
+    public function fetchDataById($contract_id) 
 	{
-	 echo "";
+		$contract=$this->contract_model->getContract($contract_id);
+		echo json_encode($contract);
 	}
 
   
-	function addpayment()
+	function addpayment($contract_id)
     {
       
             $this->global['pageTitle'] = 'Add Payment';
@@ -40,7 +42,9 @@ class SourceUser extends Admin_Controller
 			$data["transportlist"]=$this->transport_model->getForDropdown();
 			$data["disposallist"]=$this->disposal_model->getForDropdown();
 			$data["sizelist"]=$this->truck_model->getSizeForDropdown();
-			$data["contract_code"]=$this->contract_model->getAutoContractCode($_SESSION["userId"]);
+			$contract=$this->contract_model->getContract($contract_id);
+			$data["contract"]=$contract;
+			$data["contract_code"]=$contract->contract_code;
           
             $this->loadViews("payment/add_payment", $this->global, $data, NULL);
         
