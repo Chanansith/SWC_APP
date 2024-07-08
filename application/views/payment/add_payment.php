@@ -134,7 +134,7 @@
                               <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="address">รายละเอียดอื่นๆ</label>
-                                      <textarea rows="5" name="other_detail"></textarea>
+                                      <textarea rows="5" class="form-control" name="other_detail"></textarea>
                                   </div>
                               </div>
                           </div>
