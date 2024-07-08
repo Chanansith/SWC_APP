@@ -76,7 +76,7 @@
                   <img src="<?php echo base_url(); ?>assets/dist/img/avatar.png" class="img-circle" alt="User Image" />
                   <p>
                     <?php echo $name; ?>
-                    <small><?php echo $role_text; ?></small>
+                    <small>ขนส่ง</small>
                   </p>
                 </li>
                 <!-- Menu Footer-->
@@ -85,7 +85,7 @@
                     <a href="<?php echo base_url(); ?>loadChangePass" class="btn btn-default btn-flat"><i class="fa fa-key"></i> Change Password</a>
                   </div> -->
                   <div class="pull-right">
-                    <a href="<?php echo base_url(); ?>transport/signout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                    <a href="<?php echo base_url_api; ?>transport/signout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
                   </div>
                 </li>
               </ul>
