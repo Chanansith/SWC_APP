@@ -8,7 +8,7 @@ class Contract extends Admin_Controller
     {
         parent::__construct();
 
-        $this->not_logged_in();
+        $this->not_logged_in_source();
 
         $this->data['page_title'] = 'Contract';
 

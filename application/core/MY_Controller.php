@@ -76,6 +76,54 @@ class Admin_Controller extends MY_Controller
 			redirect('login', 'refresh');
 		}
 	}
+	public function not_logged_in_source()
+	{
+		$session_data = $this->session->userdata();
+		$this->role = "";
+			$this->vendorId = $this->session->userdata ( 'userId' );
+			$this->name = $this->session->userdata ( 'name' );
+			$this->roleText ="";
+			$this->language = "th";
+		$this->global ['name'] = $this->name;
+		$this->global ['role'] = $this->role;
+		$this->global ['role_text'] = $this->roleText;
+		$this->global ['language'] = "th";
+		if($session_data['isLoggedIn'] == FALSE) {
+			redirect(base_url_api.'login/hn', 'refresh');
+		}
+	}
+	public function not_logged_in_transport()
+	{
+		$session_data = $this->session->userdata();
+		$this->role = "";
+			$this->vendorId = $this->session->userdata ( 'userId' );
+			$this->name = $this->session->userdata ( 'name' );
+			$this->roleText ="";
+			$this->language = "th";
+		$this->global ['name'] = $this->name;
+		$this->global ['role'] = $this->role;
+		$this->global ['role_text'] = $this->roleText;
+		$this->global ['language'] = "th";
+		if($session_data['isLoggedIn'] == FALSE) {
+			redirect(base_url_api.'login/transport', 'refresh');
+		}
+	}
+	public function not_logged_in_disposal()
+	{
+		$session_data = $this->session->userdata();
+		$this->role = "";
+			$this->vendorId = $this->session->userdata ( 'userId' );
+			$this->name = $this->session->userdata ( 'name' );
+			$this->roleText ="";
+			$this->language = "th";
+		$this->global ['name'] = $this->name;
+		$this->global ['role'] = $this->role;
+		$this->global ['role_text'] = $this->roleText;
+		$this->global ['language'] = "th";
+		if($session_data['isLoggedIn'] == FALSE) {
+			redirect(base_url_api.'login/disposal', 'refresh');
+		}
+	}
 
 	public function render_template($page = null, $data = array())
 	{

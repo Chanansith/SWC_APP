@@ -8,7 +8,7 @@ class Disposal extends Admin_Controller
     {
         parent::__construct();
 
-        $this->not_logged_in();
+        $this->not_logged_in_disposal();
 
         $this->data['page_title'] = 'disposal';
 

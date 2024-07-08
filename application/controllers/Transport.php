@@ -9,7 +9,7 @@ class Transport extends Admin_Controller
         parent::__construct();
         
      
-        $this->not_logged_in();
+        $this->not_logged_in_transport();
 
         $this->data['page_title'] = 'Transport';
 
@@ -36,12 +36,12 @@ class Transport extends Admin_Controller
     {
         
 		$data["RequestRecords"]=$this->request_model->getRequest($_SESSION["userId"]);
-        $this->loadViews('transport/request_list', $this->global, $data, NULL);
+        $this->loadTransportViews('transport/request_list', $this->global, $data, NULL);
     }
     public function signout(){
         
         session_destroy();
-        redirect('login/transport', 'refresh');
+        redirect( base_url_api.'login/transport', 'refresh');
 
     }
    

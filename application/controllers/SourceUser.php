@@ -32,6 +32,19 @@ class SourceUser extends Admin_Controller
 	}
 
   
+	function addpayment()
+    {
+      
+            $this->global['pageTitle'] = 'Add Payment';
+            $data['header'] ="Contract";
+			$data["transportlist"]=$this->transport_model->getForDropdown();
+			$data["disposallist"]=$this->disposal_model->getForDropdown();
+			$data["sizelist"]=$this->truck_model->getSizeForDropdown();
+			$data["contract_code"]=$this->contract_model->getAutoContractCode($_SESSION["userId"]);
+          
+            $this->loadViews("payment/add_payment", $this->global, $data, NULL);
+        
+    }
 
 
     public function signout(){
