@@ -32,7 +32,7 @@ class SourceUser extends Admin_Controller
 		$contract=$this->contract_model->getContract($contract_id);
 		
 		//echo json_encode($contract);
-		echo $contract;
+		print_r($contract);
 	}
 
   
