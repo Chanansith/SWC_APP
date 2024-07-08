@@ -45,8 +45,8 @@ class SourceUser extends Admin_Controller
 			$data["disposallist"]=$this->disposal_model->getForDropdown();
 			$data["sizelist"]=$this->truck_model->getSizeForDropdown();
 			$contract=$this->contract_model->getContract($contract_id);
-			$data["contract"]=$contract;
-			//$data["contract_code"]=$contract["contract_code"];
+			$data["contract"]=$contract[0];
+			$data["contract_code"]=$contract[0]->contract_code;
           
             $this->loadViews("payment/add_payment", $this->global, $data, NULL);
         
