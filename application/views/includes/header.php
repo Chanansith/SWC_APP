@@ -85,7 +85,7 @@
                     <a href="<?php echo base_url(); ?>loadChangePass" class="btn btn-default btn-flat"><i class="fa fa-key"></i> Change Password</a>
                   </div> -->
                   <div class="pull-right">
-                    <a href="<?php echo base_url_api; ?>SourceUser/logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                    <a href="<?php echo base_url_api; ?>sourceuser/signout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
                   </div>
                 </li>
               </ul>
