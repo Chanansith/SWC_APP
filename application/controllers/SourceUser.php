@@ -31,7 +31,8 @@ class SourceUser extends Admin_Controller
 	{
 		$contract=$this->contract_model->getContract($contract_id);
 		
-		echo json_encode($contract);
+		//echo json_encode($contract);
+		echo $contract;
 	}
 
   
@@ -45,7 +46,7 @@ class SourceUser extends Admin_Controller
 			$data["sizelist"]=$this->truck_model->getSizeForDropdown();
 			$contract=$this->contract_model->getContract($contract_id);
 			$data["contract"]=$contract;
-			$data["contract_code"]=$contract[0]["contract_code"];
+			//$data["contract_code"]=$contract["contract_code"];
           
             $this->loadViews("payment/add_payment", $this->global, $data, NULL);
         
