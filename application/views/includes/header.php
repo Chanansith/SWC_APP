@@ -85,7 +85,7 @@
                     <a href="<?php echo base_url(); ?>loadChangePass" class="btn btn-default btn-flat"><i class="fa fa-key"></i> Change Password</a>
                   </div> -->
                   <div class="pull-right">
-                    <a href="<?php echo base_url_api; ?>logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                    <a href="<?php echo base_url_api; ?>SourceUser/logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
                   </div>
                 </li>
               </ul>
@@ -192,12 +192,7 @@
                <i class="fa fa-angle-right pull-right"></i> 
             </a>
             <ul class="treeview-menu">
-              <li class="treeview">
-                <a href="<?php echo base_url_api; ?>ship/create">
-                  <i class="fa fa-plus-circle"></i>
-                  <span>สร้าง</span>
-                </a>
-              </li>
+           
               <li class="treeview">
                 <a href="<?php echo base_url_api; ?>ship/list">
                   <i class="fa fa-cubes"></i>
