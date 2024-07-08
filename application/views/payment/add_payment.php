@@ -75,7 +75,7 @@
                                <div class="col-md-6">
                                    <div class="form-group">
                                        <label for="address">ราคาค่าขนส่ง/ค่าจัดเก็บ</label>
-                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                       <input type="number" class="form-control required" id="ship_price" name="ship_price" value="<?php echo(number_format($contract->ship_price,2))?>" readonly>
                                    </div>
                                </div>
                            </div>
@@ -84,7 +84,7 @@
                                <div class="col-md-6">
                                    <div class="form-group">
                                        <label for="address">ปริมาณขยะ</label>
-                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="<?php echo(number_format($contract->disposal_qty,2))?>">
                                    </div>
                                </div>
                            </div>
@@ -93,7 +93,7 @@
                                <div class="col-md-6">
                                    <div class="form-group">
                                        <label for="address">จำนวนเงินต่อสัญญา</label>
-                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                       <input type="number" class="form-control required" id="amount_per_contract" name="amount_per_contract" value="0">
                                    </div>
                                </div>
                            </div>
@@ -102,7 +102,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address">จำนวนเงินที่จ่าย</label>
-                                        <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                        <input type="number" class="form-control required" id="pay_amount" name="pay_amount" value="0">
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address">จำนวนเงินที่เหลือ</label>
-                                        <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                        <input type="number" class="form-control required" id="remain_amount" name="remain_amount" value="0">
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address">เจ้าหน้าที่ผู้จ่ายบิล</label>
-                                        <input type="text" class="form-control required" id="contract_create_name" name="contract_create_name">
+                                        <input type="text" class="form-control required" id="payment_by" name="payment_by">
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                         </div><!-- /.box-body -->
 
                         <div class="box-footer">
-                        <input type="button" class="btn btn-warning" value="Preview Data" />
+                            <input type="button" class="btn btn-warning" value="Preview Data" />
                             <input type="submit" class="btn btn-warning" value="Submit" />
                           
                         </div>
