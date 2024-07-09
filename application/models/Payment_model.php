@@ -115,10 +115,10 @@ class Payment_model extends CI_Model
         
         return $query->result();
     }
-    function editOldContract($data, $id)
+    function update($data, $id)
     {
         $this->db->where('id', $id);
-        $this->db->update('contracts', $data);
+        $this->db->update('payments', $data);
         
         return TRUE;
     }

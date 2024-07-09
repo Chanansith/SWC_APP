@@ -136,7 +136,7 @@
                               <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="address">แนบหลักฐานการจ่ายบิล</label>
-                                      <input type="file" class="form-control required" id="attach_file" name="attach_file">
+                                      <input type="file" class="form-control required" id="attach_file" name="attach_file" accept="image/*">
                                   </div>
                               </div>
                           </div>

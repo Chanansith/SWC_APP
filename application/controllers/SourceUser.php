@@ -52,6 +52,50 @@ class SourceUser extends Admin_Controller
             $this->loadViews("payment/add_payment", $this->global, $data, NULL);
         
     }
+	public function upload_image($id)
+    {
+				if (!empty($_FILES['attach_file']['name'])) {
+					$_FILES['file']['name'] = $_FILES['attach_file']['name'];
+					$_FILES['file']['type'] = $_FILES['attach_file']['type'];
+					$_FILES['file']['tmp_name'] = $_FILES['attach_file']['tmp_name'];
+					$_FILES['file']['error'] = $_FILES['attach_file']['error'];
+					$_FILES['file']['size'] = $_FILES['attach_file']['size'];
+					$path = 'contractpayment/'.$id."/";
+					$config = array(
+						'upload_path' => $path,
+						'allowed_types' => "jpg|png|jpeg",
+						'overwrite' => TRUE,
+						'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+						'file_name' => uniqid()
+					);
+					$this->load->library('upload', $config);
+					$this->upload->initialize($config);
+					if (!$this->upload->do_upload('file')) {
+						$error = $this->upload->display_errors();
+						print_r($error) ;
+					} else {
+						$data = array('upload_data' => $this->upload->data());
+						// print_r($data);
+						$type = explode('.', $data['upload_data']["file_name"]);
+						$type = $type[count($type) - 1];
+						$path = base_url().'/'.$config['upload_path'] . '/' . $data['upload_data']["file_name"];
+						$data = array(
+							'attach_file' =>$path
+						
+							
+						);
+						$update = $this->payment_model->update($data, $id);
+						return $update;
+					}
+					
+					
+					
+				}else{
+					return "error";
+				}
+			
+       
+	}
     public function createpayment()
 	{
 		
@@ -75,7 +119,10 @@ class SourceUser extends Admin_Controller
         	);
 
         	$create = $this->payment_model->create($data);
-        	if($create == true) {
+        	if($create >0) {
+
+				$this->upload_image($create);
+
 				redirect( base_url_api.'contract', 'refresh');
         		// $response['success'] = true;
         		// $response['messages'] = 'Succesfully created';
