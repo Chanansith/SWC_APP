@@ -68,6 +68,11 @@ class SourceUser extends Admin_Controller
 						'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
 						'file_name' => uniqid()
 					);
+					$this->log_model->create(
+						array('createby'=>0,
+					 'remark'=>"73",
+					 'log_type'=>"payment")
+					);
 					$this->load->library('upload', $config);
 					$this->upload->initialize($config);
 					if (!$this->upload->do_upload('file')) {
