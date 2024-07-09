@@ -78,7 +78,7 @@
                                <div class="col-md-6">
                                    <div class="form-group">
                                        <label for="address">ราคาค่าขนส่ง/ค่าจัดเก็บ</label>
-                                       <input type="number" class="form-control required" id="ship_price" name="ship_price" value="<?php echo(number_format($contract->ship_price,2))?>" readonly>
+                                       <input type="number" class="form-control" id="ship_price" name="ship_price" value="<?php echo(number_format($contract->ship_price,2))?>" readonly>
                                    </div>
                                </div>
                            </div>
@@ -87,7 +87,7 @@
                                <div class="col-md-6">
                                    <div class="form-group">
                                        <label for="address">ปริมาณขยะ</label>
-                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="<?php echo(number_format($contract->disposal_qty,2))?>" readonly>
+                                       <input type="number" class="form-control" id="disposal_qty" name="disposal_qty" value="<?php echo(number_format($contract->disposal_qty,2))?>" readonly>
                                    </div>
                                </div>
                            </div>

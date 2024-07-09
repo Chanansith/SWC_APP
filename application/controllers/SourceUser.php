@@ -123,6 +123,7 @@ class SourceUser extends Admin_Controller
 				'pay_date' => $pay_date,
 				'pay_amount' => $this->input->post('pay_amount'),
 				'remain_amount' => $this->input->post('remain_amount'),
+				'amount_per_contract' => $this->input->post('amount_per_contract'),
 				'payment_by' => $this->input->post('payment_by'),
 				'other_detail' => $this->input->post('other_detail'),
                 'bank_id' => $this->input->post('bank_id'),
