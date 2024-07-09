@@ -104,6 +104,11 @@ class SourceUser extends Admin_Controller
 
 		$this->form_validation->set_rules('contract_code', 'contract_code', 'trim|required');
         if ($this->form_validation->run() == TRUE) {
+			$this->log_model->create(
+				array('createby'=>0,
+			 'remark'=>"109",
+			 'log_type'=>"payment")
+			);
 
 			$pay_date=$this->input->post('pay_date');
         	$data = array(
@@ -117,10 +122,18 @@ class SourceUser extends Admin_Controller
 				'other_detail' => $this->input->post('other_detail'),
                 'bank_id' => $this->input->post('bank_id'),
         	);
-
+			$this->log_model->create(
+				array('createby'=>0,
+			 'remark'=>"125",
+			 'log_type'=>"payment")
+			);
         	$create = $this->payment_model->create($data);
         	if($create >0) {
-
+				$this->log_model->create(
+					array('createby'=>0,
+				 'remark'=>"132",
+				 'log_type'=>"payment")
+				);
 				$this->upload_image($create);
 
 				redirect( base_url_api.'contract', 'refresh');

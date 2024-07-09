@@ -69,7 +69,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="last_name">สัญญาเลขที่</label>
-                                        <input type="text" class="form-control required" id="contract_code" name="contract_code" readonly value="<?php echo($contract_code)?>" readonly>
+                                        <input type="text" class="form-control" id="contract_code" name="contract_code" readonly value="<?php echo($contract_code)?>" >
                                     </div>
                                 </div>
                             </div>
