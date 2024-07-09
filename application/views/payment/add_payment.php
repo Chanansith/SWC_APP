@@ -87,7 +87,7 @@
                                <div class="col-md-6">
                                    <div class="form-group">
                                        <label for="address">ปริมาณขยะ</label>
-                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="<?php echo(number_format($contract->disposal_qty,2))?>">
+                                       <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="<?php echo(number_format($contract->disposal_qty,2))?>" readonly>
                                    </div>
                                </div>
                            </div>
@@ -176,7 +176,7 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/jquery.datetimepicker.css">
 <script type="text/javascript" src="<?= base_url()?>assets/jquery.datetimepicker.js"></script>
 <script>
-    jQuery('#contract_date').datetimepicker({
+    jQuery('#pay_date').datetimepicker({
       timepicker:false,
       format:'Y-m-d',
       lang:'en'
