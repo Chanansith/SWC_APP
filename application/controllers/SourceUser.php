@@ -17,6 +17,7 @@ class SourceUser extends Admin_Controller
 		$this->load->model('truck_model');
 		$this->load->model('disposal_model');
         $this->load->model('log_model');
+        $this->load->model('payment_model');
     }
 
     /* 
@@ -47,10 +48,53 @@ class SourceUser extends Admin_Controller
 			$contract=$this->contract_model->getContract($contract_id);
 			$data["contract"]=$contract[0];
 			$data["contract_code"]=$contract[0]->contract_code;
-          
+            $data["contract_id"]=$contract_id;
             $this->loadViews("payment/add_payment", $this->global, $data, NULL);
         
     }
+    public function createpayment()
+	{
+		
+
+		$response = array();
+
+		$this->form_validation->set_rules('contract_code', 'contract_code', 'trim|required');
+        if ($this->form_validation->run() == TRUE) {
+
+			$pay_date=$this->input->post('pay_date');
+        	$data = array(
+				'contract_code' => $this->input->post('contract_code'),
+                'contract_id' => $this->input->post('contract_id'),
+				'user_id' => $_SESSION["userId"],
+				'pay_date' => $pay_date,
+				'pay_amount' => $this->input->post('pay_amount'),
+				'remain_amount' => $this->input->post('remain_amount'),
+				'payment_by' => $this->input->post('payment_by'),
+				'other_detail' => $this->input->post('other_detail'),
+                'bank_id' => $this->input->post('bank_id'),
+        	);
+
+        	$create = $this->payment_model->create($data);
+        	if($create == true) {
+				redirect( base_url_api.'contract', 'refresh');
+        		// $response['success'] = true;
+        		// $response['messages'] = 'Succesfully created';
+			
+        	}
+        	else {
+        		$response['success'] = false;
+        		$response['messages'] = 'Error in the database while creating the brand information';			
+        	}
+        }
+        else {
+        	$response['success'] = false;
+        	foreach ($_POST as $key => $value) {
+        		$response['messages'][$key] = form_error($key);
+        	}
+        }
+
+        echo json_encode($response);
+	}
 
 
     public function signout(){

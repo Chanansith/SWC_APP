@@ -50,8 +50,11 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
 
-                    <form role="form" id="addContract" action="<?php echo base_url_api ?>contract/create" method="post" role="form" >
-                        <div class="box-body">
+                    <form role="form" id="addContract" action="<?php echo base_url_api ?>sourceuser/createpayment" method="post" role="form" >
+                       
+                        <input type="hidden" name="contract_id" value="<?php  echo $contract_id; ?>" />
+
+                    <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -95,6 +98,18 @@
                                        <label for="address">จำนวนเงินต่อสัญญา</label>
                                        <input type="number" class="form-control required" id="amount_per_contract" name="amount_per_contract" value="0">
                                    </div>
+                               </div>
+                           </div>
+                           <div class="row">
+                               
+                               <div class="col-md-6">
+                                   <div class="form-group">
+                                       <label for="address">เลือกธนาคาร</label>
+                                      <select class="form-control required" id="bank_id" name="bank_id" required>
+                                        <option value="0">เลือกธนาคาร</option>
+                                        <option value="1">ไทยพานิชย์</option>
+                                        <option value="2">กสิกรไทย</option>
+                                      </select>
                                </div>
                            </div>
                             <div class="row">
