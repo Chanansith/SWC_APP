@@ -60,7 +60,13 @@ class SourceUser extends Admin_Controller
 					$_FILES['file']['tmp_name'] = $_FILES['attach_file']['tmp_name'];
 					$_FILES['file']['error'] = $_FILES['attach_file']['error'];
 					$_FILES['file']['size'] = $_FILES['attach_file']['size'];
-					$path = 'contractpayment/'.$id."/";
+					$path = 'contractpayment/'.$id;
+
+					if (!is_dir($path)) {
+						// Directory does not exist, so create it
+						mkdir($path, 0777, true); // Third parameter true ensures recursive creation
+						echo "Directory created successfully";
+					} 
 					$config = array(
 						'upload_path' => $path,
 						'allowed_types' => "jpg|png|jpeg",
