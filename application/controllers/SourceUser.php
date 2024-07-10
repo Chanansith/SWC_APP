@@ -96,6 +96,11 @@ class SourceUser extends Admin_Controller
 					
 					
 				}else{
+					$this->log_model->create(
+						array('createby'=>0,
+					 'remark'=>"error upload 101",
+					 'log_type'=>"payment")
+					);
 					return "error";
 				}
 			
