@@ -133,6 +133,8 @@ class SourceUser extends Admin_Controller
 			 'remark'=>"125",
 			 'log_type'=>"payment")
 			);
+			
+			$this->upload_image(1);
         	$create = $this->payment_model->create($data);
         	if($create >0) {
 				$this->log_model->create(
