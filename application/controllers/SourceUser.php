@@ -65,7 +65,7 @@ class SourceUser extends Admin_Controller
 					if (!is_dir($path)) {
 						// Directory does not exist, so create it
 						mkdir($path, 0777, true); // Third parameter true ensures recursive creation
-						echo "Directory created successfully";
+						//echo "Directory created successfully";
 					} 
 					$config = array(
 						'upload_path' => $path,
@@ -145,14 +145,11 @@ class SourceUser extends Admin_Controller
 			 'log_type'=>"payment")
 			);
 			
-			$this->upload_image(1);
-			$this->log_model->create(
-				array('createby'=>0,
-			 'remark'=>"140",
-			 'log_type'=>"payment")
-			);
+			
+			
         	$create = $this->payment_model->create($data);
         	if($create >0) {
+				$this->upload_image($create);
 				$this->log_model->create(
 					array('createby'=>0,
 				 'remark'=>"132",
