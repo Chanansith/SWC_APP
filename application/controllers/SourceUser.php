@@ -37,7 +37,7 @@ class SourceUser extends Admin_Controller
 	}
 
     function getpaymentbycontract($contract_id){
-		$data["payementsRecords"]=$this->payment_model->getPaymentByContract($contract_id);
+		$data["paymentsRecords"]=$this->payment_model->getPaymentByContract($contract_id);
 		$data["contract_id"]=$contract_id;
         $this->loadViews('payment/index_payment', $this->global, $data, NULL);
 	}
