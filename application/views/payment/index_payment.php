@@ -36,10 +36,10 @@
                 <th>เลขที่สัญญา</th>
                 <th>วันที่</th>
               
-                <th>ปริมาณขยะ</th>
-                <th>จำนวนเงินต่อสัญญา</th>
+                <th>ยอดชำระ</th>
+                <th>คงเหลือ</th>
               
-                <th class="text-center">Actions</th>
+               
               </tr>
               <?php
               if (!empty($paymentsRecords)) {
@@ -49,16 +49,13 @@
               ?>
                   <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $record->payments_code ?></td>
-                    <td><?php echo $record->payments_date ?>  </td>
-                    <td><?php echo $record->disposal_qty ?></td>
+                    <td><?php echo $record->contract_code ?></td>
+                    <td><?php echo $record->pay_date ?>  </td>
+                  
+
+                    <td><?php echo number_format($record->pay_amount,2) ?></td>
+                    <td><?php echo number_format($record->remain_amount,2) ?></td>
                  
-                    <td><?php echo number_format($record->payments_amount,2) ?></td>
-                    <td class="text-center">
-                    <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'editpayments/' . $record->id; ?>"><i class="fa fa-file"></i></a>
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'editpayments/' . $record->id; ?>"><i class="fa fa-pencil"></i></a>
-                      <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'sourceuser/addpayment/' . $record->id; ?>"><i class="fa fa-check-circle"></i></a>
-                    </td>
                   </tr>
               <?php
                 }
