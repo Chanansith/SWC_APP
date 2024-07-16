@@ -36,7 +36,11 @@ class SourceUser extends Admin_Controller
 		print_r($contract);
 	}
 
-  
+    function getpayments($contract_id){
+		$data["payementsRecords"]=$this->contract_model->getContractByUser($_SESSION["userId"]);
+        $this->loadViews('payments/index_payment', $this->global, $data, NULL);
+	}
+
 	function addpayment($contract_id)
     {
       

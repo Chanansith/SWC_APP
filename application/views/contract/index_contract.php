@@ -49,7 +49,9 @@
               ?>
                   <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $record->contract_code ?></td>
+                    <td><?php echo $record->contract_code ?> <br>
+                    <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'sourceuser/getpayments/' . $record->id; ?>"><i class="fa fa-file"></i></a>
+                  </td>
                     <td><?php echo $record->contract_date ?>  </td>
                     <td><?php echo $record->disposal_qty ?></td>
                  
