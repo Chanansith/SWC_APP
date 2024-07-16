@@ -50,8 +50,7 @@
                   <tr>
                     <td><?php echo $i ?></td>
                     <td><?php echo $record->contract_code ?> 
-                    <a href="<?php echo base_url_api . 'sourceuser/getpaymentbycontract/' . $record->id; ?>"><i class="fa fa-file"></i> รายการชำระ</a>
-                  </td>
+                    <a href="<?php echo base_url_api . 'sourceuser/getpaymentbycontract/' . $record->id; ?>"><i class="fa fa-file"></i> รายการชำระ</a> </td>
                     <td><?php echo $record->contract_date ?>  </td>
                     <td><?php echo $record->disposal_qty ?></td>
                  

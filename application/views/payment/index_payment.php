@@ -16,7 +16,7 @@
     <div class="row">
       <div class="col-xs-12 text-right">
         <div class="form-group">
-          <a class="btn btn-primary" href="<?php echo base_url_api; ?>payments/add"><i class="fa fa-plus"></i> เพิ่ม</a>
+          <a class="btn btn-primary" href="<?php echo base_url_api; ?>sourceuser/addpayment/"><i class="fa fa-plus"></i> เพิ่ม</a>
         </div>
       </div>
     </div>
@@ -35,7 +35,6 @@
               <th>#</th>
                 <th>เลขที่สัญญา</th>
                 <th>วันที่</th>
-              
                 <th>ยอดชำระ</th>
                 <th>คงเหลือ</th>
               
