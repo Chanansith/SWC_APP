@@ -33,6 +33,7 @@
             <table class="table table-hover">
               <tr>
               <th>#</th>
+              <th>สลิป</th>
                 <th>เลขที่สัญญา</th>
                 <th>วันที่</th>
                 <th>ยอดชำระ</th>
@@ -48,6 +49,8 @@
               ?>
                   <tr>
                     <td><?php echo $i ?></td>
+                    <td><img src="<?php echo $record->attach_file ?>" width="100px" height="100px"></td>
+
                     <td><?php echo $record->contract_code ?></td>
                     <td><?php echo $record->pay_date ?>  </td>
                   
