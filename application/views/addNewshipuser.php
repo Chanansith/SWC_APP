@@ -68,15 +68,7 @@
                                 </div>
                         </div>       
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="text">ประเภทย่อย</label>
-                                        <select name="sub_cate_id"  class="form-control">
-                                        <option value="0">สถานพยาบาล</option>
-                                                <option value="1">รพสต.</option>
-                                           </select>
-                                    </div>
-                                </div>
+                             
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address_no">ที่ตั้งเลขที่</label>
@@ -143,12 +135,7 @@
                                     </div>
                               
                              
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="text">จำนวนเตียง</label>
-                                            <input type="number" class="form-control required" id="bed_count"  name="bed_count" maxlength="10">
-                                        </div>
-                                    </div>
+                              
                                 </div>
                                      <div class="row">
                                         <div class="col-md-6">
@@ -172,26 +159,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="ctext">อปท.ที่เป็นที่ตั้ง
-                                            </label>
-                                           <select name="main_location"  class="form-control">
-                                                <option value="0">--อปท.ที่เป็นที่ตั้ง--</option>
-                                                <?php
-                                                if(!empty($main_location))
-                                                {
-                                                    foreach ($main_location as $ml)
-                                                    {
-                                                        ?>
-                                                        <option value="<?php echo $ml->id?>"><?php echo $ml->location_name ?></option>
-                                                        <?php
-                                                    }
-                                                }
-                                                ?>
-                                           </select>
-                                        </div>
-                                    </div>
+                                  
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="ctext">เบอร์โทรศัพท์:</label>
