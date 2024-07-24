@@ -23,7 +23,7 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     
-                    <form role="form" id="addUser" action="<?php echo base_url() ?>saveadduser" method="post" role="form">
+                    <form role="form" id="addUser" action="<?php echo base_url_api ?>saveadduser" method="post" role="form">
                         <div class="box-body">
                            
                         <div class="row">

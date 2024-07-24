@@ -46,11 +46,11 @@
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">สัญญาจัดเก็บมูลฝอยติดเชื้อ:Contract for disposal IMW</h3>
+                        <h3 class="box-title">สัญญาจัดเก็บมูลฝอยติดเชื้อ:Contract for disposal IMW+Transport</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
 
-                    <form role="form" id="addContract" action="<?php echo base_url_api ?>contract/create" method="post" role="form" >
+                    <form role="form" id="addContract" action="<?php echo base_url_api ?>contract/create_transport" method="post" role="form" >
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -83,19 +83,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="birth_date">เลือกแหล่งจำกัด/ศูนย์บำบัด</label>
-                                        <select class="form-control required" id="disposalid" name="disposalid">
-                                        <?php
-                                        foreach($disposallist as $disp){
-                                          
-                                             echo "<option value='".$disp->id."'>".$disp->disposal_name."</option>";
-                                        }
-                                    ?>
-                                        </select>
-                                    </div>
-                                </div>
+                            
                             </div>
                            
                             <div class="row">
@@ -106,12 +94,7 @@
                                        บาท/กิโลกรัม 
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="address">ปริมาณมูลฝอยติดเชื่อ</label>
-                                        <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
-                                    </div>
-                                </div>
+                             
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
