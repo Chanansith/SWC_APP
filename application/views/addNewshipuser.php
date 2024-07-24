@@ -23,7 +23,7 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     
-                    <form role="form" id="addUser" action="<?php echo base_url_api ?>saveadduser" method="post" role="form">
+                    <form role="form" id="addUser" action="<?php echo base_url_api ?>saveNewShipUser" method="post" role="form">
                         <div class="box-body">
                            
                         <div class="row">
@@ -137,26 +137,11 @@
                              
                               
                                 </div>
-                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="ctext">ตำแหน่งแผนที่ :ละติจูด</label>
-                                                <input type="text" class="form-control required equalTo" id="lat" name="lat" maxlength="10">
-                                            </div>
-                                        </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="ctext">ลองติจูด:</label>
-                                            <input type="text" class="form-control required equalTo" id="lng" name="lng" maxlength="10">
-                                        </div>
-                                    </div>
+                                 
                                 </div>
-                                <div class="row">
+                               
 
-                                <div id="map" style="width:800px;height:300px;"></div>
-
-
-                                </div>
+                            
 
                                 <div class="row">
                                   
