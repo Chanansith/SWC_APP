@@ -18,6 +18,7 @@ class Transport extends Admin_Controller
         $this->load->model('request_model');
 		$this->load->model('disposal_model');
         $this->load->model('log_model');
+        $this->load->model('user_model');
     }
     public function index()
     {
@@ -29,17 +30,22 @@ class Transport extends Admin_Controller
     function saveNewShipUser()
     {
         
+
+        $this->log_model->create(
+            array('createby'=>0,
+         'remark'=>"36",
+         'log_type'=>"new transport")
+        );
             $this->load->library('form_validation');
             
             $this->form_validation->set_rules('fullname','ชื่อนามสกุล','required|max_length[255]');
             $this->form_validation->set_rules('mobile_no','เบอร์โทรศัพท์มือถือ','required|max_length[20]');
          
             
-
-
             if($this->form_validation->run() == FALSE)
             {
-                $this->addNewShipUser();
+               // $this->addNewShipUser();
+               echo "กรุณากรอกข้อมูลให้ครบ";
             }
             else
             {
@@ -66,7 +72,7 @@ class Transport extends Admin_Controller
                  $lat = $this->input->post('lat');
                  $lng = $this->input->post('lng');
                  $main_location = $this->input->post('main_location');
-                 $password=$this->getPassword();
+                 $password=$this->input->post('password');
                  $registerno = $this->input->post('registerno');
                  
                 // // $secret_key = $this->input->post('secret_key');
@@ -96,11 +102,12 @@ class Transport extends Admin_Controller
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                     }
                     
-                    redirect('index.php/registershipping');
+                    redirect(base_url_api.'registershipping');
                 }else {
                    // $this->session->set_flashdata('error', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
                     $this->form_validation->set_message('is_unique', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
-                    $this->addNewShipUser();
+                    //$this->addNewShipUser();
+                    echo "กรุณากรอกข้อมูลให้ครบ";
                 }
             }
         

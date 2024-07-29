@@ -17,7 +17,7 @@
                 
                 
                 
-                <div class="box box-primary">
+                <di class="box box-primary">
                     <div class="box-header">
                         
                     </div><!-- /.box-header -->
@@ -178,7 +178,7 @@
                                     </div>
                                
                                 </div>
-                        </div>
+                        
 
 
                         </div><!-- /.box-body -->
