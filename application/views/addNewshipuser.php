@@ -151,9 +151,6 @@
                                             <input type="text" class="form-control" id="tel_no" name="tel_no" maxlength="20">
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="ctext">อีเมล์
@@ -161,23 +158,24 @@
                                             <input type="text" class="form-control required" id="email" name="email" maxlength="200">
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="row">
+                                 
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="ctext">เบอร์โทรศัพท์มือถือ:</label>
                                             <input type="text" class="form-control required" id="mobile_no" name="mobile_no" maxlength="20">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="ctext">เลขที่ใบอนุญาตจัดเก็บ
-                                            </label>
-                                            <input type="text" class="form-control" id="registerno" name="registerno" maxlength="200">
+                                            <label for="ctext">รหัสผ่าน:</label>
+                                            <input type="text" class="form-control required" id="password" name="password" >
                                         </div>
                                     </div>
-                               
                                 </div>
+                             
                         
 
 

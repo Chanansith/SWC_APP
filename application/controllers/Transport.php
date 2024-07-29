@@ -50,16 +50,14 @@ class Transport extends Admin_Controller
             else
             {
                 $mobile = $this->input->post('mobile_no');
-                $users_exists = $this->user_model->checkUserExists($mobile);
-                if(count($users_exists)==0){
+               
 
                  $code = $this->input->post('code');
                  $hascode = $this->input->post('hascode');
                  $companyname = $this->input->post('companyname');
                  $title = $this->input->post('title');
                  $fullname = $this->input->post('fullname');
-                 $cate_id = $this->input->post('cate_id');
-                 $sub_cate_id = $this->input->post('sub_cate_id');
+               
                  $address_no = $this->input->post('address_no');
                  $moo = $this->input->post('sub_cate_id');
                  $zipcode = $this->input->post('zipcode');
@@ -71,7 +69,7 @@ class Transport extends Admin_Controller
                  $email = $this->input->post('email');
                  $lat = $this->input->post('lat');
                  $lng = $this->input->post('lng');
-                 $main_location = $this->input->post('main_location');
+               
                  $password=$this->input->post('password');
                  $registerno = $this->input->post('registerno');
                  
@@ -82,7 +80,7 @@ class Transport extends Admin_Controller
                                         'address_no'=>$address_no,'moo'=>$moo,
                                          'mobile_no'=>$mobile,
                                          'provinceid'=>$provinceid,'districtid'=>$districtid,'amphurid'=>$amphurid,
-                                         'lat'=>$lat,'lng'=>$lng,'main_location'=>$main_location,
+                                         'lat'=>$lat,'lng'=>$lng,
                                          'registerno'=>$registerno,'pass'=>$password,
                                          'createon'=>date('Y-m-d H:i:s'));
                     
@@ -103,12 +101,7 @@ class Transport extends Admin_Controller
                     }
                     
                     redirect(base_url_api.'registershipping');
-                }else {
-                   // $this->session->set_flashdata('error', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
-                    $this->form_validation->set_message('is_unique', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
-                    //$this->addNewShipUser();
-                    echo "กรุณากรอกข้อมูลให้ครบ";
-                }
+               
             }
         
     }
