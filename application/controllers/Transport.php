@@ -9,7 +9,7 @@ class Transport extends Admin_Controller
         parent::__construct();
         
      
-        $this->not_logged_in_transport();
+       
 
         $this->data['page_title'] = 'Transport';
 
@@ -21,6 +21,7 @@ class Transport extends Admin_Controller
     }
     public function index()
     {
+        $this->not_logged_in_transport();
         $data["summary"]=[];
         $this->loadTransportViews('transport/transdasboard', $this->global, $data, NULL);
         
@@ -108,14 +109,14 @@ class Transport extends Admin_Controller
 
     public function contract()
     {
-        
+        $this->not_logged_in_transport();
 		$data["ContractRecords"]=$this->contract_model->getContractByTransport($_SESSION["userId"]);
         $this->loadTransportViews('transport/trans_contract', $this->global, $data, NULL);
     }
 
     public function requestlist()
     {
-        
+        $this->not_logged_in_transport();
 		$data["RequestRecords"]=$this->request_model->getRequest($_SESSION["userId"]);
         $this->loadTransportViews('transport/request_list', $this->global, $data, NULL);
     }

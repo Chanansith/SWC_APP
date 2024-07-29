@@ -8,8 +8,7 @@ class SourceUser extends Admin_Controller
     {
         parent::__construct();
 
-        $this->not_logged_in();
-
+    
         $this->data['page_title'] = 'Source of IMW';
 
 		$this->load->model('contract_model');
@@ -30,6 +29,8 @@ class SourceUser extends Admin_Controller
   
     public function fetchDataById($contract_id) 
 	{
+		$this->not_logged_in();
+
 		$contract=$this->contract_model->getContract($contract_id);
 		
 		//echo json_encode($contract);
@@ -139,6 +140,8 @@ class SourceUser extends Admin_Controller
         
     }
     function getpaymentbycontract($contract_id){
+		$this->not_logged_in();
+
 		$data["paymentsRecords"]=$this->payment_model->getPaymentByContract($contract_id);
 		$data["contract_id"]=$contract_id;
         $this->loadViews('payment/index_payment', $this->global, $data, NULL);
@@ -146,6 +149,7 @@ class SourceUser extends Admin_Controller
 
 	function addpayment($contract_id)
     {
+		$this->not_logged_in();
       
             $this->global['pageTitle'] = 'Add Payment';
             $data['header'] ="Contract";
@@ -161,7 +165,9 @@ class SourceUser extends Admin_Controller
     }
 	public function upload_image($id)
     {
-				if (!empty($_FILES['attach_file']['name'])) {
+	    $this->not_logged_in();
+
+		if (!empty($_FILES['attach_file']['name'])) {
 					$_FILES['file']['name'] = $_FILES['attach_file']['name'];
 					$_FILES['file']['type'] = $_FILES['attach_file']['type'];
 					$_FILES['file']['tmp_name'] = $_FILES['attach_file']['tmp_name'];
@@ -222,6 +228,7 @@ class SourceUser extends Admin_Controller
     public function createpayment()
 	{
 		
+		$this->not_logged_in();
 
 		$response = array();
 
