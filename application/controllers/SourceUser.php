@@ -119,7 +119,7 @@ class SourceUser extends Admin_Controller
                         $this->session->set_flashdata('success', 'สมัครสมาชิกเรียบร้อย');
                         $this->log_model->create(array('createby'=>$result,
                     'remark'=>"Register",'log_type'=>"register"));
-                        $this->sendMail(" Register Success your login with $mobile and password: $password ");
+                        //$this->sendMail(" Register Success your login with $mobile and password: $password ");
 
                         echo "<a href=".base_url_api."login/hn class='btn btn-success'>สมัครสมาชิกเรียบร้อย ถัดไป</a>";
                     }
