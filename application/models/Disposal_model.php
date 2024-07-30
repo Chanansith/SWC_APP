@@ -92,6 +92,31 @@ class Disposal_model extends CI_Model
     
         return $insert_id;
     }
+
+    function getContract($id)
+    {
+        $this->db->select('*');
+        $this->db->from('disposal_contracts');
+    
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+
+    function getContractByDisposal($id)
+    {
+        $this->db->select('t1.*,t2.companyname');
+        $this->db->from('disposal_contracts t1');
+        $this->db->join('transport_user t2', 't1.transportid = t2.id');
+    
+        $this->db->where('t1.disposalid', $id);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+
+
  
  
 }

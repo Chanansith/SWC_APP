@@ -32,15 +32,15 @@ class Transport extends Admin_Controller
 
 
 
-    function addTran()
+    function addTran($contract_id)
     {
       
+           $this->not_logged_in_transport();;
             $this->global['pageTitle'] = 'Add Transport';
             $data['header'] ="Transport";
-		
-			$data["disposallist"]=$this->disposal_model->getForDropdown();
-		
-          
+            $data['contract_id'] ="contract_id";
+            $data['contract_code'] ="contract_code";
+			
             $this->loadTransportViews("transport/addNewTran", $this->global, $data, NULL);
         
     }
