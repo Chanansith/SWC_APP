@@ -76,7 +76,7 @@ class User_model extends CI_Model
         $this->db->where("mobile_no", $username);   
         $this->db->where("isDeleted", 0);
         if($userId != 0){
-            $this->db->where("id !=", $id);
+            $this->db->where("id !=", $userId);
         }
         $query = $this->db->get();
 
