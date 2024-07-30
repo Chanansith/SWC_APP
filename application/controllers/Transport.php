@@ -27,6 +27,18 @@ class Transport extends Admin_Controller
         $this->loadTransportViews('transport/transdasboard', $this->global, $data, NULL);
         
     }
+    function addNewShipUser()
+    {
+        
+          
+        $data["title"]="index";
+        $this->global["name"]="guess";
+        $this->global["pageTitle"]="home";
+        $data["provinces"]=$this->province_model->getProvinces();
+       
+        $this->loadViewsNoHeader("addNewshipuser", $this->global, $data, NULL);
+        
+    }
     function saveNewShipUser()
     {
         

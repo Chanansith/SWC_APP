@@ -55,9 +55,9 @@ $route['userListing/(:num)'] = "user/userListing/$1";
 $route['register'] = "login/addNew";
 $route['register2'] = "index.php/login/addNew";
 $route['registersuccess/(:num)'] = "login/registerSuccess/$1";
-$route['registershipping'] = "login/addNewShipUser";
+$route['registershipping'] = "transport/addNewShipUser";
 $route['saveadduser'] = "login/addNewUser";
-$route['saveaddshipuser'] = "login/saveNewShipUser";
+$route['saveaddshipuser'] = "transport/saveNewShipUser";
 
 $route['editOld'] = "user/editOld";
 $route['editOld/(:num)'] = "user/editOld/$1";

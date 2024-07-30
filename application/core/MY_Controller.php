@@ -155,7 +155,12 @@ class Admin_Controller extends MY_Controller
         $this->load->view('includes/footer', $footerInfo);
     }
 
+	function loadViewsNoHeader($viewName = "", $headerInfo = NULL, $pageInfo = NULL, $footerInfo = NULL){
 
+        $this->load->view('includes/headerblank', $headerInfo);
+        $this->load->view($viewName, $pageInfo);
+        $this->load->view('includes/footerhome', $footerInfo);
+    }
 
 	function loadDefaultViews($viewName = "", $headerInfo = NULL, $pageInfo = NULL, $footerInfo = NULL){
 
