@@ -26,7 +26,7 @@
                     <form role="form" id="addUser" action="<?php echo base_url_api ?>transport/saveNewShipUser" method="post" role="form">
                         <div class="box-body">
                            
-                        <div class="row">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="text">รหัสบริษัท</label>
@@ -138,11 +138,8 @@
                               
                                 </div>
                                  
-                                </div>
-                               
-
-                            
-
+                             
+                    
                                 <div class="row">
                                   
                                     <div class="col-md-6">
@@ -176,9 +173,7 @@
                                     </div>
                                 </div>
                              
-                        
-
-
+    
                         </div><!-- /.box-body -->
     
                         <div class="box-footer">
@@ -224,7 +219,7 @@
 </div>
 
 <script>
-    var base_url="<?php echo base_url() ?>";
+    var base_url="<?php echo base_url_api() ?>";
     var provinceid=0;
     var amphureid=0;
     var lat=0;
@@ -232,23 +227,8 @@
 
     $(document).ready(function(){
  
-        $('#lat').on('focus', function (e) {
-        var code = (e.keyCode ? e.keyCode : e.which);
-        if (code == 9) {
-            lat =parseFloat($(this).val());
-            initMap(lat,lng)
-        }
-       
-        });
-        
-        $('#lng').on('focus', function (e) {
-        var code = (e.keyCode ? e.keyCode : e.which);
-        if (code == 9) {
-            lng =parseFloat($(this).val());
-            initMap(lat,lng)
-        }
-       
-        });
+      
+    
       
         $('#province').change(async function(){ 
             provinceid = $(this).val();

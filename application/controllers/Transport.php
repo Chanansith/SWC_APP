@@ -100,7 +100,11 @@ class Transport extends Admin_Controller
                                          'createon'=>date('Y-m-d H:i:s'));
                     
            
-              
+                                         $this->log_model->create(
+                                            array('createby'=>0,
+                                         'remark'=>"105",
+                                         'log_type'=>"new transport")
+                                        );
 
                     $result = $this->user_model->addNewShipUser($userInfo);
 
@@ -108,11 +112,23 @@ class Transport extends Admin_Controller
                     
                     if($result > 0)
                     {
+                        
+                        $this->log_model->create(
+                            array('createby'=>0,
+                         'remark'=>"118",
+                         'log_type'=>"new transport")
+                        );
+
                         $this->session->set_flashdata('success', 'สมัครสมาชิกเรียบร้อย');
                         echo "<a href=".base_url_api."login/transport class='btn btn-success'>ถัดไป</a>";
                     }
                     else
                     {
+                        $this->log_model->create(
+                            array('createby'=>0,
+                         'remark'=>"129",
+                         'log_type'=>"new transport")
+                        );
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                     }
                     
