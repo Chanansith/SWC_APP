@@ -225,9 +225,6 @@
 
     $(document).ready(function(){
  
-      
-    
-      
         $('#province').change(async function(){ 
             provinceid = $(this).val();
               console.log("province"+provinceid);
@@ -290,38 +287,9 @@
             });
 
 
-            async function initMap(mylat,mylng) {
-  // Request needed libraries.
-  const { Map } = await google.maps.importLibrary("maps");
-  var myLatlng = { lat:mylat, lng:mylng };
-  console.log(myLatlng);
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 10,
-    center: myLatlng,
-  });
-  // Create the initial InfoWindow.
-  let infoWindow = new google.maps.InfoWindow({
-    content: "Click the map to get Lat/Lng!",
-    position: myLatlng,
-  });
+         
 
-  infoWindow.open(map);
-  // Configure the click listener.
-  map.addListener("click", (mapsMouseEvent) => {
-    // Close the current InfoWindow.
-    infoWindow.close();
-    // Create a new InfoWindow.
-    infoWindow = new google.maps.InfoWindow({
-      position: mapsMouseEvent.latLng,
-    });
-    infoWindow.setContent(
-      JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2),
-    );
-    infoWindow.open(map);
-  });
-}
 
-initMap(19.7110803,99.907557);
 
     })
 

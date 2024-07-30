@@ -74,10 +74,10 @@ class Transport extends Admin_Controller
                  $fullname = $this->input->post('fullname');
                
                  $address_no = $this->input->post('address_no');
-                 $moo = $this->input->post('sub_cate_id');
+                 $moo = $this->input->post('moo');
                  $zipcode = $this->input->post('zipcode');
                  $provinceid = $this->input->post('province');
-                 $districtid = $this->input->post('distric');
+                 $districtid = $this->input->post('district');
                  $amphurid = $this->input->post('amphure');
                  $tel = $this->input->post('tel_no');
                  $mobile = $this->input->post('mobile_no');
@@ -91,9 +91,9 @@ class Transport extends Admin_Controller
                 // // $secret_key = $this->input->post('secret_key');
                 // // $myreferral = $this->input->post('myreferral');
                     $userInfo = array('email'=>$email,  'companyname'=> $companyname,'code'=>$code,'hascode'=>$hascode,
-                                         'title'=>$title,'fullname'=>$fullname,
+                                         'title'=>$title,'full_name'=>$fullname,
                                         'address_no'=>$address_no,'moo'=>$moo,
-                                         'mobile_no'=>$mobile,
+                                         'mobile_no'=>$mobile,  'tel_no'=>$tel,
                                          'provinceid'=>$provinceid,'districtid'=>$districtid,'amphurid'=>$amphurid,
                                          'lat'=>$lat,'lng'=>$lng,
                                          'registerno'=>$registerno,'pass'=>$password,
@@ -106,7 +106,7 @@ class Transport extends Admin_Controller
                                          'log_type'=>"new transport")
                                         );
 
-                    $result = $this->user_model->addNewShipUser($userInfo);
+                    $result = $this->transport_model->addTransportUser($userInfo);
 
                     //upload file after
                     

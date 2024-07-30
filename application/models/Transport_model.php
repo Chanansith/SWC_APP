@@ -120,7 +120,7 @@ class Transport_model extends CI_Model
 
         return TRUE;
     }
-    function getCustomer($id)
+    function getDataByID($id)
     {
         $this->db->select('*');
         $this->db->from('transports');
@@ -130,33 +130,7 @@ class Transport_model extends CI_Model
 
         return $query->result();
     }
-    function editOldtransportCar($data, $id)
-    {
-        $this->db->where('id ', $id);
-        $this->db->update('transport', $data);
 
-        return TRUE;
-    }
-    function editOldCondition($data, $id)
-    {
-        $this->db->where('id ', $id);
-        $this->db->update('transport_condition_list', $data);
-
-        return TRUE;
-    }
-    function deleteCondition($id, $data)
-    {
-        $this->db->where('id ', $id);
-        $this->db->update('transport_condition_list', $data);
-
-        return $this->db->affected_rows();
-    }
-    function deleteCondition_transport($id,$data){
-        $this->db->where('id ', $id);
-        $this->db->update('condition_transport', $data);
-
-        return $this->db->affected_rows();
-    }
     function deletetransport($id, $data)
     {
         $this->db->where('id ', $id);
@@ -164,37 +138,8 @@ class Transport_model extends CI_Model
 
         return $this->db->affected_rows();
     }
-    function condition_transportListing($id){
-        $this->db->select('t1.*');
-        $this->db->from('condition_transport t1');
-        $this->db->where('t1.transport_id', $id);
-        $this->db->where('t1.is_delete', 0);
-        $this->db->order_by('t1.id', 'desc');
-        $query = $this->db->get();
 
-        $result = $query->result();
-        return $result;
-    }
-    function condition_transportListingCount($id){
-        $this->db->select('t1.*');
-        $this->db->from('condition_transport t1');
-        $this->db->where('t1.transport_id', $id);
-        $this->db->where('t1.is_delete', 0);
-        $query = $this->db->get();
-
-        return count($query->result());
-    }
-    function regis_departListing($id){
-        $this->db->select('t1.*');
-        $this->db->from('transport_regis_depart t1');
-        $this->db->where('t1.transport_id', $id);
-        $this->db->where('t1.is_delete', 0);
-        $this->db->order_by('t1.id', 'desc');
-        $query = $this->db->get();
-
-        $result = $query->result();
-        return $result;
-    }
+  
     function regis_departListingCount($id){
         $this->db->select('t1.*');
         $this->db->from('transport_regis_depart t1');
@@ -238,4 +183,16 @@ class Transport_model extends CI_Model
 
         return $query->result();
     }
+
+    function addTransportUser($userInfo)
+    {
+    
+        $this->db->insert('ship_users', $userInfo);
+        
+        $insert_id = $this->db->insert_id();
+        
+    
+        return $insert_id;
+    }
+    
 }
