@@ -168,7 +168,7 @@ class Login extends BaseController
         
         if($this->form_validation->run() == FALSE)
         {
-            $this->index();
+            redirect(base_url_api.'login/transport');
         }
         else
         {
@@ -195,14 +195,15 @@ class Login extends BaseController
               
                     //echo "success";
                   
-                                    }
-                echo "<a href=".base_url()."index.php/transport class='btn btn-success'>ถัดไป</a>";
+                }
+                redirect( base_url_api.'transport', 'refresh');
+               // echo "<a href=".base_url()."index.php/transport class='btn btn-success'>ถัดไป</a>";
             }
             else
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
               
-                 redirect('index.php/login/transport');
+                 redirect(base_url_api.'login/transport');
             }
         }
     }
@@ -342,7 +343,7 @@ class Login extends BaseController
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                     }
                     
-                    redirect('index.php/register');
+                    redirect(base_url_api.'register');
                 }else{
                     //$this->session->set_flashdata('error', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
                     $this->form_validation->set_message('is_unique', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
