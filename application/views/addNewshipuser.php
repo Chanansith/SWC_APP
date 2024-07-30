@@ -15,9 +15,7 @@
             <div class="col-md-8">
               <!-- general form elements -->
                 
-                
-                
-                <di class="box box-primary">
+                    <di class="box box-primary">
                     <div class="box-header">
                         
                     </div><!-- /.box-header -->
@@ -219,7 +217,7 @@
 </div>
 
 <script>
-    var base_url="<?php echo base_url_api() ?>";
+    var base_url="<?php echo base_url_api ?>";
     var provinceid=0;
     var amphureid=0;
     var lat=0;
