@@ -36,7 +36,7 @@ class SourceUser extends Admin_Controller
 		//echo json_encode($contract);
 		print_r($contract);
 	}
-	function addNewUser()
+	function saveadduser()
     {
         
             $this->load->library('form_validation');
@@ -58,8 +58,9 @@ class SourceUser extends Admin_Controller
 
             if($this->form_validation->run() == FALSE)
             {
-                $this->addNew();
-            }
+               // $this->addNew();
+			   echo "<a href='".base_url_api."register' class='btn btn-success'>ถัดไป</a>";
+			}
             else
             {
 
@@ -119,21 +120,21 @@ class SourceUser extends Admin_Controller
                     'remark'=>"Register",'log_type'=>"register"));
                         $this->sendMail(" Register Success your login with $mobile and password: $password ");
 
-                        redirect("registersuccess/$result");
+                        echo "<a href=".base_url_api."login/hn class='btn btn-success'>สมัครสมาชิกเรียบร้อย ถัดไป</a>";
                     }
                     else
                     {
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                         $this->log_model->create(array('createby'=>$result,
                         'remark'=>"Register Error",'log_type'=>"register"));
-                        $this->addNew();
+						echo "<a href='".base_url_api."register' class='btn btn-success'>ถัดไป</a>";
                     }
                     
                    
                 }else{
                     //$this->session->set_flashdata('error', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
                     $this->form_validation->set_message('is_unique', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
-                    $this->addNew();
+					echo "<a href='".base_url_api."register' class='btn btn-success'>ถัดไป</a>";
                     //echo "มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว";
             }
         }

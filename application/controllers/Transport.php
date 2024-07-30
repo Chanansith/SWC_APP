@@ -60,7 +60,7 @@ class Transport extends Admin_Controller
                // $this->addNewShipUser();
                //echo "กรุณากรอกข้อมูลให้ครบ";
 
-               echo "<a href=".base_url_api."registershipping class='btn btn-success'>ถัดไป</a>";
+               echo "<a href='".base_url_api."registershipping' class='btn btn-success'>ถัดไป</a>";
             }
             else
             {
