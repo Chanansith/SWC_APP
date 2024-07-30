@@ -28,6 +28,22 @@ class Transport extends Admin_Controller
         $this->loadTransportViews('transport/transdasboard', $this->global, $data, NULL);
         
     }
+
+
+
+
+    function addTran()
+    {
+      
+            $this->global['pageTitle'] = 'Add Transport';
+            $data['header'] ="Transport";
+		
+			$data["disposallist"]=$this->disposal_model->getForDropdown();
+		
+          
+            $this->loadTransportViews("transport/addNewTran", $this->global, $data, NULL);
+        
+    }
     function addNewShipUser()
     {
         

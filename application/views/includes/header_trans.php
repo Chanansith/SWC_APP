@@ -173,7 +173,7 @@
               </li>
             
               <li class="treeview">
-                <a href="<?php echo base_url_api; ?>contract">
+                <a href="<?php echo base_url_api; ?>transport/contract">
                   <i class="fa fa-cubes"></i>
                   <span>รายการสัญญา</span>
                 </a>
@@ -187,12 +187,7 @@
                <i class="fa fa-angle-right pull-right"></i> 
             </a>
             <ul class="treeview-menu">
-              <li class="treeview">
-                <a href="<?php echo base_url_api; ?>ship/create">
-                  <i class="fa fa-plus-circle"></i>
-                  <span>สร้าง</span>
-                </a>
-              </li>
+            
               <li class="treeview">
                 <a href="<?php echo base_url_api; ?>ship/list">
                   <i class="fa fa-cubes"></i>
