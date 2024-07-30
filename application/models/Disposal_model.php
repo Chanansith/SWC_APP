@@ -85,7 +85,7 @@ class Disposal_model extends CI_Model
     function addContract($data)
     {
     
-        $this->db->insert('disposal_contract', $data);
+        $this->db->insert('disposal_contracts', $data);
         
         $insert_id = $this->db->insert_id();
         
