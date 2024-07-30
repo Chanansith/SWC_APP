@@ -222,7 +222,6 @@ class Disposal extends Admin_Controller
 
 
     public function signout(){
-        
         session_destroy();
         redirect( base_url_api.'login/disposal', 'refresh');
 
