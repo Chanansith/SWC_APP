@@ -72,7 +72,7 @@ class Login extends BaseController
         
         if($this->form_validation->run() == FALSE)
         {
-            $this->index();
+            redirect(base_url_api.'login/hn');
         }
         else
         {
@@ -102,13 +102,14 @@ class Login extends BaseController
                 }
                 
                 //redirect('index.php/dashboard');
-                echo "<a href=".base_url()."index.php/dashboard class='btn btn-success'>ถัดไป</a>";
+              
+                redirect( base_url_api.'dashboard', 'refresh');
             }
             else
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
               
-                 redirect('index.php/login/hn');
+                 redirect(base_url_api.'login/hn');
             }
         }
     }
@@ -122,7 +123,7 @@ class Login extends BaseController
         
         if($this->form_validation->run() == FALSE)
         {
-            $this->index();
+            redirect(base_url_api. 'login/disposal');
         }
         else
         {
@@ -147,7 +148,9 @@ class Login extends BaseController
                     unset($_SESSION["error"]);
                     //redirect( base_url_api.'disposal', 'refresh');                
                  }
-                       echo "<a href=".base_url_api."disposal class='btn btn-success'>ถัดไป</a>";
+                   
+
+                       redirect( base_url_api.'disposal', 'refresh');
             }
             else
             {
