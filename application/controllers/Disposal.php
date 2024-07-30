@@ -118,7 +118,7 @@ class Disposal extends Admin_Controller
 				'user_id' => $_SESSION["userId"],
 				'contract_date' => $contract_date,
 				'transportid' => $this->input->post('transportid'),
-				'disposalid' => $this->input->post('disposalid'),
+				'disposalid' =>  $_SESSION["userId"],
 				'ship_price' => $this->input->post('ship_price'),
 				'disposal_qty' => $this->input->post('disposal_qty'),
 				'size_amount' => $this->input->post('size_amount'),
@@ -127,9 +127,9 @@ class Disposal extends Admin_Controller
 				'contract_create_name' => $this->input->post('contract_create_name'),
         	);
 
-        	$create = $this->contract_model->create($data);
+        	$create = $this->disposal_model->addContract($data);
         	if($create == true) {
-				redirect( base_url_api.'contract', 'refresh');
+				redirect( base_url_api.'disposal/contract', 'refresh');
         		// $response['success'] = true;
         		// $response['messages'] = 'Succesfully created';
 			
