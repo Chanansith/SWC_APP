@@ -102,6 +102,53 @@ class Disposal extends Admin_Controller
             $this->loadDisposalViews("disposal/addNew", $this->global, $data, NULL);
         
     }
+
+	public function createcontract()
+	{
+		
+
+		$response = array();
+
+		$this->form_validation->set_rules('contract_code', 'contract_code', 'trim|required');
+        if ($this->form_validation->run() == TRUE) {
+
+			$contract_date=$this->input->post('contract_date');
+        	$data = array(
+				'contract_code' => $this->input->post('contract_code'),
+				'user_id' => $_SESSION["userId"],
+				'contract_date' => $contract_date,
+				'transportid' => $this->input->post('transportid'),
+				'disposalid' => $this->input->post('disposalid'),
+				'ship_price' => $this->input->post('ship_price'),
+				'disposal_qty' => $this->input->post('disposal_qty'),
+				'size_amount' => $this->input->post('size_amount'),
+				'trip_rate' => $this->input->post('trip_rate'),
+				'contract_amount' => $this->input->post('contract_amount'),
+				'contract_create_name' => $this->input->post('contract_create_name'),
+        	);
+
+        	$create = $this->contract_model->create($data);
+        	if($create == true) {
+				redirect( base_url_api.'contract', 'refresh');
+        		// $response['success'] = true;
+        		// $response['messages'] = 'Succesfully created';
+			
+        	}
+        	else {
+        		$response['success'] = false;
+        		$response['messages'] = 'Error in the database while creating the brand information';			
+        	}
+        }
+        else {
+        	$response['success'] = false;
+        	foreach ($_POST as $key => $value) {
+        		$response['messages'][$key] = form_error($key);
+        	}
+        }
+
+        echo json_encode($response);
+	}
+
 	public function create()
 	{
 		

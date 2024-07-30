@@ -7,8 +7,8 @@
             <small>Add</small>
         </h1>
         <ol class="breadcrumb">
-      <li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
-      <li><a href="<?= base_url('Contract') ?>"> Contract</a></li>
+      <li><a href="<?= base_url_api.'disposal/dashboard' ?>"><i class="fa fa-dashboard"></i> Main</a></li>
+      <li><a href="<?= base_url_api.'disposal' ?>"> Contract</a></li>
     </ol>
     </section>
 
@@ -50,7 +50,7 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
 
-                    <form role="form" id="addContract" action="<?php echo base_url_api ?>contract/create" method="post" role="form" >
+                    <form role="form" id="addContract" action="<?php echo base_url_api ?>disposal/createcontract" method="post" role="form" >
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -83,19 +83,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="birth_date">เลือกแหล่งจำกัด/ศูนย์บำบัด</label>
-                                        <select class="form-control required" id="disposalid" name="disposalid">
-                                        <?php
-                                        foreach($disposallist as $disp){
-                                          
-                                             echo "<option value='".$disp->id."'>".$disp->disposal_name."</option>";
-                                        }
-                                    ?>
-                                        </select>
-                                    </div>
-                                </div>
+                              
                             </div>
                            
                             <div class="row">

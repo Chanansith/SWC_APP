@@ -67,22 +67,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="id_card_number">เลือกบริษัทขนส่ง</label>
-                                        <?php 
-                                       
-                                        ?>
-                                        <select class="form-control required" id="transportid" name="transportid">
-                                        <?php
-                                        foreach($transportlist as $trans){
-                                          
-                                             echo "<option value='".$trans->id."'>".$trans->full_name."</option>";
-                                        }
-                                    ?>
-                                        </select>
-                                    </div>
-                                </div>
+                              
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="birth_date">เลือกแหล่งจำกัด/ศูนย์บำบัด</label>
@@ -114,22 +99,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="Contract_type">เลือกขนาดรถบรรทุก</label>
-                                        <select class="form-control required" id="size_amount" name="size_amount">
-                                          <option value="0">--กรุณาเลือก--</option>
-                                      <?php
-                                        
-                                        foreach($sizelist as $size){
-                                          
-                                             echo "<option value='".$size->size_amount."'>".$size->size_name."</option>";
-                                        }
-                                    ?>
-                                        </select>
-                                       kg (กิโลกรัม)
-                                    </div>
-                                </div>
+                               
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address">จำนวนเที่ยวรถที่ขนต่อสัญญา</label>
