@@ -17,6 +17,7 @@ class Transport extends Admin_Controller
 		$this->load->model('transport_model');
         $this->load->model('request_model');
 		$this->load->model('disposal_model');
+        $this->load->model('province_model');
         $this->load->model('log_model');
         $this->load->model('user_model');
     }
@@ -57,7 +58,9 @@ class Transport extends Admin_Controller
             if($this->form_validation->run() == FALSE)
             {
                // $this->addNewShipUser();
-               echo "กรุณากรอกข้อมูลให้ครบ";
+               //echo "กรุณากรอกข้อมูลให้ครบ";
+
+               echo "<a href=".base_url_api."registershipping class='btn btn-success'>ถัดไป</a>";
             }
             else
             {
@@ -106,13 +109,14 @@ class Transport extends Admin_Controller
                     if($result > 0)
                     {
                         $this->session->set_flashdata('success', 'สมัครสมาชิกเรียบร้อย');
+                        echo "<a href=".base_url_api."login/transport class='btn btn-success'>ถัดไป</a>";
                     }
                     else
                     {
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                     }
                     
-                    redirect(base_url_api.'registershipping');
+                    echo "<a href=".base_url_api."registershipping class='btn btn-success'>ถัดไป</a>";
                
             }
         
