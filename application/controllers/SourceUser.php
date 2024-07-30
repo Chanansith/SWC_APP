@@ -17,6 +17,7 @@ class SourceUser extends Admin_Controller
 		$this->load->model('disposal_model');
         $this->load->model('log_model');
         $this->load->model('payment_model');
+		$this->load->model('user_model');
     }
 
     /* 
