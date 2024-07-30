@@ -15,6 +15,7 @@ class Disposal extends Admin_Controller
 		$this->load->model('contract_model');
 		$this->load->model('transport_model');
 		$this->load->model('disposal_model');
+		$this->load->model('truck_model');
         $this->load->model('log_model');
     }
 
@@ -76,7 +77,19 @@ class Disposal extends Admin_Controller
         echo json_encode($result);
 	}
 	
-   
+	function addcontract()
+    {
+      
+            $this->global['pageTitle'] = 'Add Contract';
+            $data['header'] ="Contract";
+			$data["transportlist"]=$this->transport_model->getForDropdown();
+			$data["disposallist"]=$this->disposal_model->getForDropdown();
+			$data["sizelist"]=$this->truck_model->getSizeForDropdown();
+			$data["contract_code"]=$this->contract_model->getAutoContractCode($_SESSION["userId"]);
+          
+            $this->loadDisposalViews("disposal/addNewContract", $this->global, $data, NULL);
+        
+    }
 	function add()
     {
       

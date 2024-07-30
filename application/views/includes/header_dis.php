@@ -159,16 +159,19 @@
           ?>
 
           <li class="treeview">
-            <a href="<?php echo base_url(); ?>car">
+            <a href="#">
               <!-- <i class="fa fa-cubes"></i> -->
               <span>สัญญา</span>
                <i class="fa fa-angle-right pull-right"></i> 
             </a>
             <ul class="treeview-menu">
-            <li class="treeview">
-              
+         
+              <li class="treeview">
+                <a href="<?php echo base_url_api; ?>disposal/addcontract">
+                  <i class="fa fa-plus-circle"></i>
+                  <span>สร้างสัญญา</span>
+                </a>
               </li>
-             
               <li class="treeview">
                 <a href="<?php echo base_url_api; ?>disposal/contract">
                   <i class="fa fa-cubes"></i>
@@ -177,8 +180,10 @@
               </li>
             </ul> 
           </li>
+
+        
           <li class="treeview">
-            <a href="<?php echo base_url_api; ?>car">
+            <a href="#">
               <!-- <i class="fa fa-cubes"></i> -->
               <span>งานขนส่ง</span>
                <i class="fa fa-angle-right pull-right"></i> 
