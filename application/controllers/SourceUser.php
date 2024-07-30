@@ -37,16 +37,12 @@ class SourceUser extends Admin_Controller
 		//echo json_encode($contract);
 		print_r($contract);
 	}
-	function saveadduser()
-    {
+public	function saveadduser(){
         
             $this->load->library('form_validation');
             
             $this->form_validation->set_rules('companyname','ชื่อสถานประกอบการ','required|max_length[255]');
-            // $this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean|max_length[128]');
-            // $this->form_validation->set_rules('password','Password','required');
-            // $this->form_validation->set_rules('cpassword','Confirm Password','trim|required|matches[password]');
-            // $this->form_validation->set_rules('province','province','trim|required|numeric');
+          
              $this->form_validation->set_rules('mobile_no','เบอร์โทรศัพท์มือถือ','required|max_length[20]');
            
              
@@ -57,13 +53,11 @@ class SourceUser extends Admin_Controller
             );
            
 
-            if($this->form_validation->run() == FALSE)
-            {
+            if($this->form_validation->run() == FALSE){
                // $this->addNew();
-			   redirect(base_url_api.'login/register');
-			}
-            else
-            {
+			 
+			   redirect( base_url_api.'register', 'refresh');
+			}else{
 
                 $mobile = $this->input->post('mobile_no');
                 $users_exists = $this->user_model->checkUserExists($mobile);
@@ -114,8 +108,7 @@ class SourceUser extends Admin_Controller
 
                     $result = $this->user_model->addNewUser($userInfo);
                     
-                    if($result > 0)
-                    {
+                    if($result > 0){
                         $this->session->set_flashdata('success', 'สมัครสมาชิกเรียบร้อย');
                         $this->log_model->create(array('createby'=>$result,
                     'remark'=>"Register",'log_type'=>"register"));
@@ -129,22 +122,22 @@ class SourceUser extends Admin_Controller
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
                         $this->log_model->create(array('createby'=>$result,
                         'remark'=>"Register Error",'log_type'=>"register"));
-						redirect(base_url_api.'login/register');
-                    }
+						redirect( base_url_api.'register', 'refresh');
+                    }//end 111
                     
                    
                 }else{
                     //$this->session->set_flashdata('error', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
                     $this->form_validation->set_message('is_unique', 'มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว');
 					
-					redirect(base_url_api.'login/register');
-				}
-                    //echo "มีผู้ใช้เคยเบอร์โทรศัพท์นี้สมัครอยู่แล้ว";
-            }
-        }
+					redirect( base_url_api.'register', 'refresh');
+				}//70
+                 
+            }// 56
+        
         
     }
-    function getpaymentbycontract($contract_id){
+    public function getpaymentbycontract($contract_id){
 		$this->not_logged_in();
 
 		$data["paymentsRecords"]=$this->payment_model->getPaymentByContract($contract_id);
@@ -152,7 +145,7 @@ class SourceUser extends Admin_Controller
         $this->loadViews('payment/index_payment', $this->global, $data, NULL);
 	}
 
-	function addpayment($contract_id)
+	public	function addpayment($contract_id)
     {
 		$this->not_logged_in();
       
