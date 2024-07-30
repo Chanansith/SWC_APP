@@ -120,7 +120,7 @@ class Transport extends Admin_Controller
                         );
 
                         $this->session->set_flashdata('success', 'สมัครสมาชิกเรียบร้อย');
-                        echo "<a href=".base_url_api."login/transport class='btn btn-success'>ถัดไป</a>";
+                        echo "<a href=".base_url_api."login/transport class='btn btn-success'>สมัครสมาชิกเรียบร้อย ถัดไป</a>";
                     }
                     else
                     {
@@ -130,9 +130,10 @@ class Transport extends Admin_Controller
                          'log_type'=>"new transport")
                         );
                         $this->session->set_flashdata('error', 'พบข้อผิดพลาด');
+                        echo "<a href=".base_url_api."registershipping class='btn btn-success'>ถัดไป</a>";
                     }
                     
-                    echo "<a href=".base_url_api."registershipping class='btn btn-success'>ถัดไป</a>";
+                  
                
             }
         
