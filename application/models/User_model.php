@@ -91,7 +91,7 @@ class User_model extends CI_Model
         $this->db->where("mobile_no", $username);   
         $this->db->where("isDeleted", 0);
         if($userId != 0){
-            $this->db->where("id !=", $id);
+            $this->db->where("id !=", $userId);
         }
         $query = $this->db->get();
 
@@ -112,16 +112,7 @@ class User_model extends CI_Model
     
         return $insert_id;
     }
-    function addNewShipUser($userInfo)
-    {
-    
-        $this->db->insert('ship_users', $userInfo);
-        
-        $insert_id = $this->db->insert_id();
-        
-    
-        return $insert_id;
-    }
+ 
     
     /**
      * This function used to get user information by id
