@@ -187,7 +187,7 @@ class Transport_model extends CI_Model
     function addTransportUser($userInfo)
     {
     
-        $this->db->insert('ship_users', $userInfo);
+        $this->db->insert('transport_user', $userInfo);
         
         $insert_id = $this->db->insert_id();
         
