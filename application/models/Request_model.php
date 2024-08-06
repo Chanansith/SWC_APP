@@ -83,6 +83,10 @@ class Request_model extends CI_Model
        
 
         $query = $this->db->get();
+        $str = $this->db->last_query();
+   
+        
+        print_r($str);
         
         return $query->result();
     }
