@@ -91,22 +91,9 @@
                                        บาท/กิโลกรัม 
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="address">ปริมาณมูลฝอยติดเชื่อ</label>
-                                        <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
-                                    </div>
-                                </div>
+                              
                             </div>
-                            <div class="row">
-                               
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="address">จำนวนเที่ยวรถที่ขนต่อสัญญา</label>
-                                        <input type="number" class="form-control required" id="trip_rate" name="trip_rate" readonly>
-                                    </div>
-                                </div>
-                            </div>
+                          
 
                             <div class="row">
                                 <div class="col-md-6">
