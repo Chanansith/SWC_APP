@@ -54,7 +54,7 @@
                         <div class="box-body">
                         <div class="row">
                              
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="last_name">สัญญาเลขที่</label>
                                         <input type="text" class="form-control required" id="contract_code" name="contract_code" readonly value="<?php echo($contract_code)?>">
@@ -68,16 +68,20 @@
                                         <input type="text" class="form-control date" id="contract_date" name="contract_date" required>
                                     </div>
                                 </div>
+                          
+                            </div>
+                            <div class="row">
+                             
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="first_name">วันที่สิ้นสุด</label>
-                                        <input type="text" class="form-control date" id="contract_date" name="contract_date" required>
+                                        <input type="text" class="form-control date" id="end_date" name="end_date" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                               
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="birth_date">เลือกแหล่งจำกัด/ศูนย์บำบัด</label>
                                         <select class="form-control required" id="disposalid" name="disposalid">
@@ -93,14 +97,20 @@
                             </div>
                            
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="Contract_type">ราคากำจัดมูลฝอยติดเชื้อ</label>
                                         <input type="number" class="form-control required" id="ship_price" name="ship_price" value="0">
                                        บาท/กิโลกรัม 
                                     </div>
                                 </div>
-                              
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="Contract_type" style="text-align:left;"> บาท/กิโลกรัม </label>
+                                       
+                                      
+                                    </div>
+                                </div>
                             </div>
                           
 
@@ -136,6 +146,11 @@
       format:'Y-m-d',
       lang:'en'
     });
+    jQuery('#end_date').datetimepicker({
+      timepicker:false,
+      format:'Y-m-d',
+      lang:'en'
+    });
     var ship_pric=0;
     var disposal_qty=0;
 function calTotal(){
@@ -157,38 +172,8 @@ var trip_rate=0;
 
        
 	
-        $('#ship_price').on('input',function(e){
-        
-             ship_price = $(this).val();
-           
-            if (ship_price>0){
-                console.log("cal ship");
-                calTotal();
-            }
-            });
-
-        $('#disposal_qty').on('input',function(e){
-    
-  
-             disposal_qty = $('#disposal_qty').val();
-            if (disposal_qty>0){
-                console.log("cal dispo")
-                calTotal();
-            }
-
-        });
-        $('#size_amount').change(async function(){ 
-            size_amount =parseInt($(this).val());
-
-            disposal_qty = $('#disposal_qty').val();
-            
-            if (size_amount>0 && disposal_qty>0){
-                console.log("cal size");
-                trip_rate=parseInt(disposal_qty/size_amount);
-               $("#trip_rate").val(trip_rate); 
-            }
-        });
-
+      
+      
 	// var validator = addContractForm.validate({
 		
 	// 	rules:{

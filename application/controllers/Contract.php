@@ -67,17 +67,19 @@ class Contract extends Admin_Controller
         if ($this->form_validation->run() == TRUE) {
 
 			$contract_date=$this->input->post('contract_date');
+			$end_date=$this->input->post('end_date');
         	$data = array(
 				'contract_code' => $this->input->post('contract_code'),
 				'user_id' => $_SESSION["userId"],
 				'contract_date' => $contract_date,
+				'end_date' => $end_date,
 				'transportid' => 0,
 				'disposalid' => $this->input->post('disposalid'),
 				'ship_price' => $this->input->post('ship_price'),
 				'disposal_qty' =>0,
 				'size_amount' => 0,
-				'trip_rate' => $this->input->post('trip_rate'),
-				'contract_amount' => $this->input->post('contract_amount'),
+				'trip_rate' => 0,
+				'contract_amount' => 0,
 				'contract_create_name' => $this->input->post('contract_create_name'),
         	);
 
