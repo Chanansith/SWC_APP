@@ -54,7 +54,7 @@
                         <div class="box-body">
                         <div class="row">
                              
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="last_name">สัญญาเลขที่</label>
                                         <input type="text" class="form-control required" id="contract_code" name="contract_code" readonly value="<?php echo($contract_code)?>">
@@ -77,7 +77,7 @@
                             </div>
                             <div class="row">
                               
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="birth_date">เลือกแหล่งจำกัด/ศูนย์บำบัด</label>
                                         <select class="form-control required" id="disposalid" name="disposalid">
@@ -93,9 +93,9 @@
                             </div>
                            
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="Contract_type">ราคาค่าขนส่ง/ค่าจัดเก็บ</label>
+                                        <label for="Contract_type">ราคากำจัดมูลฝอยติดเชื้อ</label>
                                         <input type="number" class="form-control required" id="ship_price" name="ship_price" value="0">
                                        บาท/กิโลกรัม 
                                     </div>
