@@ -34,6 +34,7 @@
               <tr>
               <th>#</th>
                 <th>Request By</th>
+                <th>Contract Code</th>
                 <th>วันที่</th>
               
                 <th>disposal</th>
@@ -49,6 +50,7 @@
                   <tr>
                     <td><?php echo $i ?></td>
                     <td><?php echo $record->companyname ?></td>
+                    <td><?php echo $record->contract_code ?></td>
                     <td><?php echo $record->createon ?>  </td>
                     <td>xxx</td>
                  
