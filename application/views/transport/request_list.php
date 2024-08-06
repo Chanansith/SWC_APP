@@ -38,7 +38,7 @@
                 <th>วันที่</th>
               
                 <th>disposal</th>
-              
+                <th>Disposal Qty</th>
                 <th class="text-center">Actions</th>
               </tr>
               <?php
@@ -54,7 +54,7 @@
                     <td><?php echo $record->createon ?>  </td>
                     <td>xxx</td>
                  
-                 
+                    <td><?php echo $record->qty ?>  </td>
                     <td class="text-center">
                    
                       <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'editContract/' . $record->requestid; ?>"><i class="fa fa-pencil"></i></a>
