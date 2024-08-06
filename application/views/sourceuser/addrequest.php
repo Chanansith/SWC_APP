@@ -68,7 +68,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="birth_date">เลือกบริษัทขนส่ง</label>
-                                        <select class="form-control required" id="disposalid" name="disposalid">
+                                        <select class="form-control required" id="assign_to" name="assign_to">
                                         <?php
                                         foreach($transportlist as $tran){
                                           
@@ -87,7 +87,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address">เจ้าหน้าที่ผู้บันทึก</label>
-                                        <input type="text" class="form-control required" id="contract_create_name" name="contract_create_name">
+                                        <input type="text" class="form-control required" id="request_by_name" name="request_by_name">
                                     </div>
                                 </div>
                             </div>

@@ -238,6 +238,61 @@ public	function saveadduser(){
 			
        
 	}
+
+	public function createrequest()
+	{
+		
+		$this->not_logged_in();
+
+		$response = array();
+
+		$this->form_validation->set_rules('contract_code', 'contract_code', 'trim|required');
+        if ($this->form_validation->run() == TRUE) {
+			$this->log_model->create(
+				array('createby'=>0,
+			 'remark'=>"109",
+			 'log_type'=>"payment")
+			);
+
+        	$data = array(
+				'contract_code' => $this->input->post('contract_code'),
+                'contract_id' => $this->input->post('contract_id'),
+				'request_by' => $_SESSION["userId"],
+				'assign_to' => $this->input->post('assign_to'),
+                'request_by_name' => $this->input->post('request_by_name'),
+        	);
+			$this->log_model->create(
+				array('createby'=>0,
+			 'remark'=>"125",
+			 'log_type'=>"payment")
+			);
+			
+			
+			
+        	$create = $this->request_model->create($data);
+        	if($create >0) {
+				
+
+				redirect( base_url_api.'contract', 'refresh');
+        		// $response['success'] = true;
+        		// $response['messages'] = 'Succesfully created';
+			
+        	}
+        	else {
+        		$response['success'] = false;
+        		$response['messages'] = 'Error in the database while creating the brand information';			
+        	}
+        }
+        else {
+        	$response['success'] = false;
+        	foreach ($_POST as $key => $value) {
+        		$response['messages'][$key] = form_error($key);
+        	}
+        }
+
+        echo json_encode($response);
+	}
+
     public function createpayment()
 	{
 		
@@ -276,7 +331,7 @@ public	function saveadduser(){
 			
         	$create = $this->payment_model->create($data);
         	if($create >0) {
-				$this->upload_image($create);
+				
 				$this->log_model->create(
 					array('createby'=>0,
 				 'remark'=>"132",

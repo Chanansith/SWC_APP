@@ -63,7 +63,7 @@ class Request_model extends CI_Model
     function create($data)
     {
     
-        $this->db->insert('contracts', $data);
+        $this->db->insert('transport_request', $data);
         
         $insert_id = $this->db->insert_id();
         
@@ -88,28 +88,9 @@ class Request_model extends CI_Model
         return $query->result();
     }
     
-    function getContractByUser($id)
-    {
-        $this->db->select('*');
-        $this->db->from('contracts');
-    
-        $this->db->where('user_id', $id);
-        $query = $this->db->get();
-        
-        return $query->result();
-    }
-    function getContractByDisposal($id)
-    {
-        $this->db->select('t1.*,t2.companyname');
-        $this->db->from('contracts t1');
-        $this->db->join('users t2', 't1.user_id = t2.id');
-    
-        $this->db->where('t1.disposalid', $id);
-        $query = $this->db->get();
-        
-        return $query->result();
-    }
-    function getContractByTransport($id)
+ 
+
+    function getRequestByTransport($id)
     {
         $this->db->select('t1.*,t2.companyname');
         $this->db->from('contracts t1');
@@ -123,14 +104,14 @@ class Request_model extends CI_Model
     function edit($data, $id)
     {
         $this->db->where('id', $id);
-        $this->db->update('contracts', $data);
+        $this->db->update('transport_request', $data);
         
         return TRUE;
     }
     function delete($id, $data)
     {
         $this->db->where('id', $id);
-        $this->db->update('contracts', $data);
+        $this->db->update('transport_request', $data);
         
         return $this->db->affected_rows();
     }
