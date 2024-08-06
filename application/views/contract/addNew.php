@@ -4,7 +4,7 @@
     <section class="content-header">
         <h1>
             <i class="fa fa-users"></i> สัญญาจัดเก็บมูลฝอยติดเชื้อ:Contract for disposal IMW 
-            <small>Add</small>
+            <small></small>
         </h1>
         <ol class="breadcrumb">
       <li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
@@ -52,17 +52,26 @@
 
                     <form role="form" id="addContract" action="<?php echo base_url_api ?>contract/create" method="post" role="form" >
                         <div class="box-body">
+                        <div class="row">
+                             
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="last_name">สัญญาเลขที่</label>
+                                        <input type="text" class="form-control required" id="contract_code" name="contract_code" readonly value="<?php echo($contract_code)?>">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="first_name">วันที่</label>
+                                        <label for="first_name">วันที่เริ่ม</label>
                                         <input type="text" class="form-control date" id="contract_date" name="contract_date" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="last_name">สัญญาเลขที่</label>
-                                        <input type="text" class="form-control required" id="contract_code" name="contract_code" readonly value="<?php echo($contract_code)?>">
+                                        <label for="first_name">วันที่สิ้นสุด</label>
+                                        <input type="text" class="form-control date" id="contract_date" name="contract_date" required>
                                     </div>
                                 </div>
                             </div>
