@@ -9,8 +9,6 @@ class Transport extends Admin_Controller
         parent::__construct();
         
      
-       
-
         $this->data['page_title'] = 'Transport';
 
 		$this->load->model('contract_model');

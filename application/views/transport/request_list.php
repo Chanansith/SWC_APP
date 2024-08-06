@@ -36,7 +36,7 @@
                 <th>Request By</th>
                 <th>วันที่</th>
               
-              
+                <th>disposal</th>
               
                 <th class="text-center">Actions</th>
               </tr>
@@ -50,7 +50,7 @@
                     <td><?php echo $i ?></td>
                     <td><?php echo $record->companyname ?></td>
                     <td><?php echo $record->createon ?>  </td>
-                    
+                    <td><?php echo $record->disposal_name ?></td>
                  
                  
                     <td class="text-center">
