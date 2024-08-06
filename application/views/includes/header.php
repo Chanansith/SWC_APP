@@ -165,12 +165,7 @@
                <i class="fa fa-angle-right pull-right"></i> 
             </a>
             <ul class="treeview-menu">
-            <li class="treeview">
-                <a href="<?php echo base_url_api; ?>contract/add">
-                  <i class="fa fa-plus-circle"></i>
-                  <span>สร้าง Request</span>
-                </a>
-              </li>
+            
               <li class="treeview">
                 <a href="<?php echo base_url_api; ?>contract/add">
                   <i class="fa fa-plus-circle"></i>

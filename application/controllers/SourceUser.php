@@ -144,6 +144,21 @@ public	function saveadduser(){
 		$data["contract_id"]=$contract_id;
         $this->loadViews('payment/index_payment', $this->global, $data, NULL);
 	}
+	public	function addrequest($contract_id)
+    {
+		$this->not_logged_in();
+      
+            $this->global['pageTitle'] = 'Add Request';
+            $data['header'] ="Contract";
+			$data["transportlist"]=$this->transport_model->getForDropdown();
+		
+			$contract=$this->contract_model->getContract($contract_id);
+			$data["contract"]=$contract[0];
+			$data["contract_code"]=$contract[0]->contract_code;
+            $data["contract_id"]=$contract_id;
+            $this->loadViews("sourceuser/addrequest", $this->global, $data, NULL);
+        
+    }
 
 	public	function addpayment($contract_id)
     {

@@ -56,9 +56,9 @@
                  
                     <td><?php echo number_format($record->contract_amount,2) ?></td>
                     <td class="text-center">
-                    <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'editContract/' . $record->id; ?>"><i class="fa fa-file"></i></a>
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'editContract/' . $record->id; ?>"><i class="fa fa-pencil"></i></a>
-                      <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'sourceuser/addpayment/' . $record->id; ?>"><i class="fa fa-check-circle"></i></a>
+                    <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'editContract/' . $record->id; ?>"><i class="fa fa-file"></i> Edit </a>
+                    <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'sourceuser/addrequest/' . $record->id; ?>"><i class="fa fa-plus-circle"></i>Add Request</a>
+                      <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'sourceuser/addpayment/' . $record->id; ?>"><i class="fa fa-check-circle"></i> Payment</a>
                     </td>
                   </tr>
               <?php
