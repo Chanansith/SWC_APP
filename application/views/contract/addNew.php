@@ -96,13 +96,7 @@
                           
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="Contract_type">จำนวนเงินต่อสัญญา</label>
-                                        <input type="text" class="form-control required" id="contract_amount" name="contract_amount" readonly>
-                                       บาท
-                                    </div>
-                                </div>
+                               
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address">เจ้าหน้าที่ผู้ทำสัญญา</label>
