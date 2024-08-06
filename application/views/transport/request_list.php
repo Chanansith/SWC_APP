@@ -50,7 +50,7 @@
                     <td><?php echo $i ?></td>
                     <td><?php echo $record->companyname ?></td>
                     <td><?php echo $record->createon ?>  </td>
-                    <td><?php echo $record->disposal_name ?></td>
+                    <td>xxx</td>
                  
                  
                     <td class="text-center">
