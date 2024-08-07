@@ -21,21 +21,16 @@ class Transport_model extends CI_Model
         return count($query->result());
     }
 
-    function transportListing($id)
+    function create($data)
     {
-        $this->db->select('*');
-        // $this->db->select('t1.id,t1.vat,t2.id as condition_list_id,t2.subject,t2.transport,t2.transfer_date,t2.create_by,t2.update_by');
-        $this->db->from('transport t1');
-       
     
-        $this->db->where('t1.carno', $id);
-      
-    
-        $query = $this->db->get();
-
-        $result = $query->result();
-        return $result;
+        $this->db->insert('transport_item', $data);
+        
+        $insert_id = $this->db->insert_id();
+        
+        return $insert_id;
     }
+
     function gettransportById($id)
     {
         $this->db->select('t1.vat');
@@ -72,48 +67,10 @@ class Transport_model extends CI_Model
         $result = $query->result();
         return $result;
     }
-    function addNewtransportCar($data)
-    {
-        $this->db->trans_start();
-        $this->db->insert('transport', $data);
-
-        $insert_id = $this->db->insert_id();
-
-        $this->db->trans_complete();
-
-        return $insert_id;
-    }
-    function addNewCondition($data)
-    {
-        $this->db->trans_start();
-        $this->db->insert('transport_condition_list', $data);
-
-        $insert_id = $this->db->insert_id();
-
-        $this->db->trans_complete();
-
-        return $insert_id;
-    }
-    function addNewCondition_transport($data)
-    {
-        $this->db->trans_start();
-        $this->db->insert('condition_transport', $data);
-
-        $insert_id = $this->db->insert_id();
-
-        $this->db->trans_complete();
-
-        return $insert_id;
-    }
-    function getCondition_transport($id){
-        $this->db->select('*');
-        $this->db->from('condition_transport');
-
-        $this->db->where('id ', $id);
-        $query = $this->db->get();
-
-        return $query->result();
-    }
+   
+   
+   
+   
     function editOldCondition_transport($id,$data){
         $this->db->where('id ', $id);
         $this->db->update('condition_transport', $data);
@@ -123,7 +80,7 @@ class Transport_model extends CI_Model
     function getDataByID($id)
     {
         $this->db->select('*');
-        $this->db->from('transports');
+        $this->db->from('transport_item');
 
         $this->db->where('id ', $id);
         $query = $this->db->get();
@@ -134,57 +91,16 @@ class Transport_model extends CI_Model
     function deletetransport($id, $data)
     {
         $this->db->where('id ', $id);
-        $this->db->update('transport', $data);
+        $this->db->update('transport_item', $data);
 
         return $this->db->affected_rows();
     }
 
   
-    function regis_departListingCount($id){
-        $this->db->select('t1.*');
-        $this->db->from('transport_regis_depart t1');
-        $this->db->where('t1.transport_id', $id);
-        $this->db->where('t1.is_delete', 0);
-        
-        $query = $this->db->get();
+ 
+   
 
-        return count($query->result());
-    }
-    function addNewRegis_depart($data){
-        $this->db->trans_start();
-        $this->db->insert('transport_regis_depart', $data);
-
-        $insert_id = $this->db->insert_id();
-
-        $this->db->trans_complete();
-
-        return $insert_id;
-    }
-    function editOldRegis_depart($data, $id)
-    {
-        $this->db->where('id ', $id);
-        $this->db->update('transport_regis_depart', $data);
-
-        return TRUE;
-    }
-    function deleteRegis_depart($id, $data)
-    {
-        $this->db->where('id ', $id);
-        $this->db->update('transport_regis_depart', $data);
-
-        return $this->db->affected_rows();
-    }
-    function getRegis_depart($id){
-        $this->db->select('*');
-        $this->db->from('transport_regis_depart');
-
-        $this->db->where('id ', $id);
-        $query = $this->db->get();
-
-        return $query->result();
-    }
-
-    function addTransportUser($userInfo)
+        function addTransportUser($userInfo)
     {
     
         $this->db->insert('transport_user', $userInfo);

@@ -33,7 +33,7 @@ class Transport extends Admin_Controller
     function addTran($reqest_id,$contract_id)
     {
       
-           $this->not_logged_in_transport();;
+           $this->not_logged_in_transport();
             $this->global['pageTitle'] = 'Add Transport';
             $data['header'] ="Transport";
             $contract=$this->contract_model->getContract($contract_id);
@@ -155,6 +155,65 @@ class Transport extends Admin_Controller
             }
         
     }
+	public function create()
+	{
+		
+	    $this->not_logged_in_transport();;
+
+		$response = array();
+
+		$this->form_validation->set_rules('contract_code', 'contract_code', 'trim|required');
+        if ($this->form_validation->run() == TRUE) {
+			$this->log_model->create(
+				array('createby'=>0,
+			 'remark'=>"169",
+			 'log_type'=>"tran")
+			);
+            $tran_date=$this->input->post('tran_date');
+        	$data = array(
+				'contract_code' => $this->input->post('contract_code'),
+                'contract_id' => $this->input->post('contract_id'),
+                'disposal_qty' => $this->input->post('disposal_qty'),
+				'tran_by' => $_SESSION["userId"],
+                'tran_date' => $tran_date,
+                'tran_create_name' => $this->input->post('tran_create_name'),
+        	);
+			$this->log_model->create(
+				array('createby'=>0,
+			 'remark'=>"182",
+			 'log_type'=>"tran")
+			);
+			
+			
+			
+        	$create = $this->transport_model->create($data);
+        	if($create >0) {
+				
+				$this->log_model->create(
+					array('createby'=>0,
+				 'remark'=>"193 success",
+				 'log_type'=>"tran")
+				);
+				
+				redirect( base_url_api.'contract', 'refresh');
+        		// $response['success'] = true;
+        		// $response['messages'] = 'Succesfully created';
+			
+        	}
+        	else {
+        		$response['success'] = false;
+        		$response['messages'] = 'Error in the database while creating the brand information';			
+        	}
+        }
+        else {
+        	$response['success'] = false;
+        	foreach ($_POST as $key => $value) {
+        		$response['messages'][$key] = form_error($key);
+        	}
+        }
+
+        echo json_encode($response);
+	}
 
 
     public function contract()

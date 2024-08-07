@@ -59,7 +59,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="first_name">วันที่</label>
-                                        <input type="text" class="form-control date" id="contract_date" name="contract_date" required>
+                                        <input type="text" class="form-control date" id="tran_date" name="contract_date" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -88,7 +88,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="address">เจ้าหน้าที่บันทึก</label>
-                                        <input type="text" class="form-control required" id="contract_create_name" name="contract_create_name">
+                                        <input type="text" class="form-control required" id="tran_create_name" name="contract_create_name">
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url()?>assets/jquery.datetimepicker.css">
 <script type="text/javascript" src="<?= base_url()?>assets/jquery.datetimepicker.js"></script>
 <script>
-    jQuery('#contract_date').datetimepicker({
+    jQuery('#tran_date').datetimepicker({
       timepicker:false,
       format:'Y-m-d',
       lang:'en'
@@ -136,38 +136,8 @@ var trip_rate=0;
 
        
 	
-        $('#ship_price').on('input',function(e){
-        
-             ship_price = $(this).val();
-           
-            if (ship_price>0){
-                console.log("cal ship");
-                calTotal();
-            }
-            });
-
-        $('#disposal_qty').on('input',function(e){
-    
-  
-             disposal_qty = $('#disposal_qty').val();
-            if (disposal_qty>0){
-                console.log("cal dispo")
-                calTotal();
-            }
-
-        });
-        $('#size_amount').change(async function(){ 
-            size_amount =parseInt($(this).val());
-
-            disposal_qty = $('#disposal_qty').val();
-            
-            if (size_amount>0 && disposal_qty>0){
-                console.log("cal size");
-                trip_rate=parseInt(disposal_qty/size_amount);
-               $("#trip_rate").val(trip_rate); 
-            }
-        });
-
+       
+       
 	// var validator = addTranForm.validate({
 		
 	// 	rules:{
