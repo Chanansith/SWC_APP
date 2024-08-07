@@ -51,6 +51,7 @@
                     <!-- form start -->
 
                     <form role="form" id="addContract" action="<?php echo base_url_api ?>sourceuser/createrequest" method="post" role="form" >
+                        <input type="hidden"  id="contract_id" name="contract_id"  value="<?php echo($contract_id)?>">
                         <div class="box-body">
                         <div class="row">
                              

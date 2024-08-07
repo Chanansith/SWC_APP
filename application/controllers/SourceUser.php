@@ -251,8 +251,8 @@ public	function saveadduser(){
         if ($this->form_validation->run() == TRUE) {
 			$this->log_model->create(
 				array('createby'=>0,
-			 'remark'=>"109",
-			 'log_type'=>"payment")
+			 'remark'=>"254",
+			 'log_type'=>"request")
 			);
 
         	$data = array(
@@ -264,8 +264,8 @@ public	function saveadduser(){
         	);
 			$this->log_model->create(
 				array('createby'=>0,
-			 'remark'=>"125",
-			 'log_type'=>"payment")
+			 'remark'=>"267",
+			 'log_type'=>"request")
 			);
 			
 			
@@ -273,7 +273,12 @@ public	function saveadduser(){
         	$create = $this->request_model->create($data);
         	if($create >0) {
 				
-
+				$this->log_model->create(
+					array('createby'=>0,
+				 'remark'=>"278 success",
+				 'log_type'=>"request")
+				);
+				
 				redirect( base_url_api.'contract', 'refresh');
         		// $response['success'] = true;
         		// $response['messages'] = 'Succesfully created';
