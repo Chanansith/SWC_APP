@@ -55,7 +55,7 @@
               
                     <td class="text-center">
                     
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'addTransport/' . $record->requestid.'/'.$record->contract_id ?>"><i class="fa fa-plus"></i> Add Transport</a>
+                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'transport/addTransport/' . $record->requestid.'/'.$record->contract_id ?>"><i class="fa fa-plus"></i> Add Transport</a>
                      
                     </td>
                   </tr>

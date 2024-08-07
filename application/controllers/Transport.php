@@ -30,7 +30,7 @@ class Transport extends Admin_Controller
 
 
 
-    function addTran($reqest_id,$contract_id)
+    function addTransport($reqest_id,$contract_id)
     {
       
            $this->not_logged_in_transport();
