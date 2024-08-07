@@ -35,10 +35,9 @@
               <th>#</th>
                 <th>Request By</th>
                 <th>Contract Code</th>
-                <th>วันที่</th>
+                <th>Request Date</th>
+                <th>Disposal</th>
               
-                <th>disposal</th>
-                <th>Disposal Qty</th>
                 <th class="text-center">Actions</th>
               </tr>
               <?php
@@ -52,12 +51,11 @@
                     <td><?php echo $record->companyname ?></td>
                     <td><?php echo $record->contract_code ?></td>
                     <td><?php echo $record->createon ?>  </td>
-                    <td>xxx</td>
-                 
-                    <td><?php echo $record->qty ?>  </td>
+                    <td><?php echo $record->disposal_name ?>  </td>
+              
                     <td class="text-center">
                    
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'editContract/' . $record->requestid; ?>"><i class="fa fa-pencil"></i></a>
+                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'addTransport/' . $record->id; ?>"><i class="fa fa-plus"></i> Add Transport</a>
                      
                     </td>
                   </tr>
