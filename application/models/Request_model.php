@@ -74,11 +74,11 @@ class Request_model extends CI_Model
 
     function getRequest($id)
     {
-        $this->db->select('t1.*,t2.companyname,t3.contract_code');
+        $this->db->select('t1.*,t2.companyname,t3.contract_code,t4.disposal_name');
         $this->db->from('transport_request t1');
         $this->db->join('users t2', 't1.request_by = t2.id');
-        $this->db->join('contracts t3','t1.request_by=t3.user_id');
-       // $this->db->join('disposal t4', 't3.disposalid = t4.id');
+        $this->db->join('contracts t3','t1.contract_id=t3.id');
+        $this->db->join('disposal t4', 't3.disposalid = t4.id');
         $this->db->where('t1.assign_to', $id);
        
 
