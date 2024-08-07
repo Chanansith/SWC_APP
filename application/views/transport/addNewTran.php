@@ -51,7 +51,10 @@
                     <!-- form start -->
 
                     <form role="form" id="addTran" action="<?php echo base_url_api ?>transport/create" method="post" role="form" >
-                        <div class="box-body">
+                       
+                    <input type="hidden"  id="contract_id" name="contract_id"  value="<?php echo($contract_id)?>">
+                    <input type="hidden"  id="request_id" name="request_id"  value="<?php echo($request_id)?>">
+                    <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
