@@ -54,8 +54,8 @@
                     <td><?php echo $record->disposal_name ?>  </td>
               
                     <td class="text-center">
-                   
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'addTransport/' . $record->id; ?>"><i class="fa fa-plus"></i> Add Transport</a>
+                    
+                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'addTransport/' . $record->requestid; ?>"><i class="fa fa-plus"></i> Add Transport</a>
                      
                     </td>
                   </tr>
