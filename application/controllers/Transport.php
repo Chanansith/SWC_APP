@@ -30,7 +30,7 @@ class Transport extends Admin_Controller
 
 
 
-    function addTransport($reqest_id,$contract_id)
+    function addTransport($request_id,$contract_id)
     {
       
            $this->not_logged_in_transport();
@@ -40,7 +40,7 @@ class Transport extends Admin_Controller
 			$data["contract"]=$contract[0];
 			$data["contract_code"]=$contract[0]->contract_code;
             $data["contract_id"]=$contract_id;
-            $data["reqest_id"]=$reqest_id;
+            $data["request_id"]=$request_id;
 			
             $this->loadTransportViews("transport/addNewTran", $this->global, $data, NULL);
         
@@ -173,6 +173,7 @@ class Transport extends Admin_Controller
         	$data = array(
 				'contract_code' => $this->input->post('contract_code'),
                 'contract_id' => $this->input->post('contract_id'),
+                'request_id' => $this->input->post('request_id'),
                 'disposal_qty' => $this->input->post('disposal_qty'),
 				'tran_by' => $_SESSION["userId"],
                 'tran_date' => $tran_date,
@@ -202,7 +203,7 @@ class Transport extends Admin_Controller
         	}
         	else {
         		$response['success'] = false;
-        		$response['messages'] = 'Error in the database while creating the brand information';			
+        		$response['messages'] = 'Error in the database while creating the  information';			
         	}
         }
         else {
