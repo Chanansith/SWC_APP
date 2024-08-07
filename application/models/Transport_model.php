@@ -31,18 +31,7 @@ class Transport_model extends CI_Model
         return $insert_id;
     }
 
-    function gettransportById($id)
-    {
-        $this->db->select('t1.vat');
-        $this->db->from('transport t1');
-
-        $this->db->where('t1.id', $id);
-        $this->db->where('t1.is_delete', 0);
-        $query = $this->db->get();
-
-        $result = $query->row_array();
-        return $result;
-    }
+  
     function getForDropdown()
     {
         $this->db->select('id,full_name');
@@ -88,6 +77,14 @@ class Transport_model extends CI_Model
         return $query->result();
     }
 
+    function getData()
+    {
+        $this->db->select('*');
+        $this->db->from('transport_item');
+        $query = $this->db->get();
+
+        return $query->result();
+    }
     function deletetransport($id, $data)
     {
         $this->db->where('id ', $id);
