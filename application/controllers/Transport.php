@@ -28,7 +28,7 @@ class Transport extends Admin_Controller
     }
     public function monitordisposal($diposal_id)
     {
-        
+        $this->not_logged_in_transport();
 		$data["monitoring_record"]=$this->disposal_model->getMonitoring($diposal_id);
         $this->loadTransportViews('transport/dis_monitoring', $this->global, $data, NULL);
     }
