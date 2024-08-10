@@ -103,7 +103,16 @@ class Disposal_model extends CI_Model
         
         return $query->result();
     }
-
+    function getMonitoring($id)
+    {
+        $this->db->select('*');
+        $this->db->from('monitoring');
+    
+        $this->db->where('disposal_id', $id);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
     function getContractByDisposal($id)
     {
         $this->db->select('t1.*,t2.companyname');

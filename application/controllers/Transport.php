@@ -26,7 +26,12 @@ class Transport extends Admin_Controller
         $this->loadTransportViews('transport/transdasboard', $this->global, $data, NULL);
         
     }
-
+    public function monitordisposal($diposal_id)
+    {
+        
+		$data["monitoring_record"]=$this->disposal_model->getMonitoring($diposal_id);
+        $this->loadTransportViews('transport/dis_monitoring', $this->global, $data, NULL);
+    }
 
 
 

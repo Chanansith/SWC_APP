@@ -34,6 +34,7 @@ class Disposal extends Admin_Controller
         $this->loadDisposalViews('disposal/dis_contract', $this->global, $data, NULL);
     }
   
+	
     public function fetchDataById($id) 
 	{
 		if($id) {

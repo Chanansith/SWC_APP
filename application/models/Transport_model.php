@@ -43,19 +43,7 @@ class Transport_model extends CI_Model
         $result = $query->result();
         return $result;
     }
-    function conditionList($id)
-    {
-        $this->db->select('t1.subject,t1.transport,t1.transfer_date,t1.id,t1.transport_id,t1.create_by,t1.vat');
-        $this->db->from('transport_condition_list t1');
-
-        $this->db->where('t1.transport_id', $id);
-        $this->db->where('t1.is_delete', 0);
-        // $this->db->order_by('t1.id', 'desc');
-        $query = $this->db->get();
-
-        $result = $query->result();
-        return $result;
-    }
+  
    
    
    
