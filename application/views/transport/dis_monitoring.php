@@ -47,7 +47,7 @@
               ?>
                   <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $record->imw_status_daliy ?></td>
+                    <td><?php echo $record->imw_status_daily ?></td>
                     <td><?php echo $record->max_per_day ?></td>
                  
               
