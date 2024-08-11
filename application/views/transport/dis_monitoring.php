@@ -4,12 +4,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      <i class="fa fa-users"></i> Request
-      <small>Add, Edit, Delete</small>
+      <i class="fa fa-users"></i> Monitoring
+     
     </h1>
     <ol class="breadcrumb">
-      <li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
-      <li><a href="<?= base_url('Contract') ?>"> Request</a></li>
+      <li><a href="<?= base_url_api.'transport' ?>"><i class="fa fa-dashboard"></i> Main</a></li>
+      <li><a href="<?= base_url_api.'transport' ?>">"> Monitoring</a></li>
     </ol>
   </section>
   <section class="content">
@@ -24,7 +24,7 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Request List</h3>
+            <h3 class="box-title">Monitoring</h3>
             <div class="box-tools">
           
             </div>
@@ -33,10 +33,9 @@
             <table class="table table-hover">
               <tr>
               <th>#</th>
-                <th>Request By</th>
-                <th>Contract Code</th>
-                <th>Request Date</th>
-                <th>Disposal</th>
+                <th>imw status daily</th>
+                <th>Max Per Day</th>
+            
               
                 <th class="text-center">Actions</th>
               </tr>
@@ -48,16 +47,10 @@
               ?>
                   <tr>
                     <td><?php echo $i ?></td>
-                    <td><?php echo $record->companyname ?></td>
-                    <td><?php echo $record->contract_code ?></td>
-                    <td><?php echo $record->createon ?>  </td>
-                    <td><?php echo $record->disposal_name ?>  </td>
+                    <td><?php echo $record->imw_status_daliy ?></td>
+                    <td><?php echo $record->max_per_day ?></td>
+                 
               
-                    <td class="text-center">
-                    
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'transport/addTransport/' . $record->requestid.'/'.$record->contract_id ?>"><i class="fa fa-plus"></i> Add Transport</a>
-                     
-                    </td>
                   </tr>
               <?php
                 }
