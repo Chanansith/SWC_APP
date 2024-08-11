@@ -55,7 +55,7 @@
                  
                     <td><?php echo number_format($record->contract_amount,2) ?></td>
                     <td class="text-center">
-                    <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/addTran/' . $record->id; ?>"><i class="fa fa-plus"></i> เพิ่มการขนส่ง</a>
+                    <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/addTransport/0/' . $record->id; ?>"><i class="fa fa-plus"></i> เพิ่มการขนส่ง</a>
                     
                      
                     </td>
