@@ -235,6 +235,13 @@ class Transport extends Admin_Controller
 		$data["RequestRecords"]=$this->request_model->getRequest($_SESSION["userId"]);
         $this->loadTransportViews('transport/request_list', $this->global, $data, NULL);
     }
+    public function transportitem()
+    {
+        $this->not_logged_in_transport();
+		$data["TranRecords"]=$this->transport_model->getDataByID($_SESSION["userId"]);
+        $this->loadTransportViews('transport/tran_list', $this->global, $data, NULL);
+    }
+
     public function signout(){
         
         session_destroy();

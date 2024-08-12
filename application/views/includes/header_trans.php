@@ -189,7 +189,7 @@
             <ul class="treeview-menu">
             
               <li class="treeview">
-                <a href="<?php echo base_url_api; ?>ship/list">
+                <a href="<?php echo base_url_api; ?>transport/transportitem">
                   <i class="fa fa-cubes"></i>
                   <span>รายการ</span>
                 </a>
