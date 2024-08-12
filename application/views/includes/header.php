@@ -180,39 +180,8 @@
               </li>
             </ul> 
           </li>
-          <li class="treeview">
-            <a href="<?php echo base_url_api; ?>car">
-              <!-- <i class="fa fa-cubes"></i> -->
-              <span>งานขนส่ง</span>
-               <i class="fa fa-angle-right pull-right"></i> 
-            </a>
-            <ul class="treeview-menu">
-           
-              <li class="treeview">
-                <a href="<?php echo base_url_api; ?>ship/list">
-                  <i class="fa fa-cubes"></i>
-                  <span>รายการ</span>
-                </a>
-              </li>
-            </ul> 
-          </li>
-            <li class="treeview">
-            <a >
-              <!-- <i class="fa fa-report"></i> -->
-              <span>รายงาน</span>
-              <!-- <i class="fa fa-angle-left pull-right"></i> -->
-            </a>
-            <ul class="treeview-menu">
-              <li class="treeview">
-                <a href="<?php echo base_url_api; ?>report">
-                  <!-- <i class="fa fa-cubes"></i> -->
-                  <span>xx</span>
-                </a>
-              </li>
-           
-            </ul>
-          </li>
-       
+        
+          
         </ul>
       </section>
       <!-- /.sidebar -->
