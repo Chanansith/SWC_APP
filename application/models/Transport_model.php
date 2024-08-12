@@ -58,8 +58,8 @@ class Transport_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('transport_item');
-
-        $this->db->where('id ', $id);
+        //Transport user id
+        $this->db->where('tran_by ', $id);
         $query = $this->db->get();
 
         return $query->result();
