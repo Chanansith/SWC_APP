@@ -87,7 +87,7 @@ if (!empty($monitoring_record)) {
                                         <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
                                     <?php
                                     if ($max_per_day>0){
-                                        echo "(**ไม่เกิน".$max_per_day.")";
+                                        echo "(**ไม่เกิน ".number_format($max_per_day,2)."/วัน)";
                                     }
                                     ?>
                                     </div>
