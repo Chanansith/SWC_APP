@@ -42,7 +42,7 @@ class Transport extends Admin_Controller
             $this->global['pageTitle'] = 'Add Transport';
             $data['header'] ="Transport";
             $contract=$this->contract_model->getContract($contract_id);
-            $data["monitoring_record"]=$this->disposal_model->getMonitoring($diposal_id);
+            $data["monitoring_record"]=$this->disposal_model->getMonitoring($contract[0]->disposalid);
 			$data["contract"]=$contract[0];
 			$data["contract_code"]=$contract[0]->contract_code;
             $data["contract_id"]=$contract_id;

@@ -129,7 +129,7 @@ if (!empty($monitoring_record)) {
     });
     var ship_pric=0;
     var disposal_qty=0;
-    var max_per_day='<?php echo($max_per_day)?>';
+    var max_per_day=<?php echo($max_per_day)?>;
 function calTotal(){
     console.log("cal total");
     if (ship_price>0 && disposal_qty>0){
