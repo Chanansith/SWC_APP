@@ -1,4 +1,11 @@
 
+<?php 
+$max_per_day=0;
+if (!empty($monitoring_record)) {
+ $max_per_day=$monitoring_record[0]->max_per_day;
+
+}
+?>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -78,6 +85,11 @@
                                     <div class="form-group">
                                         <label for="address">ปริมาณมูลฝอยติดเชื้อ</label>
                                         <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
+                                    <?php
+                                    if ($max_per_day>0){
+                                        echo "(**ไม่เกิน".$max_per_day.")";
+                                    }
+                                    ?>
                                     </div>
                                 </div>
                             </div>
