@@ -1,4 +1,5 @@
 ### Building and running your application
+Create a password.txt in .env directory that contains database password.
 
 When you're ready, start your application by running:
 `docker compose up --build`.
