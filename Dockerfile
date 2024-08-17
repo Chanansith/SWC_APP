@@ -16,7 +16,7 @@
 FROM php:8.0-apache
 
 # Copy app files from the app directory.
-COPY . /var/www/html
+COPY --chown=www-data:www-data . /var/www/html
 
 # Your PHP application may require additional PHP extensions to be installed
 # manually. For detailed instructions for installing extensions can be found, see
@@ -42,13 +42,12 @@ COPY . /var/www/html
 # RUN pecl install redis-5.3.7 \
 #    && pecl install xdebug-3.2.1 \
 #    && docker-php-ext-enable redis xdebug
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 # Use the default production configuration for PHP runtime arguments, see
 # https://github.com/docker-library/docs/tree/master/php#configuration
-RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 # Switch to a non-privileged user (defined in the base image) that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
-RUN chmod 777 /var/www/html/application/sessions
 USER www-data
