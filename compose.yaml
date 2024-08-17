@@ -16,8 +16,11 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    volumes:
-      - ${PWD}/db/dsn:/var/www/html/.env
+    # volumes:
+    #   - ${PWD}/db/dsn:/var/www/html/.env
+    secrets:
+      - source: dot-env
+        target: /var/www/html/.env
 
   db:
     image: mariadb
@@ -37,6 +40,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
   phpmyadmin:
     image: phpmyadmin
     ports:
@@ -48,6 +52,9 @@ services:
 
 volumes:
   db-data:
+
 secrets:
   db-password:
     file: db/password.txt
+  dot-env:
+    file: db/data-source-name.txt
