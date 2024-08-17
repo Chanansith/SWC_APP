@@ -16,13 +16,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    secrets:
-      - db-password
-    environment:
-      - PASSWORD_FILE_PATH=/run/secrets/db-password
-      - DB_HOST=db
-      - DB_NAME=swc_logistic
-      - DB_USER=root
+    volumes:
+      - ${PWD}/db/dsn:/var/www/html/.env
 
   db:
     image: mariadb
@@ -55,4 +50,4 @@ volumes:
   db-data:
 secrets:
   db-password:
-    file: .env/password.txt
+    file: db/password.txt
