@@ -16,11 +16,15 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    # volumes:
-    #   - ${PWD}/db/dsn:/var/www/html/.env
     secrets:
-      - source: dot-env
-        target: /var/www/html/.env
+      - db-password
+    environment:
+    # If there is no .env file with the following variables.
+    # Default value specified here will be passed into container.
+      - DB_HOST=${DB_HOST:-db}
+      - DB_NAME=${DB_NAME:-swc_logistic}
+      - DB_USER=${DB_USER:-root}
+      - PASSWORD_FILE_PATH=/run/secrets/db-password
 
   db:
     image: mariadb
@@ -56,5 +60,3 @@ volumes:
 secrets:
   db-password:
     file: db/password.txt
-  dot-env:
-    file: db/data-source-name.txt
