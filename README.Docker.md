@@ -14,8 +14,8 @@ If your application requires specific PHP extensions to run, they will need to b
 [docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 
 ### Using Apache as reverse proxy
-To use Apachae instead of default NGINX reserver proxy.
-Update compose.yaml
+To use Apache web server instead of default NGINX reserver proxy.
+Update compose.yaml:
 ```yml
   server:
     build:
