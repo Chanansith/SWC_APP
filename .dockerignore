@@ -33,7 +33,6 @@
 **/values.dev.yaml
 **/vendor
 **/db
-**/proxy
 .htaccess
 LICENSE
 README.*
