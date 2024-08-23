@@ -8,6 +8,7 @@
 **/.dockerignore
 **/.env
 **/.git
+**/.github
 **/.gitignore
 **/.project
 **/.settings
@@ -34,4 +35,4 @@
 **/db
 .htaccess
 LICENSE
-README.md
+README.*
