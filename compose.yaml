@@ -11,6 +11,7 @@ services:
   server:
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
       - 8080:80
     depends_on:
@@ -19,7 +20,7 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./src
+          path: ./application
           target: /var/www/html
     secrets:
       - db-password

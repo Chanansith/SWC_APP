@@ -51,8 +51,8 @@ $active_record = TRUE;
 
 $db['default'] = array(
     'dsn'      => '',
-    'hostname' => 'swccenter-server.mysql.database.azure.com',  // หรือ host ของ MySQL
-    'username' => 'vojnlucynm',   // ชื่อผู้ใช้ MySQL
+    'hostname' => 'db',  // หรือ host ของ MySQL
+    'username' => 'root',   // ชื่อผู้ใช้ MySQL
     'password' => '$M3L2dazLQ4X$SPZ',   // รหัสผ่าน MySQL
     'database' => 'swc_logictic',   // ชื่อฐานข้อมูล MySQL
     'dbdriver' => 'mysqli',     // ประเภทของ driver ที่ใช้ (mysqli สำหรับ MySQL)
