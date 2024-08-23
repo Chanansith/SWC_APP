@@ -12,7 +12,7 @@ services:
     build:
       context: .
     ports:
-      - 9000:80
+      - 8080:80
     depends_on:
       db:
         condition: service_healthy
@@ -53,7 +53,7 @@ services:
   phpmyadmin:
     image: phpmyadmin
     ports:
-      - 8080:80
+      - 8088:80
     depends_on:
       - db
     environment:
