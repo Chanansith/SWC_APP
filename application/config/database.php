@@ -47,14 +47,17 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-
+$db_host = getenv('DB_HOST');
+$db_name = getenv('DB_NAME');
+$db_user = getenv('DB_USER');
+$db_password = file_get_contents(getenv('PASSWORD_FILE_PATH'));
 
 $db['default'] = array(
     'dsn'      => '',
-    'hostname' => 'swccenter-server.mysql.database.azure.com',  // หรือ host ของ MySQL
-    'username' => 'vojnlucynm',   // ชื่อผู้ใช้ MySQL
-    'password' => '$M3L2dazLQ4X$SPZ',   // รหัสผ่าน MySQL
-    'database' => 'swc_logistic',   // ชื่อฐานข้อมูล MySQL
+    'hostname' => $db_host,  // หรือ host ของ MySQL
+    'username' => $db_user,   // ชื่อผู้ใช้ MySQL
+    'password' => $db_password,   // รหัสผ่าน MySQL
+    'database' => $db_name,   // ชื่อฐานข้อมูล MySQL
     'dbdriver' => 'mysqli',     // ประเภทของ driver ที่ใช้ (mysqli สำหรับ MySQL)
     'dbprefix' => '',
     'pconnect' => FALSE,
@@ -66,7 +69,7 @@ $db['default'] = array(
     'swap_pre' => '',
     'encrypt'  => array(
 		'ssl_ca' => 'cer/DigiCertGlobalRootCA.crt.pem',
-        'ssl_verify' => TRUE   // เปิดใช้งาน SSL/TLS
+        'ssl_verify' => FALSE   // เปิดใช้งาน SSL/TLS
     ),
     'compress' => FALSE,
     'stricton' => FALSE,
