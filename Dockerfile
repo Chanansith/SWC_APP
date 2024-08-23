@@ -25,6 +25,9 @@ RUN apt-get update && apt-get install -y \
 # Copy application code to /var/www/html
 COPY --chown=www-data:www-data --chmod=755 . /var/www/html
 
+# Set working directory
+WORKDIR /var/www/html
+
 # Remove default server definition
 RUN unlink /etc/nginx/sites-enabled/default
 
