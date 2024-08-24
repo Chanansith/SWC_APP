@@ -1,8 +1,15 @@
+### Disable verification of SSL/TLS certificates  
+```code
+    'encrypt'  => array(
+		'ssl_ca' => 'cer/DigiCertGlobalRootCA.crt.pem',
+        'ssl_verify' => FALSE
+    ),
+```  
 ### Building and running your application
 
 Create [db/password.txt](https://docs.docker.com/compose/use-secrets/) containing database password. 
 
-When you're ready, start your application by running:
+When you're ready, start your application by running:  
 `docker compose up --build`.
 
 Your application will be available at [http://localhost:8080](http://localhost:8080).
