@@ -1,0 +1,3 @@
+database.default.hostname = 'localhost';
+database.default.username = 'root';
+database.default.database = 'swc_logistic';
