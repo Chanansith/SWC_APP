@@ -33,6 +33,7 @@
             <table class="table table-hover">
               <tr>
               <th>#</th>
+              <th>Approve Status</th>
                 <th>Transport Date</th>
                 <th>Contract Code</th>
                 <th>Disposal QTY</th>
@@ -48,6 +49,7 @@
               ?>
                   <tr>
                     <td><?php echo $i ?></td>
+                    <td><?php echo $record->approve_status ?></td>
                     <td><?php echo $record->tran_date ?></td>
                     <td><?php echo $record->contract_code ?></td>
                     <td><?php echo $record->disposal_qty ?>  </td>
@@ -55,8 +57,8 @@
               
                     <td class="text-center">
                     
-                      <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'disposal/approveTransport/' . $record->id.'/'.$record->contract_id ?>"><i class="fa fa-check-circle"></i> Approve</a>
-                      <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'disposal/pendingTransport/' . $record->id.'/'.$record->contract_id ?>"><i class="fa fa-edit"></i> Pending</a>
+                      <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'disposal/approveTransport/'.$record->id ?>"><i class="fa fa-check-circle"></i> Approve</a>
+                      <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'disposal/pendingTransport/'.$record->id ?>"><i class="fa fa-edit"></i> Pending</a>
                     
                      
                     </td>
