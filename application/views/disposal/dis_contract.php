@@ -58,7 +58,7 @@
                   
                     <td class="text-center">
                  
-                      <a class="btn btn-sm btn-success" href="<?php echo base_url() . 'disposal/approveContract/' . $record->id; ?>"><i class="fa fa-check-circle"></i> Approve</a>
+                   
                      
                     </td>
                   </tr>
