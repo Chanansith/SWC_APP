@@ -55,8 +55,9 @@
               
                     <td class="text-center">
                     
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'transport/editTransport/' . $record->id.'/'.$record->contract_id ?>"><i class="fa fa-pencil"></i> Edit</a>
-                      <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/monitordisposal/1' ?>"> Monitoring</a>
+                      <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'disposal/approveTransport/' . $record->id.'/'.$record->contract_id ?>"><i class="fa fa-check-circle"></i> Approve</a>
+                      <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'disposal/pendingTransport/' . $record->id.'/'.$record->contract_id ?>"><i class="fa fa-edit"></i> Pending</a>
+                    
                      
                     </td>
                   </tr>
