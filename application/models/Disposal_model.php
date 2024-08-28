@@ -92,6 +92,16 @@ class Disposal_model extends CI_Model
     
         return $insert_id;
     }
+    function getMyTransport($id)
+    {
+        $this->db->select('*');
+        $this->db->from('transport_item');
+        //Transport user id
+        //$this->db->where('tran_by ', $id);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
 
     function getContract($id)
     {
