@@ -33,6 +33,7 @@
             <table class="table table-hover">
               <tr>
               <th>#</th>
+              <th>Approve Status</th>
                 <th>Transport Date</th>
                 <th>Contract Code</th>
                 <th>Disposal QTY</th>
@@ -48,6 +49,18 @@
               ?>
                   <tr>
                     <td><?php echo $i ?></td>
+                  
+                    <td>
+                    <?php if ($record->approve_status==0){?>
+                     Waiting for Approve
+                    <?php }?>
+                    <?php if ($record->approve_status==1){?>
+                     Pending
+                    <?php }?>
+                    <?php if ($record->approve_status==2){?>
+                     Approved
+                    <?php }?>
+                </td>
                     <td><?php echo $record->tran_date ?></td>
                     <td><?php echo $record->contract_code ?></td>
                     <td><?php echo $record->disposal_qty ?>  </td>
