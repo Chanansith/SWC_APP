@@ -96,7 +96,7 @@ class Disposal_model extends CI_Model
     {
         $this->db->select('t1.*');
         $this->db->from('transport_item t1');
-        $this->db->join('contracts t2', 't1.contract_id = t2.contract_id');
+        $this->db->join('contracts t2', 't1.contract_id = t2.id');
         $this->db->where('t2.disposalid ', $id);
         //Transport user id
         //$this->db->where('tran_by ', $id);
