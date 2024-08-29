@@ -108,7 +108,7 @@ function displayTrafficInfo(response) {
     const travelTimeValueWithTraffic = leg.duration_in_traffic.value;
     console.log('Travel time with traffic:', travelTimeWithTraffic);
 
-    $("#traveltime").html(travelTimeValueWithTraffic);
+    $("#traveltime").html(travelTimeWithTraffic);
     // Optionally, display the travel time without traffic
     //const travelTimeWithoutTraffic = leg.duration.text;
    // console.log('Travel time without traffic:', travelTimeWithoutTraffic);
