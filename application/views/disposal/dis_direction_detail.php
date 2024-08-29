@@ -13,6 +13,7 @@
     </ol>
   </section>
   <section class="content">
+  <div id="map"></div>
     <div class="row">
       <div class="col-xs-12 text-right">
         <div class="form-group">
@@ -30,7 +31,7 @@
             </div>
           </div><!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
-          <div id="map"></div>
+          
           <div class="alert alert-info" id="traveltime"></div>
           </div><!-- /.box-body -->
          
