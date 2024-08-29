@@ -51,7 +51,7 @@ let directionsService;
 let directionsRenderer;
 const start ="<?php echo($source_name)?>";
 const end ="<?php echo($destination_name)?>";
-calculateAndDisplayRoute();
+
 function initMap() {
     // Initialize map
     map = new google.maps.Map(document.getElementById('map'), {
@@ -64,11 +64,13 @@ function initMap() {
     directionsRenderer = new google.maps.DirectionsRenderer();
     directionsRenderer.setMap(map);
 
-    // Handle form submission
-    document.getElementById('routeForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        calculateAndDisplayRoute();
-    });
+    // // Handle form submission
+    // document.getElementById('routeForm').addEventListener('submit', function(event) {
+    //     event.preventDefault();
+    //     calculateAndDisplayRoute();
+    // });
+
+    calculateAndDisplayRoute();
 }
 
 function calculateAndDisplayRoute() {
