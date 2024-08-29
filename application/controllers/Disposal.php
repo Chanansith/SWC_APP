@@ -50,6 +50,16 @@ class Disposal extends Admin_Controller
 		$data["TranRecords"]=$this->disposal_model->getMyTransport($_SESSION["userId"]);
         $this->loadDisposalViews('disposal/dis_tran_list', $this->global, $data, NULL);
     }
+	public function direction($id)
+    {
+        $this->not_logged_in_transport();
+		
+		$data["id"]=$id;
+		$data["source_name"]="Don Kaeo, Mae Rim District, Chiang Mai 50180";
+		$data["destination_name"]="Nakornping Hospital, 159, Don Kaeo, Mae Rim District, Chiang Mai 50180";
+		
+        $this->loadDisposalViews('disposal/dis_direction_detail', $this->global, $data, NULL);
+    }
 	public function pendingTransport($id)
     {
         $this->not_logged_in_transport();
