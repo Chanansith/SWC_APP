@@ -31,6 +31,7 @@
           </div><!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
           <div id="map"></div>
+          <div class="alert alert-info" id="traveltime"></div>
           </div><!-- /.box-body -->
          
         </div><!-- /.box -->
@@ -106,9 +107,10 @@ function displayTrafficInfo(response) {
     const travelTimeValueWithTraffic = leg.duration_in_traffic.value;
     console.log('Travel time with traffic:', travelTimeWithTraffic);
 
+    $("#traveltime").html(travelTimeValueWithTraffic);
     // Optionally, display the travel time without traffic
-    const travelTimeWithoutTraffic = leg.duration.text;
-    console.log('Travel time without traffic:', travelTimeWithoutTraffic);
+    //const travelTimeWithoutTraffic = leg.duration.text;
+   // console.log('Travel time without traffic:', travelTimeWithoutTraffic);
 }
 
 // Initialize map when the window loads
