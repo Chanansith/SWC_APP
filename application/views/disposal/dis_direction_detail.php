@@ -38,6 +38,8 @@
     </div>
   </section>
 </div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6HBpHxcgpVgxAcaVso4vYU9l-_WML5EM&libraries=places"></script>
+   
 <script type="text/javascript">
   jQuery(document).ready(function() {
    
