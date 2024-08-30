@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1.7-labs
 
 # Use the official PHP image as the base image.
 FROM php:8.0-fpm
@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 # RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"    
 
 # Copy application code to /var/www/html
-COPY --chown=www-data:www-data --chmod=755 . /var/www/html
+COPY --chown=www-data:www-data --chmod=755 --exclude=proxy . /var/www/html
 
 # Set working directory
 WORKDIR /var/www/html
