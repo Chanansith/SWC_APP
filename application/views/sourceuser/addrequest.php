@@ -81,7 +81,15 @@
                                 </div>
                             </div>
                            
-                          
+                            <div class="row">
+                               
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="address">ปริมาณขยะติดเชื้อ</label>
+                                        <input type="number" class="form-control required" id="qty" name="qty">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="row">
                                
