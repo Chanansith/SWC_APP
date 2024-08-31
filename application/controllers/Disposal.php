@@ -15,6 +15,7 @@ class Disposal extends Admin_Controller
 		$this->load->model('contract_model');
 		$this->load->model('transport_model');
 		$this->load->model('disposal_model');
+		$this->load->model('source_model');
 		$this->load->model('truck_model');
         $this->load->model('log_model');
     }
@@ -55,11 +56,29 @@ class Disposal extends Admin_Controller
         $this->not_logged_in_transport();
 		
 		$data["id"]=$id;
-		$data["source_name"]="Don Kaeo, Mae Rim District, Chiang Mai 50180";
-		$data["destination_name"]="Nakornping Hospital, 159, Don Kaeo, Mae Rim District, Chiang Mai 50180";
+		$contract=$this->contract_model->getContractByDisposal($_SESSION["userId"]);
+		$sourceuser=$this->source_model->getData($contract[0]->user_id);
+		$data["source_name"]="";
+		$data["destination_name"]=$_SESSION['direction_name'];
 		
         $this->loadDisposalViews('disposal/dis_direction_detail', $this->global, $data, NULL);
     }
+	public function direction_test($id)
+    {
+        $this->not_logged_in_transport();
+		//php try catch
+		try {
+	
+		$contract=$this->contract_model->getContractByDisposal($_SESSION["userId"]);
+		$sourceuser=$this->source_model->getData($contract[0]->user_id);
+		print($contract);
+	    print($sourceuser);
+		}
+		catch (Exception $e) {
+			echo $e->getMessage();
+		}
+
+	}
 	public function pendingTransport($id)
     {
         $this->not_logged_in_transport();
@@ -193,9 +212,6 @@ class Disposal extends Admin_Controller
 
 		$this->form_validation->set_rules('disposal_code', 'disposal_code', 'trim|required');
 		
-
-	
-
         if ($this->form_validation->run() == TRUE) {
 
 			$disposal_date=$this->input->post('disposal_date');
@@ -250,7 +266,6 @@ class Disposal extends Admin_Controller
 		if($id) {
 			$this->form_validation->set_rules('edit_name', 'Category name', 'trim|required');
 			$this->form_validation->set_rules('edit_active', 'Active', 'trim|required');
-
 			$this->form_validation->set_error_delimiters('<p class="text-danger">','</p>');
 
 	        if ($this->form_validation->run() == TRUE) {

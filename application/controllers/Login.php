@@ -140,6 +140,7 @@ class Login extends BaseController
                                             'role'=>"disposal",
                                             'roleText'=>"",
                                             'name'=>$res->disposal_name,
+                                            'direction_name'=>$res->direction_name,
                                             'code'=>$res->id,
                                             'isLoggedIn' => TRUE
                                     );
