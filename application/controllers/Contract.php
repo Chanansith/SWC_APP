@@ -76,7 +76,7 @@ class Contract extends Admin_Controller
 				'transportid' => 0,
 				'disposalid' => $this->input->post('disposalid'),
 				'ship_price' => $this->input->post('ship_price'),
-				'disposal_qty' =>0,
+				'disposal_qty' =>$this->input->post('disposal_qty'),
 				'size_amount' => 0,
 				'trip_rate' => 0,
 				'contract_amount' => 0,

@@ -260,6 +260,7 @@ public	function saveadduser(){
                 'contract_id' => $this->input->post('contract_id'),
 				'request_by' => $_SESSION["userId"],
 				'assign_to' => $this->input->post('assign_to'),
+				'qty' => $this->input->post('qty'),
                 'request_by_name' => $this->input->post('request_by_name'),
         	);
 			$this->log_model->create(
