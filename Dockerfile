@@ -1,53 +1,41 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1.7-labs
 
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Dockerfile reference guide at
-# https://docs.docker.com/go/dockerfile-reference/
+# Use the official PHP image as the base image.
+FROM php:8.0-fpm
 
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
-
-################################################################################
-
-# The example below uses the PHP Apache image as the foundation for running the app.
-# By specifying the "8.2-apache" tag, it will also use whatever happens to be the
-# most recent version of that tag when you build your Dockerfile.
-# If reproducability is important, consider using a specific digest SHA, like
-# php@sha256:99cede493dfd88720b610eb8077c8688d3cca50003d76d1d539b0efc8cca72b4.
-FROM php:8.0-apache
-
-# Copy app files from the app directory.
-COPY --chown=www-data:www-data . /var/www/html
-
-# Your PHP application may require additional PHP extensions to be installed
-# manually. For detailed instructions for installing extensions can be found, see
-# https://github.com/docker-library/docs/tree/master/php#how-to-install-more-php-extensions
-# The following code blocks provide examples that you can edit and use.
-#
-# Add core PHP extensions, see
-# https://github.com/docker-library/docs/tree/master/php#php-core-extensions
-# This example adds the apt packages for the 'gd' extension's dependencies and then
-# installs the 'gd' extension. For additional tips on running apt-get:
-# https://docs.docker.com/go/dockerfile-aptget-best-practices/
-# RUN apt-get update && apt-get install -y \
-#     libfreetype-dev \
-#     libjpeg62-turbo-dev \
-#     libpng-dev \
-# && rm -rf /var/lib/apt/lists/* \
-#     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-#     && docker-php-ext-install -j$(nproc) gd
-#
-# Add PECL extensions, see
-# https://github.com/docker-library/docs/tree/master/php#pecl-extensions
-# This example adds the 'redis' and 'xdebug' extensions.
-# RUN pecl install redis-5.3.7 \
-#    && pecl install xdebug-3.2.1 \
-#    && docker-php-ext-enable redis xdebug
-RUN docker-php-ext-install pdo pdo_mysql mysqli
+# Install NGINX and any necessary dependencies
+RUN apt-get update && apt-get install -y \
+    nginx \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    libzip-dev \
+    zip \
+    unzip \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install zip \
+    && docker-php-ext-install pdo pdo_mysql \
+    && docker-php-ext-install mysqli
 
 # Use the default production configuration for PHP runtime arguments, see
 # https://github.com/docker-library/docs/tree/master/php#configuration
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+# RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"    
 
-# Switch to a non-privileged user (defined in the base image) that the app will run under.
-# See https://docs.docker.com/go/dockerfile-user-best-practices/
-USER www-data
+# Copy application code to /var/www/html
+COPY --chown=www-data:www-data --chmod=755 --exclude=proxy . /var/www/html
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Remove default server definition
+RUN unlink /etc/nginx/sites-enabled/default
+
+# Copy virtual host configuration file
+COPY proxy/virtual-host.conf /etc/nginx/sites-available/virtual-host.conf
+
+# Enable virtual host
+RUN ln -s /etc/nginx/sites-available/virtual-host.conf /etc/nginx/sites-enabled/
+
+# Start NGINX and PHP-FPM
+CMD service nginx start && php-fpm
