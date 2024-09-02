@@ -59,19 +59,7 @@ class Disposal_model extends CI_Model
         $result = $query->result();
         return $result;
     }
-    function conditionList($id)
-    {
-        $this->db->select('t1.subject,t1.disposal,t1.transfer_date,t1.id,t1.disposal_id,t1.create_by,t1.vat');
-        $this->db->from('disposal_condition_list t1');
-
-        $this->db->where('t1.disposal_id', $id);
-        $this->db->where('t1.is_delete', 0);
-        // $this->db->order_by('t1.id', 'desc');
-        $query = $this->db->get();
-
-        $result = $query->result();
-        return $result;
-    }
+    
     function addNew($data)
     {
        
@@ -91,6 +79,19 @@ class Disposal_model extends CI_Model
         
     
         return $insert_id;
+    }
+    function getMyTransport($id)
+    {
+        $this->db->select('t1.*');
+        $this->db->from('transport_item t1');
+        $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        $this->db->where('t2.disposalid ', $id);
+        //Transport user id
+        //$this->db->where('tran_by ', $id);
+       
+        $query = $this->db->get();
+
+        return $query->result();
     }
 
     function getContract($id)

@@ -8,8 +8,8 @@
       <small>Add, Edit, Delete</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="<?= base_url_api.'dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
-      <li><a href="<?= base_url_api.'Contract') ?>"> Contract</a></li>
+      <li><a href="<?= base_url_api.'disposal' ?>"><i class="fa fa-dashboard"></i> Main</a></li>
+      <li><a href="<?= base_url_api.'disposal' ?>"> Contract</a></li>
     </ol>
   </section>
   <section class="content">
@@ -58,7 +58,7 @@
                   
                     <td class="text-center">
                  
-                      <a class="btn btn-sm btn-success" href="<?php echo base_url() . 'disposal/approveContract/' . $record->id; ?>"><i class="fa fa-check-circle"></i> Approve</a>
+                   
                      
                     </td>
                   </tr>

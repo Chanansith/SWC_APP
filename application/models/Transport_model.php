@@ -44,16 +44,8 @@ class Transport_model extends CI_Model
         return $result;
     }
   
-   
-   
-   
-   
-    function editOldCondition_transport($id,$data){
-        $this->db->where('id ', $id);
-        $this->db->update('condition_transport', $data);
 
-        return TRUE;
-    }
+
     function getDataByID($id)
     {
         $this->db->select('*');
@@ -63,6 +55,13 @@ class Transport_model extends CI_Model
         $query = $this->db->get();
 
         return $query->result();
+    }
+    function updateTransport($data, $id)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('transport_item', $data);
+        
+        return TRUE;
     }
 
     function getData()
