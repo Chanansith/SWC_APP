@@ -31,7 +31,8 @@
             </div>
           </div><!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
-          
+          From  <?php echo($source_name)?> To <?php echo($destination_name)?>
+          <br>
           <div class="alert alert-info" id="traveltime"></div>
           </div><!-- /.box-body -->
          
