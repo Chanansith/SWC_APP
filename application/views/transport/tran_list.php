@@ -68,7 +68,7 @@
               
                     <td class="text-center">
                     
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'transport/editTransport/' . $record->id.'/'.$record->contract_id ?>"><i class="fa fa-pencil"></i> Edit</a>
+                    <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/sendApproveTransport/'.$record->id ?>"><i class="fa fa-edit"></i> Send Request</a>
                       <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/monitordisposal/1' ?>"> Monitoring</a>
                      
                     </td>

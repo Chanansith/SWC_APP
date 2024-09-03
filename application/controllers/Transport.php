@@ -222,7 +222,16 @@ class Transport extends Admin_Controller
         echo json_encode($response);
 	}
 
-
+    public function sendApproveTransport($id)
+    {
+        $this->not_logged_in_transport();
+		$data = array(
+			'approve_status' => 0
+		);
+		$this->transport_model->updateTransport($data,$id);
+		$data["TranRecords"]=$this->disposal_model->getMyTransport($_SESSION["userId"]);
+        $this->loadTransportViews('transport/tran_list', $this->global, $data, NULL);
+    }
     public function contract()
     {
         $this->not_logged_in_transport();
