@@ -58,7 +58,7 @@ class Disposal extends Admin_Controller
 		$data["id"]=$id;
 		$contract=$this->contract_model->getContractByDisposal($_SESSION["userId"]);
 		$sourceuser=$this->source_model->getData($contract[0]->user_id);
-		$data["source_name"]="";
+		$data["source_name"]="โรงพยาบาลเชียงรายประชานุเคราะห์";
 		$data["destination_name"]=$_SESSION['direction_name'];
 		
         $this->loadDisposalViews('disposal/dis_direction_detail', $this->global, $data, NULL);
