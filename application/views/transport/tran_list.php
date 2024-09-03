@@ -70,7 +70,9 @@
                     <?php if ($record->approve_status==1){?>
                       <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/sendApproveTransport/'.$record->id ?>"><i class="fa fa-check-circle"></i> Send Request</a>
                     <?php }?>
-                    
+                    <?php if ($record->approve_status==2){?>
+                      <i class="fa fa-check-circle"></i> Approved
+                    <?php }?>
                       <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/monitordisposal/1' ?>"> Monitoring</a>
                      
                     </td>
