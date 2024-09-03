@@ -34,6 +34,8 @@
           From  <?php echo($source_name)?> To <?php echo($destination_name)?>
           <br>
           <div class="alert alert-info" id="traveltime"></div>
+          <br>
+          <div id="map"></div>
           </div><!-- /.box-body -->
          
         </div><!-- /.box -->
@@ -42,7 +44,7 @@
   </section>
 </div>
 
-<div id="map"></div>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6HBpHxcgpVgxAcaVso4vYU9l-_WML5EM&libraries=places"></script>
    
 <script type="text/javascript">
