@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Maps Routing</title>
+    <title>Transportation and travel times to SWC</title>
     <style>
         #map {
             height: 500px;
@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <h1>Get Directions with Google Maps</h1>
+    <h1>Transportation and travel times to SWC</h1>
     <form id="routeForm">
         <label for="start">Start:</label>
         <input type="text" id="start" placeholder="Start location">
