@@ -18,7 +18,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php echo "200000 KG" ?></h3>
+              <h3><?php echo "200000" ?> kg</h3>
 
               <p>Disposal</p>
             </div>
