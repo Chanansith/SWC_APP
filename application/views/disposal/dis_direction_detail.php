@@ -9,7 +9,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
-      <li><a href="<?= base_url('Contract') ?>"> Transport List</a></li>
+      <li><a href="<?= base_url('Contract') ?>"> Transportation and travel times</a></li>
     </ol>
   </section>
   <section class="content">
@@ -25,7 +25,7 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Transport List List</h3>
+            <h3 class="box-title">Transportation and travel times</h3>
             <div class="box-tools">
           
             </div>
