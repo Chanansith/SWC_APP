@@ -67,8 +67,10 @@
                     <td><?php echo $record->tran_create_name ?>  </td>
               
                     <td class="text-center">
+                    <?php if ($record->approve_status==1){?>
+                      <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/sendApproveTransport/'.$record->id ?>"><i class="fa fa-check-circle"></i> Send Request</a>
+                    <?php }?>
                     
-                    <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/sendApproveTransport/'.$record->id ?>"><i class="fa fa-edit"></i> Send Request</a>
                       <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/monitordisposal/1' ?>"> Monitoring</a>
                      
                     </td>
