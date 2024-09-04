@@ -202,7 +202,7 @@ class Transport extends Admin_Controller
 				 'log_type'=>"tran")
 				);
 				
-				redirect( base_url_api.'contract', 'refresh');
+				redirect( base_url_api.'transport/transportitem', 'refresh');
         		// $response['success'] = true;
         		// $response['messages'] = 'Succesfully created';
 			
