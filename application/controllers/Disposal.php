@@ -81,8 +81,11 @@ class Disposal extends Admin_Controller
 	
 		$contract=$this->contract_model->getContractByDisposal($_SESSION["userId"]);
 		$sourceuser=$this->source_model->getData($contract[0]->user_id);
+		$tranitem=$this->transport_model->getDataByItemID(1);
 		print_r($contract);
 	    print_r($sourceuser[0]->companyname);
+		echo "<br>";
+		print_r($tranitem);
 		}
 		catch (Exception $e) {
 			echo $e->getMessage();
