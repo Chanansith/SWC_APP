@@ -51,6 +51,16 @@ class Disposal extends Admin_Controller
 		$data["TranRecords"]=$this->disposal_model->getMyTransport($_SESSION["userId"]);
         $this->loadDisposalViews('disposal/dis_tran_list', $this->global, $data, NULL);
     }
+	public function receiveTransport($id)
+    {
+        $this->not_logged_in_transport();
+		$data = array(
+			'approve_status' => 3
+		);
+		$this->transport_model->updateTransport($data,$id);
+		$data["TranRecords"]=$this->disposal_model->getMyTransport($_SESSION["userId"]);
+        $this->loadDisposalViews('disposal/dis_tran_list', $this->global, $data, NULL);
+    }
 	public function direction($id)
     {
         $this->not_logged_in_transport();

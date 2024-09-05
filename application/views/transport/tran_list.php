@@ -60,6 +60,9 @@
                     <?php if ($record->approve_status==2){?>
                      Approved
                     <?php }?>
+                    <?php if ($record->approve_status==3){?>
+                     Received
+                    <?php }?>
                 </td>
                     <td><?php echo $record->tran_date ?></td>
                     <td><?php echo $record->contract_code ?></td>
