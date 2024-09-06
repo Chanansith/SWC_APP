@@ -2,40 +2,8 @@
 
 class Disposal_model extends CI_Model
 {
-    function transportListingCount($id, $searchText = '')
-    {
-        $this->db->select('t1.id,t1.vat,t1.create_by');
-        // $this->db->select('t1.id,t1.vat,t2.id as condition_list_id,t2.subject,t2.transport,t2.transfer_date,t2.create_by,t2.update_by');
-        $this->db->from('transport t1');
-        // $this->db->join("transport_condition_list t2", "t2.transport_id=t1.id","left");
-        // if(!empty($searchText)) {
-        //     $likeCriteria = "(id   LIKE '%".$searchText."%'
-        //                     OR  transporttype   LIKE '%".$searchText."%'
-        //                     )";
-        //     $this->db->where($likeCriteria);
-        // }
-        $this->db->where('t1.carno', $id);
-        $this->db->where('t1.is_delete', 0);
-        $query = $this->db->get();
-
-        return count($query->result());
-    }
-
-    function transportListing($id)
-    {
-        $this->db->select('*');
-        // $this->db->select('t1.id,t1.vat,t2.id as condition_list_id,t2.subject,t2.transport,t2.transfer_date,t2.create_by,t2.update_by');
-        $this->db->from('transport t1');
-       
     
-        $this->db->where('t1.carno', $id);
-      
-    
-        $query = $this->db->get();
-
-        $result = $query->result();
-        return $result;
-    }
+ 
     function getById($id)
     {
         $this->db->select('t1.vat');
@@ -113,6 +81,21 @@ class Disposal_model extends CI_Model
         $query = $this->db->get();
         
         return $query->result();
+    }
+    function updateMonitoring($data, $id)
+    {
+        $this->db->where('disposal_id', $id);
+        $this->db->update('monitoring', $data);
+        
+        return TRUE;
+    }
+    function updateDaily($imw_status_daily, $id)
+    {
+        $this->db->set('imw_status_daily', 'imw_status_daily+' . (int)$imw_status_daily, FALSE);
+        $this->db->where('disposal_id', $id);
+        $this->db->update('monitoring');
+        
+        return TRUE;
     }
     function getContractByDisposal($id)
     {

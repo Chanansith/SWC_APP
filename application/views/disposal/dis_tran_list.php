@@ -75,7 +75,7 @@
                       <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'disposal/pendingTransport/'.$record->id ?>"><i class="fa fa-edit"></i> Pending</a>
                     <?php }?>
                     <?php if ($record->approve_status==2){?>
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'disposal/receiveTransport/'.$record->id ?>"><i class="fa fa-check-circle"></i> Receive</a>
+                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'disposal/receiveTransport/'.$record->disposal_qty.'/'.$record->id ?>"><i class="fa fa-check-circle"></i> Receive</a>
                      
                     <?php }?>
                     </td>
