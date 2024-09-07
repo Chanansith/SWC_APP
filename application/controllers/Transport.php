@@ -25,7 +25,7 @@ class Transport extends Admin_Controller
         $data["summary"]=[];
         $monitoring_record=$this->disposal_model->getMonitoring(1);;
        
-        $data["monitoring_record"]=$monitoring_record[0];
+        $data["monitoring_record"]=$monitoring_record;
     
         $this->loadTransportViews('transport/transdasboard', $this->global, $data, NULL);
         
