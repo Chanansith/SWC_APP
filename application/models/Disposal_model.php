@@ -82,6 +82,7 @@ class Disposal_model extends CI_Model
         
         return $query->result();
     }
+  
     function updateMonitoring($data, $id)
     {
         $this->db->where('disposal_id', $id);

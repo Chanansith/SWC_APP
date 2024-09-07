@@ -2,18 +2,20 @@
 
 class Contract_model extends CI_Model
 {
-    function ContractListingCount($searchText = '')
+    function ContractCountByHN($user_id)
     {
-        $this->db->select('*');
+        $this->db->select('id');
         $this->db->from('contracts ');
-        if(!empty($searchText)) {
-            $likeCriteria = "(title_lao  LIKE '%".$searchText."%'
-                            OR  title_eng  LIKE '%".$searchText."%'
-                            OR  detail_lao  LIKE '%".$searchText."%'
-                            OR  detail_eng  LIKE '%".$searchText."%')";
-            $this->db->where($likeCriteria);
-        }
-        $this->db->where('isDeleted', 0);
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get();
+        
+        return count($query->result());
+    }
+    function ContractCountByDisposal($user_id)
+    {
+        $this->db->select('id');
+        $this->db->from('contracts ');
+        $this->db->where('disposal_id', $user_id);
         $query = $this->db->get();
         
         return count($query->result());

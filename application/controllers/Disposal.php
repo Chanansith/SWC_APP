@@ -26,6 +26,10 @@ class Disposal extends Admin_Controller
     public function index()
     {
         $data["summary"]=[];
+		$monitoring_record=$this->disposal_model->getMonitoring(1);;
+       
+        $data["monitoring_record"]=$monitoring_record[0];
+    
         $this->loadDisposalViews('disposal/disposaldashboard', $this->global, $data, NULL);
     }
 	public function contract()

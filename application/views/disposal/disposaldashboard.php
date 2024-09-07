@@ -18,14 +18,14 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php echo "200000" ?> kg</h3>
+              <h3><?php echo $imw_status_daily ?> kg</h3>
 
-              <p>Disposal</p>
+              <p>IMW Status Daily</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="<?php echo base_url('contract/') ?>" class="small-box-footer"> เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('disposal/contract/') ?>" class="small-box-footer"> เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -33,9 +33,9 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3><?php echo "5" ?></h3>
+            <h3><?php echo $max_per_day ?> kg</h3>
 
-              <p>Contract</p>
+              <p>Max Per Day</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>

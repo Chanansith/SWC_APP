@@ -23,6 +23,10 @@ class Transport extends Admin_Controller
     {
         $this->not_logged_in_transport();
         $data["summary"]=[];
+        $monitoring_record=$this->disposal_model->getMonitoring(1);;
+       
+        $data["monitoring_record"]=$monitoring_record[0];
+    
         $this->loadTransportViews('transport/transdasboard', $this->global, $data, NULL);
         
     }
@@ -42,11 +46,22 @@ class Transport extends Admin_Controller
             $this->global['pageTitle'] = 'Add Transport';
             $data['header'] ="Transport";
             $contract=$this->contract_model->getContract($contract_id);
-            $data["monitoring_record"]=$this->disposal_model->getMonitoring($contract[0]->disposalid);
-			$data["contract"]=$contract[0];
+            $monitoring_record=$this->disposal_model->getMonitoring($contract[0]->disposalid);;
+            $imw_status_daily=0;
+            $max_per_day=0;
+         
+			
+            $imw_status_daily=$monitoring_record[0]->imw_status_daily;
+            $max_per_day=$monitoring_record[0]->max_per_day;
+            if ($imw_status_daily>=$max_per_day){
+                //alert;
+            }
+            $data["monitoring_record"]=$monitoring_record[0];
+            $data["contract"]=$contract[0];
 			$data["contract_code"]=$contract[0]->contract_code;
             $data["contract_id"]=$contract_id;
             $data["request_id"]=$request_id;
+
 			
             $this->loadTransportViews("transport/addNewTran", $this->global, $data, NULL);
         
