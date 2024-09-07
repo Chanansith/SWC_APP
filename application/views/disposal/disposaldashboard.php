@@ -1,3 +1,13 @@
+<?php 
+$max_per_day=0;
+$imw_status_daily=0;
+if (!empty($monitoring_record)) {
+ $max_per_day=$monitoring_record[0]->max_per_day;
+ $imw_status_daily=$monitoring_record[0]->imw_status_daily;
+
+}
+?>
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
