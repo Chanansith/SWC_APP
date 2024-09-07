@@ -56,7 +56,7 @@ class Transport extends Admin_Controller
             if ($imw_status_daily>=$max_per_day){
                 //alert;
             }
-            $data["monitoring_record"]=$monitoring_record[0];
+            $data["monitoring_record"]=$monitoring_record;
             $data["contract"]=$contract[0];
 			$data["contract_code"]=$contract[0]->contract_code;
             $data["contract_id"]=$contract_id;
