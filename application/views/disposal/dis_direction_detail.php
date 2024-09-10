@@ -109,11 +109,14 @@ function displayTrafficInfo(response) {
     const leg = route.legs[0];
     
     // Display total travel time with traffic
+    const travelTimeDefault = leg.duration.text;
+    const travelTimeValueDefault = leg.duration.value;
     const travelTimeWithTraffic = leg.duration_in_traffic.text;
     const travelTimeValueWithTraffic = leg.duration_in_traffic.value;
+    const distance_detail=leg.distance.text;
     console.log('Travel time with traffic:', travelTimeWithTraffic);
 
-    $("#traveltime").html(travelTimeWithTraffic);
+    $("#traveltime").html(travelTimeWithTraffic+" ระยะทาง:"+distance_detail);
     // Optionally, display the travel time without traffic
     //const travelTimeWithoutTraffic = leg.duration.text;
    // console.log('Travel time without traffic:', travelTimeWithoutTraffic);
