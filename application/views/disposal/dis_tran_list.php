@@ -69,7 +69,7 @@
                     <td><?php echo $record->tran_create_name ?>  </td>
               
                     <td class="text-center">
-                    <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'disposal/direction/'.$record->id ?>" target="_blank"><i class="fa fa-map-marker"></i>Travel Times</a>
+                    <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'disposal/direction/'.$record->id.'/'.$record->contract_id ?>" target="_blank"><i class="fa fa-map-marker"></i>Travel Times</a>
                     <?php if ($record->approve_status<2){?>
                       <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'disposal/approveTransport/'.$record->id ?>"><i class="fa fa-check-circle"></i> Approve</a>
                       <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'disposal/pendingTransport/'.$record->id ?>"><i class="fa fa-edit"></i> Pending</a>

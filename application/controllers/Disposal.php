@@ -66,12 +66,12 @@ class Disposal extends Admin_Controller
 		$data["TranRecords"]=$this->disposal_model->getMyTransport($_SESSION["userId"]);
         $this->loadDisposalViews('disposal/dis_tran_list', $this->global, $data, NULL);
     }
-	public function direction($id)
+	public function direction($id,$contract_id)
     {
         $this->not_logged_in_transport();
 		
 		$data["id"]=$id;
-		$contract=$this->contract_model->getContractByDisposal($_SESSION["userId"]);
+		$contract=$this->contract_model->getContract($contract_id);
 		$sourceuser=$this->source_model->getData($contract[0]->user_id);
 		$data["source_name"]=$sourceuser[0]->companyname;
 		$data["destination_name"]=$_SESSION['direction_name'];
