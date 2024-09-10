@@ -111,8 +111,16 @@ function displayTrafficInfo(response) {
     // Display total travel time with traffic
     const travelTimeDefault = leg.duration.text;
     const travelTimeValueDefault = leg.duration.value;
+
     const travelTimeWithTraffic = leg.duration_in_traffic.text;
     const travelTimeValueWithTraffic = leg.duration_in_traffic.value;
+    
+  if (travelTimeValueDefault>travelTimeValueWithTraffic){
+    //set red
+  }else {
+    //set green
+  }
+
     const distance_detail=leg.distance.text;
     console.log('Travel time with traffic:', travelTimeWithTraffic);
 
