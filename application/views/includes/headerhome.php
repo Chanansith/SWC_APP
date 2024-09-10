@@ -67,7 +67,7 @@
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                 เกี่ยวกับ SWC
+                 เกี่ยวกับศูนย์บำบัดมูลฝอยติดเชื้อ
               </a>
 
             </li>
