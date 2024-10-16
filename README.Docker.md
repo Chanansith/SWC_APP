@@ -1,5 +1,5 @@
 ### Disable verification of SSL/TLS certificates  
-Edit application/config/database.php at line 69
+Edit application/config/database.php at line 69:
 ```code
     'encrypt'  => array(
 		'ssl_ca' => 'cer/DigiCertGlobalRootCA.crt.pem',
@@ -16,17 +16,17 @@ docker compose up --build
 ```
 If no error, the application should be ready at [http://localhost:8080](http://localhost:8080).
 
-Tip: You can access phpMyAdmin to manage database at [http://localhost:8088](http://localhost:8088).
+Tip: You can manage database via phpMyAdmin at [http://localhost:8088](http://localhost:8088).
 
 ### Install PHP extensions
-If your application requires additional PHP extensions, please adding them to the Dockerfile.
-Follow the instructions and example in the Dockerfile to add them. Find supported extensions at:
+If your application requires additional PHP extensions, follow the instructions and example in the Dockerfile to add them.
+Find supported extensions at:
 [docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 
 ### Apache Web Server
 
 To use Apache web server instead of default NGINX reserver proxy.
-Update compose.yaml:
+Update compose.yaml at line 14:
 ```yml
   server:
     build:
