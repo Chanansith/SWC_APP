@@ -32,9 +32,7 @@ class SourceUser extends Admin_Controller
     public function fetchDataById($contract_id) 
 	{
 		$this->not_logged_in();
-
 		$contract=$this->contract_model->getContract($contract_id);
-		
 		//echo json_encode($contract);
 		print_r($contract);
 	}

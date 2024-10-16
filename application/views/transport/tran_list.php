@@ -60,15 +60,22 @@
                     <?php if ($record->approve_status==2){?>
                      Approved
                     <?php }?>
+                    <?php if ($record->approve_status==3){?>
+                     Received
+                    <?php }?>
                 </td>
                     <td><?php echo $record->tran_date ?></td>
                     <td><?php echo $record->contract_code ?></td>
-                    <td><?php echo $record->disposal_qty ?>  </td>
+                    <td><?php echo number_format($record->disposal_qty,2) ?>  </td>
                     <td><?php echo $record->tran_create_name ?>  </td>
               
                     <td class="text-center">
-                    
-                      <a class="btn btn-sm btn-info" href="<?php echo base_url_api . 'transport/editTransport/' . $record->id.'/'.$record->contract_id ?>"><i class="fa fa-pencil"></i> Edit</a>
+                    <?php if ($record->approve_status==1){?>
+                      <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/sendApproveTransport/'.$record->id ?>"><i class="fa fa-check-circle"></i> Send Request</a>
+                    <?php }?>
+                    <?php if ($record->approve_status==2){?>
+                      <i class="fa fa-check-circle"></i> Approved
+                    <?php }?>
                       <a class="btn btn-sm btn-warning" href="<?php echo base_url_api . 'transport/monitordisposal/1' ?>"> Monitoring</a>
                      
                     </td>

@@ -26,6 +26,10 @@ class Disposal extends Admin_Controller
     public function index()
     {
         $data["summary"]=[];
+		$monitoring_record=$this->disposal_model->getMonitoring(1);;
+       
+        $data["monitoring_record"]=$monitoring_record;
+    
         $this->loadDisposalViews('disposal/disposaldashboard', $this->global, $data, NULL);
     }
 	public function contract()
@@ -51,14 +55,25 @@ class Disposal extends Admin_Controller
 		$data["TranRecords"]=$this->disposal_model->getMyTransport($_SESSION["userId"]);
         $this->loadDisposalViews('disposal/dis_tran_list', $this->global, $data, NULL);
     }
-	public function direction($id)
+	public function receiveTransport($disposal_qty,$id)
+    {
+        $this->not_logged_in_transport();
+		$data = array(
+			'approve_status' => 3
+		);
+		$this->transport_model->updateTransport($data,$id);
+		$this->disposal_model->updateDaily($disposal_qty,$_SESSION["userId"]);
+		$data["TranRecords"]=$this->disposal_model->getMyTransport($_SESSION["userId"]);
+        $this->loadDisposalViews('disposal/dis_tran_list', $this->global, $data, NULL);
+    }
+	public function direction($id,$contract_id)
     {
         $this->not_logged_in_transport();
 		
 		$data["id"]=$id;
-		$contract=$this->contract_model->getContractByDisposal($_SESSION["userId"]);
+		$contract=$this->contract_model->getContract($contract_id);
 		$sourceuser=$this->source_model->getData($contract[0]->user_id);
-		$data["source_name"]="";
+		$data["source_name"]=$sourceuser[0]->companyname;
 		$data["destination_name"]=$_SESSION['direction_name'];
 		
         $this->loadDisposalViews('disposal/dis_direction_detail', $this->global, $data, NULL);
@@ -71,8 +86,11 @@ class Disposal extends Admin_Controller
 	
 		$contract=$this->contract_model->getContractByDisposal($_SESSION["userId"]);
 		$sourceuser=$this->source_model->getData($contract[0]->user_id);
-		print($contract);
-	    print($sourceuser);
+		$tranitem=$this->transport_model->getDataByItemID(1);
+		print_r($contract);
+	    print_r($sourceuser[0]->companyname);
+		echo "<br>";
+		print_r($tranitem);
 		}
 		catch (Exception $e) {
 			echo $e->getMessage();

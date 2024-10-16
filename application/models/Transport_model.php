@@ -44,6 +44,16 @@ class Transport_model extends CI_Model
         return $result;
     }
   
+    function getDataByItemID($id)
+    {
+        $this->db->select('*');
+        $this->db->from('transport_item');
+        //Transport user id
+        $this->db->where('id ', $id);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
 
 
     function getDataByID($id)
