@@ -4,16 +4,16 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      <i class="fa fa-users"></i> Transport List
-      <small>Add, Edit, Delete</small>
+      <i class="fa fa-users"></i>Transportation and travel times
+      <small></small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
-      <li><a href="<?= base_url('Contract') ?>"> Transport List</a></li>
+      <li><a href="<?= base_url('Contract') ?>"> Transportation and travel times</a></li>
     </ol>
   </section>
   <section class="content">
-  <div id="map"></div>
+ 
     <div class="row">
       <div class="col-xs-12 text-right">
         <div class="form-group">
@@ -25,14 +25,17 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Transport List List</h3>
+            <h3 class="box-title">Transportation and travel times</h3>
             <div class="box-tools">
           
             </div>
           </div><!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
-          
+          From  <?php echo($source_name)?> To <?php echo($destination_name)?>
+          <br>
           <div class="alert alert-info" id="traveltime"></div>
+          <br>
+          <div id="map"></div>
           </div><!-- /.box-body -->
          
         </div><!-- /.box -->
@@ -40,6 +43,8 @@
     </div>
   </section>
 </div>
+
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6HBpHxcgpVgxAcaVso4vYU9l-_WML5EM&libraries=places"></script>
    
 <script type="text/javascript">
@@ -104,11 +109,22 @@ function displayTrafficInfo(response) {
     const leg = route.legs[0];
     
     // Display total travel time with traffic
+    const travelTimeDefault = leg.duration.text;
+    const travelTimeValueDefault = leg.duration.value;
+
     const travelTimeWithTraffic = leg.duration_in_traffic.text;
     const travelTimeValueWithTraffic = leg.duration_in_traffic.value;
+    
+  if (travelTimeValueDefault>travelTimeValueWithTraffic){
+    //set red
+  }else {
+    //set green
+  }
+
+    const distance_detail=leg.distance.text;
     console.log('Travel time with traffic:', travelTimeWithTraffic);
 
-    $("#traveltime").html(travelTimeWithTraffic);
+    $("#traveltime").html(travelTimeWithTraffic+" ระยะทาง:"+distance_detail);
     // Optionally, display the travel time without traffic
     //const travelTimeWithoutTraffic = leg.duration.text;
    // console.log('Travel time without traffic:', travelTimeWithoutTraffic);

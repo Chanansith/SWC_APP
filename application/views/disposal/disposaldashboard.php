@@ -1,3 +1,16 @@
+<?php 
+$max_per_day=0;
+$imw_status_daily=0;
+$pending_count=0;
+$approved_count=0;
+$receive_count=0;
+if (!empty($monitoring_record)) {
+ $max_per_day=$monitoring_record[0]->max_per_day;
+ $imw_status_daily=$monitoring_record[0]->imw_status_daily;
+
+}
+?>
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -18,14 +31,14 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php echo "200000 KG" ?></h3>
+              <h3><?php echo $imw_status_daily ?> kg</h3>
 
-              <p>Disposal</p>
+              <p>IMW Status Daily</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="<?php echo base_url('contract/') ?>" class="small-box-footer"> เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url('disposal/contract/') ?>" class="small-box-footer"> เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -33,9 +46,9 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3><?php echo "5" ?></h3>
+            <h3><?php echo $max_per_day ?> kg</h3>
 
-              <p>Contract</p>
+              <p>Max Per Day</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -48,7 +61,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3><?php echo "300"; ?></h3>
+              <h3><?php echo $pending_count; ?></h3>
 
               <p>Pending</p>
             </div>
@@ -62,9 +75,9 @@
         <div class="col-lg-3 col-xs-6">
           <div class="small-box bg-green">
             <div class="inner">
-              <h3><?php echo "40" ?></h3>
+              <h3><?php echo $approved_count ?></h3>
 
-              <p>Success</p>
+              <p>Approved</p>
             </div>
             <div class="icon">
               <i class="ion ion-android-home"></i>
