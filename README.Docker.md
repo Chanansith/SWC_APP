@@ -1,24 +1,26 @@
 ### Disable verification of SSL/TLS certificates  
+Edit application/config/database.php at line 69
 ```code
     'encrypt'  => array(
 		'ssl_ca' => 'cer/DigiCertGlobalRootCA.crt.pem',
         'ssl_verify' => FALSE
     ),
 ```  
-### Building and running your application
 
+### Building and running your application
 Create [db/password.txt](https://docs.docker.com/compose/use-secrets/) containing database password. 
 
 When you're ready, start your application by running:  
-`docker compose up --build`.
+```shell
+docker compose up --build
+```
+If no error, the application should be ready at [http://localhost:8080](http://localhost:8080).
 
-Your application will be available at [http://localhost:8080](http://localhost:8080).
+Tip: You can access phpMyAdmin to manage database at [http://localhost:8088](http://localhost:8088).
 
-Using phpMyAdmin to manage database at [http://localhost:8088](http://localhost:8088).
-
-### PHP extensions
-
-If your application requires specific PHP extensions to run, they will need to be added to the Dockerfile. Follow the instructions and example in the Dockerfile to add them. Find supported extensions at:
+### Install PHP extensions
+If your application requires additional PHP extensions, please adding them to the Dockerfile.
+Follow the instructions and example in the Dockerfile to add them. Find supported extensions at:
 [docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 
 ### Apache Web Server
@@ -32,15 +34,15 @@ Update compose.yaml:
       dockerfile: Dockerfile-apache
 ```
 
-### Deploying your application to the cloud
+### Deploying your application on Cloud
 
-First, build your image, e.g.: `docker build -t myapp .`.
-If your cloud uses a different CPU architecture than your development
+First, build your image, e.g.: `docker build -t swc_app .`.
+If your Cloud provider uses a different CPU architecture than your development
 machine (e.g., you are on a Mac M1 and your cloud provider is amd64),
 you'll want to build the image for that platform, e.g.:
-`docker build --platform=linux/amd64 -t myapp .`.
+`docker build --platform=linux/amd64 -t swc_app .`.
 
-Then, push it to your registry, e.g. `docker push myregistry.com/myapp`.
+Then, push it to your registry, e.g. `docker push myregistry.com/swc_app`.
 
 Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
 docs for more detail on building and pushing.
