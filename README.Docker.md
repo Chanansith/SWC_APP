@@ -7,7 +7,7 @@ Edit application/config/database.php at line 69:
     ),
 ```  
 
-### Building and running your application
+### Building and running your application  
 Create [db/password.txt](https://docs.docker.com/compose/use-secrets/) containing database password. 
 
 When you're ready, start your application by running:  
@@ -19,9 +19,8 @@ If no error, the application should be ready at [http://localhost:8080](http://l
 Tip: You can manage database via phpMyAdmin at [http://localhost:8088](http://localhost:8088).
 
 ### Install PHP extensions
-If your application requires additional PHP extensions, follow the instructions and example in the Dockerfile to add them.
-Find supported extensions at:
-[docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
+Follow the instructions and example in the Dockerfile to install addtional PHP extenstions.  
+Find supported extensions at: [docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
 
 ### Apache Web Server
 
