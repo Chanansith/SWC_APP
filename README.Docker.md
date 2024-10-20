@@ -43,7 +43,7 @@ you'll want to build the image for that platform, e.g.:
 
 Then, push it to your image registry, e.g.  
 ```shell
-docker push myregistry.com/swc_app`.
+docker push myregistry.com/swc_app
 ```
 Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
 docs for more detail on building and pushing.
