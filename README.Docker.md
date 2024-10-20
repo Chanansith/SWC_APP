@@ -1,6 +1,6 @@
 ### Disable verification of SSL/TLS certificates  
 Edit application/config/database.php at line 69:
-```php title="application/config/database.php"
+```php filename="application/config/database.php"
     'encrypt'  => array(
 		'ssl_ca' => 'cer/DigiCertGlobalRootCA.crt.pem',
         'ssl_verify' => FALSE
@@ -26,7 +26,7 @@ Find supported extensions at: [docker-php-extension-installer](https://github.co
 
 To use Apache web server instead of default NGINX reserver proxy.
 Update compose.yaml at line 14:
-```yml
+```yaml filename="compose.yaml"
   server:
     build:
       context: .
