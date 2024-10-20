@@ -41,7 +41,9 @@ machine (e.g., you are on a Mac M1 and your cloud provider is amd64),
 you'll want to build the image for that platform, e.g.:
 `docker build --platform=linux/amd64 -t swc_app .`.
 
-Then, push it to your registry, e.g. `docker push myregistry.com/swc_app`.
-
+Then, push it to your image registry, e.g.  
+```shell
+docker push myregistry.com/swc_app`.
+```
 Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
 docs for more detail on building and pushing.
