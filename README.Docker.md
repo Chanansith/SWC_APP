@@ -1,6 +1,6 @@
 ### Disable verification of SSL/TLS certificates  
 Edit application/config/database.php at line 69:
-```file application/config/database.php
+```php title="application/config/database.php"
     'encrypt'  => array(
 		'ssl_ca' => 'cer/DigiCertGlobalRootCA.crt.pem',
         'ssl_verify' => FALSE
