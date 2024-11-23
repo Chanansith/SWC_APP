@@ -51,10 +51,10 @@ $active_record = TRUE;
 
 $db['default'] = array(
     'dsn'      => '',
-    'hostname' => 'swc-centerapp-server.mysql.database.azure.com',  // หรือ host ของ MySQL
-    'username' => 'kogwcpcvst',   // ชื่อผู้ใช้ MySQL
-    'password' => 'DdYHSZ8jEz$fN93U',   // รหัสผ่าน MySQL
-    'database' => 'swc-centerapp-database',   // ชื่อฐานข้อมูล MySQL
+    'hostname' => 'swc-center-db.mysql.database.azure.com',  // หรือ host ของ MySQL
+    'username' => 'npltygockt',   // ชื่อผู้ใช้ MySQL
+    'password' => 'E2tNUajT$DwaAqJN',   // รหัสผ่าน MySQL
+    'database' => 'swc_logictic',   // ชื่อฐานข้อมูล MySQL
     'dbdriver' => 'mysqli',     // ประเภทของ driver ที่ใช้ (mysqli สำหรับ MySQL)
     'dbprefix' => '',
     'pconnect' => FALSE,
