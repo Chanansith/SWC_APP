@@ -58,6 +58,6 @@ define('SMTP_PORT',                             '25');					// your smtp port e.g
 define('SMTP_USER',                             'swc.centerlogistic@gmail.com');		// your smtp user
 define('SMTP_PASS',                             'Id@123zxcv');	// your smtp password
 define('MAIL_PATH',                             '/usr/sbin/sendmail');
-define('base_url_api', 'https://swccenter.azurewebsites.net/index.php/');
+define('base_url_api', 'https://swc-center.azurewebsites.net/index.php/');
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
