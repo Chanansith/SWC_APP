@@ -25,7 +25,7 @@ date_default_timezone_set("Asia/Bangkok");
 |
 */
 //$base  = "https://" . $_SERVER['HTTP_HOST'];
-$base="https://swccenter.azurewebsites.net/";
+$base="https://swc-center.azurewebsites.net/";
 //$base .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 $config['base_url'] = $base;
 
