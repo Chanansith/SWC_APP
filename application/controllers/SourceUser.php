@@ -42,7 +42,7 @@ public	function saveadduser(){
             
             $this->form_validation->set_rules('companyname','ชื่อสถานประกอบการ','required|max_length[255]');
           
-             $this->form_validation->set_rules('mobile_no','เบอร์โทรศัพท์มือถือ','required|max_length[20]');
+            $this->form_validation->set_rules('mobile_no','เบอร์โทรศัพท์มือถือ','required|max_length[20]');
            
              
              $this->log_model->create(
