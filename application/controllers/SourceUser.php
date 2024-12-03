@@ -152,8 +152,6 @@ public	function saveadduser(){
 									 'bed_count'=>0,
 									 'createon'=>date('Y-m-d H:i:s'));
 				
-							
-		  
 
 				$result = $this->user_model->addNewUser($userInfo);
 				
