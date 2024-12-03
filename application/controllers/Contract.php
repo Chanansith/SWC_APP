@@ -57,6 +57,34 @@ class Contract extends Admin_Controller
             $this->loadViews("contract/addNew", $this->global, $data, NULL);
         
     }
+
+	public function testcreate()
+	{
+		
+
+		$response = array();
+
+			$contract_date='2024-11-30';
+			$end_date='2024-12-30';
+        	$data = array(
+				'contract_code' =>'testcode',
+				'user_id' => '100',
+				'contract_date' => $contract_date,
+				'end_date' => $end_date,
+				'transportid' => 0,
+				'disposalid' => 0,
+				'ship_price' => 0,
+				'disposal_qty' =>0,
+				'size_amount' => 0,
+				'trip_rate' => 0,
+				'contract_amount' => 0,
+				'contract_create_name' => 'test create',
+        	);
+
+        	
+       
+	}
+
 	public function create()
 	{
 		
