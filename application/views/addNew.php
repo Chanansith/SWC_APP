@@ -176,13 +176,13 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="ctext">ตำแหน่งแผนที่ :ละติจูด</label>
-                                                <input type="text" class="form-control required equalTo" id="lat" name="lat" maxlength="20">
+                                                <input type="text" class="form-control required equalTo" id="lat" name="lat" maxlength="20" value="0.00">
                                             </div>
                                         </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="ctext">ลองติจูด:</label>
-                                            <input type="text" class="form-control required equalTo" id="lng" name="lng" maxlength="20">
+                                            <input type="text" class="form-control required equalTo" id="lng" name="lng" maxlength="20" value="0.00">
                                         </div>
                                     </div>
                                 </div>
