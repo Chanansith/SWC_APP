@@ -1,9 +1,12 @@
 
 <?php 
 $max_per_day=0;
+$max_tran=0;
+$imw_status_daily=0;
 if (!empty($monitoring_record)) {
  $max_per_day=$monitoring_record[0]->max_per_day;
-
+ $imw_status_daily=$monitoring_record[0]->imw_status_daily;
+ $max_tran=$max_per_day-$imw_status_daily;
 }
 ?>
 <div class="content-wrapper">
@@ -86,10 +89,13 @@ if (!empty($monitoring_record)) {
                                         <label for="address">ปริมาณมูลฝอยติดเชื้อ</label>
                                         <input type="number" class="form-control required" id="disposal_qty" name="disposal_qty" value="0">
                                     <?php
-                                    if ($max_per_day>0){
-                                        echo "(**ไม่เกิน ".number_format($max_per_day,2)."/วัน)";
+                                   
+                                    if ($max_tran>0){
+
+                                        echo "(**ไม่เกิน ".number_format($max_tran,2)."/วัน)";
                                     }
                                     ?>
+                                    
                                     </div>
                                 </div>
                             </div>

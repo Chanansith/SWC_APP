@@ -25,7 +25,7 @@
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="<?php echo base_url('contract/') ?>" class="small-box-footer">เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url_api.'contract/' ?>" class="small-box-footer">เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -40,7 +40,7 @@
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="<?php echo base_url('request/') ?>" class="small-box-footer">เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url_api.'request/' ?>" class="small-box-footer">เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -55,7 +55,7 @@
             <div class="icon">
               <i class="ion ion-android-people"></i>
             </div>
-            <a href="<?php echo base_url('contract/') ?>" class="small-box-footer">เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url_api.'contract/' ?>" class="small-box-footer">เพิ่มเติม <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        

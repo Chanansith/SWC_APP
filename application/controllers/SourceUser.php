@@ -42,7 +42,7 @@ public	function saveadduser(){
             
             $this->form_validation->set_rules('companyname','ชื่อสถานประกอบการ','required|max_length[255]');
           
-             $this->form_validation->set_rules('mobile_no','เบอร์โทรศัพท์มือถือ','required|max_length[20]');
+            $this->form_validation->set_rules('mobile_no','เบอร์โทรศัพท์มือถือ','required|max_length[20]');
            
              
              $this->log_model->create(
@@ -136,7 +136,33 @@ public	function saveadduser(){
         
         
     }
-    public function getpaymentbycontract($contract_id){
+	public	function testsaveadduser(){
+        
+		
+		 
+
+				$userInfo = array('email'=>'email',  'companyname'=>'com','code'=>'code','hascode'=>'hascode',
+									'address_no'=>'addressno','moo'=>'1',
+									 'mobile_no'=>'mobile','cate_id'=>0, 'sub_cate_id'=>0, 
+									 'provinceid'=>0,'districtid'=>0,'amphurid'=>0,
+									 'lat'=>0,'lng'=>0,'main_location'=>0,
+									 'pass'=>'password',
+									 'zipcode'=>'zip',
+									 'tel_no'=>'te;',
+									 'bed_count'=>0,
+									 'createon'=>date('Y-m-d H:i:s'));
+				
+
+				$result = $this->user_model->addNewUser($userInfo);
+				
+			
+				
+			   
+		
+	
+}
+
+	public function getpaymentbycontract($contract_id){
 		$this->not_logged_in();
 
 		$data["paymentsRecords"]=$this->payment_model->getPaymentByContract($contract_id);
