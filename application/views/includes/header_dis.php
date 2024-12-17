@@ -30,6 +30,11 @@
             width: 100%;
         }
     
+        iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
   <!-- jQuery 2.1.4 -->
   <!-- <script src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script> -->
