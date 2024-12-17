@@ -88,6 +88,14 @@ if (!empty($monitoring_record)) {
    
 </div>
   
+<iframe src="https://1drv.ms/x/c/f9f8ee280c08a614/EWquEOarz4FBg_4Aze2jHS8BpEbsJJwkkAtw6ZfxnZX3FA?e=jThOcS"
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            width="100%" 
+            height="100%" 
+            scrolling="auto">
+  </iframe>
 
 </section>
   <!-- /.content -->
