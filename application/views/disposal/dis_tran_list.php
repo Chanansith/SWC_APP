@@ -4,7 +4,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      <i class="fa fa-users"></i> Transport List
+      <i class="fa fa-users"></i> รายการขนส่ง (Transport List)
       <small>Add, Edit, Delete</small>
     </h1>
     <ol class="breadcrumb">
