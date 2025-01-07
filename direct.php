@@ -81,8 +81,8 @@ function displayTrafficInfo(response) {
     console.log('Travel time with traffic:', travelTimeWithTraffic);
 
     // Optionally, display the travel time without traffic
-    const travelTimeWithoutTraffic = leg.duration.text;
-    console.log('Travel time without traffic:', travelTimeWithoutTraffic);
+    const travelTimeNormal = leg.duration.text;
+    console.log('Travel time normal:', travelTimeNormal);
 }
 
 // Initialize map when the window loads
