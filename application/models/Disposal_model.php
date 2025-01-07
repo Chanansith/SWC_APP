@@ -65,6 +65,22 @@ class Disposal_model extends CI_Model
         return $query->result();
     }
 
+    function countTransport($id, $approve_status)
+    {
+        $this->db->select('t1.id');
+        $this->db->from('transport_item t1');
+        $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        $this->db->where('t2.disposalid ', $id);
+        if ($approve_status>0){
+            $this->db->where('t1.approve_status ', $approve_status);
+        }
+       
+        $query = $this->db->get();
+      
+        return count($query->result());
+    }
+
+
     function getContract($id)
     {
         $this->db->select('*');
