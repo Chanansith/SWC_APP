@@ -64,7 +64,7 @@
                     <?php }?>
                 </td>
                     <td><?php echo $record->tran_date ?></td>
-                    <td><?php echo $record->contract_code ?></td>
+                    <td><?php echo $record->companyname ?></br> <?php echo $record->contract_code ?></td>
                     <td><?php echo $record->disposal_qty ?>  </td>
                     <td><?php echo $record->tran_create_name ?>  </td>
               

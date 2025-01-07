@@ -50,9 +50,10 @@ class Disposal_model extends CI_Model
     }
     function getMyTransport($id)
     {
-        $this->db->select('t1.*');
+        $this->db->select('t1.*,t3.companyname');
         $this->db->from('transport_item t1');
         $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        $this->db->join('users t3', 't2.user_id =t3.id');
         $this->db->where('t2.disposalid ', $id);
         //Transport user id
         //$this->db->where('tran_by ', $id);
