@@ -47,7 +47,7 @@
                 <?php echo $success; ?>                    
             </div>
         <?php } ?>
-    <p class="title">Disposal Sign In</p>
+    <p class="title">ศูนย์บำบัด (Disposal Sign In)</p>
     <input type="text" placeholder="Username" name="username" autofocus/>
     <i class="fa fa-user"></i>
     <input type="password" placeholder="Password" name="password"/>

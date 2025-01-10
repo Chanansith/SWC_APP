@@ -26,9 +26,13 @@ class Disposal extends Admin_Controller
     public function index()
     {
         $data["summary"]=[];
-		$monitoring_record=$this->disposal_model->getMonitoring(1);;
+		$monitoring_record=$this->disposal_model->getMonitoring(1);
+		$pending_count=$this->disposal_model->countTransport($_SESSION["userId"],1);
+		$approve_count=$this->disposal_model->countTransport($_SESSION["userId"],1);
        
         $data["monitoring_record"]=$monitoring_record;
+		$data["pending_count"]=$pending_count;
+    	$data["approve_count"]=$approve_count;
     
         $this->loadDisposalViews('disposal/disposaldashboard', $this->global, $data, NULL);
     }

@@ -75,7 +75,7 @@
                                 <div class="col-md-6">                                
                                     <div class="form-group">
                                         <label for="fname">ชื่อสถานประกอบการ</label>
-                                        <input type="text" class="form-control required" id="companyname" name="companyname" maxlength="128" value="<?php echo set_value('companyname');?>" required>
+                                        <input type="text" class="form-control required" id="companyname" name="companyname" placeholder="กรุณากรอกข้อมูลให้ครบถ้วน" maxlength="128" value="<?php echo set_value('companyname');?>" required>
                                     </div>
                                     
                                 </div>

@@ -4,7 +4,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      <i class="fa fa-users"></i> Transport List
+      <i class="fa fa-users"></i> รายการขนส่ง (Transport List)
       <small>Add, Edit, Delete</small>
     </h1>
     <ol class="breadcrumb">
@@ -35,9 +35,9 @@
               <th>#</th>
               <th>Approve Status</th>
                 <th>Transport Date</th>
-                <th>Contract Code</th>
+                <th>Contract</th>
                 <th>Disposal QTY</th>
-                <th>Create By</th>
+                <th>Tranport By</th>
               
                 <th class="text-center">Actions</th>
               </tr>
@@ -64,9 +64,9 @@
                     <?php }?>
                 </td>
                     <td><?php echo $record->tran_date ?></td>
-                    <td><?php echo $record->contract_code ?></td>
+                    <td><?php echo $record->companyname ?></br> <?php echo $record->contract_code ?></td>
                     <td><?php echo $record->disposal_qty ?>  </td>
-                    <td><?php echo $record->tran_create_name ?>  </td>
+                    <td><?php echo $record->full_name ?>  </td>
               
                     <td class="text-center">
                     <a class="btn btn-sm btn-success" href="<?php echo base_url_api . 'disposal/direction/'.$record->id.'/'.$record->contract_id ?>" target="_blank"><i class="fa fa-map-marker"></i>Travel Times</a>
