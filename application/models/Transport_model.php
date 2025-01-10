@@ -58,10 +58,14 @@ class Transport_model extends CI_Model
 
     function getDataByID($id)
     {
-        $this->db->select('*');
-        $this->db->from('transport_item');
+        $this->db->select('t1.*,t3.companyname,t4.full_name');
+        $this->db->from('transport_item t1');
+        $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        $this->db->join('users t3', 't2.user_id =t3.id');
+        $this->db->join('transport_user t4', 't1.tran_by = t4.id');
+       
         //Transport user id
-        $this->db->where('tran_by ', $id);
+        $this->db->where('t1.tran_by ', $id);
         $query = $this->db->get();
 
         return $query->result();
@@ -76,8 +80,11 @@ class Transport_model extends CI_Model
 
     function getData()
     {
-        $this->db->select('*');
-        $this->db->from('transport_item');
+        $this->db->select('t1.*,t3.companyname,t4.full_name');
+        $this->db->from('transport_item t1');
+        $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        $this->db->join('users t3', 't2.user_id =t3.id');
+        $this->db->join('transport_user t4', 't1.tran_by = t4.id');
        
         $query = $this->db->get();
 

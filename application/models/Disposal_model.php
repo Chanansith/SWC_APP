@@ -50,9 +50,12 @@ class Disposal_model extends CI_Model
     }
     function getMyTransport($id)
     {
-        $this->db->select('t1.*');
+        $this->db->select('t1.*,t3.companyname,t4.full_name');
         $this->db->from('transport_item t1');
+       
         $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        $this->db->join('users t3', 't2.user_id =t3.id');
+        $this->db->join('transport_user t4', 't1.tran_by = t4.id');
         $this->db->where('t2.disposalid ', $id);
         //Transport user id
         //$this->db->where('tran_by ', $id);
@@ -61,6 +64,22 @@ class Disposal_model extends CI_Model
 
         return $query->result();
     }
+
+    function countTransport($id, $approve_status)
+    {
+        $this->db->select('t1.id');
+        $this->db->from('transport_item t1');
+        $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        $this->db->where('t2.disposalid ', $id);
+        if ($approve_status>0){
+            $this->db->where('t1.approve_status ', $approve_status);
+        }
+       
+        $query = $this->db->get();
+      
+        return count($query->result());
+    }
+
 
     function getContract($id)
     {
