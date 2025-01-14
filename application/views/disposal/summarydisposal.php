@@ -31,11 +31,9 @@
             </div>
           </div><!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
-          From  <?php echo($source_name)?> To <?php echo($destination_name)?>
+          <canvas id="myChart" width="400" height="200"></canvas>
           <br>
-          <div class="alert alert-info" id="traveltime"></div>
-          <br>
-          <div id="map"></div>
+        
           </div><!-- /.box-body -->
          
         </div><!-- /.box -->
@@ -45,12 +43,40 @@
 </div>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6HBpHxcgpVgxAcaVso4vYU9l-_WML5EM&libraries=places"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    
 <script type="text/javascript">
-  jQuery(document).ready(function() {
-   
-  });
+   var ctx = document.getElementById('myChart').getContext('2d');
+        var datas=[65,59,80,81,56];
+        var myChart = new Chart(ctx, {
+            type: 'line', // เลือกประเภทกราฟเป็น 'line'
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'], // ใส่ชื่อของแกน X
+                datasets: [{
+                    label: 'สรุปรายงาน',
+                    data: datas, // ข้อมูลในกราฟ (ค่า Y)
+                    fill: false, // กราฟไม่เติมสีด้านล่าง
+                    borderColor: 'rgb(75, 192, 192)', // สีของเส้น
+                    tension: 0.1 // ความโค้งของเส้น
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top', // ตำแหน่งของป้ายชื่อ
+                    },
+                    tooltip: {
+                        enabled: true // เปิดใช้งาน Tooltip
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true // แสดงแกน Y เริ่มจาก 0
+                    }
+                }
+            }
+        });
 </script>
 
 <script>
