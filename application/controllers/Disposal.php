@@ -82,6 +82,15 @@ class Disposal extends Admin_Controller
 		
         $this->loadDisposalViews('disposal/dis_direction_detail', $this->global, $data, NULL);
     }
+	public function summarydisposal()
+    {
+        $this->not_logged_in_transport();
+		$userid=$_SESSION["userId"];
+		$data["id"]=0;
+		
+		
+        $this->loadDisposalViews('disposal/summarydisposal', $this->global, $data, NULL);
+    }
 	public function direction_test($id)
     {
         $this->not_logged_in_transport();
