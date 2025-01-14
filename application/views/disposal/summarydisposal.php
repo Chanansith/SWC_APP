@@ -1,4 +1,7 @@
+<?php
+// PHP array
 
+?>
 
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -47,8 +50,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    
 <script type="text/javascript">
+    var datas = <?php echo json_encode($summary_dis1); ?>;
    var ctx = document.getElementById('myChart').getContext('2d');
-        var datas=[65,59,80,81,56];
+        
         var myChart = new Chart(ctx, {
             type: 'line', // เลือกประเภทกราฟเป็น 'line'
             data: {
@@ -86,7 +90,7 @@
                 labels: ['January', 'February', 'March', 'April', 'May'], // Label ของแกน X
                 datasets: [{
                     label: 'Sales', // ชื่อของ dataset
-                    data: [10, 20, 30, 40, 50], // ข้อมูลที่จะแสดงบนแกน Y
+                    data:datas, // ข้อมูลที่จะแสดงบนแกน Y
                     backgroundColor: 'rgba(54, 162, 235, 0.2)', // สีพื้นหลังของแท่ง
                     borderColor: 'rgba(54, 162, 235, 1)', // สีขอบของแท่ง
                     borderWidth: 1 // ความหนาของขอบ

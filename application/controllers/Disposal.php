@@ -87,7 +87,7 @@ class Disposal extends Admin_Controller
         $this->not_logged_in_transport();
 		$userid=$_SESSION["userId"];
 		$data["id"]=0;
-		
+		$data["summary_dis1"] = [65, 59, 80, 81, 56];
 		
         $this->loadDisposalViews('disposal/summarydisposal', $this->global, $data, NULL);
     }
