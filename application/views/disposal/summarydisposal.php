@@ -38,6 +38,7 @@
           <br>
           กราฟแท่ง
           <canvas id="myBarChart" width="400" height="200"></canvas>
+       
           </div><!-- /.box-body -->
          
         </div><!-- /.box -->
