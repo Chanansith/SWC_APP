@@ -9,7 +9,7 @@
     </h1>
     <ol class="breadcrumb">
       <li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Main</a></li>
-      <li><a href="<?= base_url('Contract') ?>"> Transportation and travel times</a></li>
+      <li><a href="<?= base_url('Contract') ?>"> รายงานสรุปขยะติดเชื้อ</a></li>
     </ol>
   </section>
   <section class="content">
@@ -25,7 +25,7 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Transportation and travel times</h3>
+            <h3 class="box-title">รายงานสรุปขยะติดเชื้อ</h3>
             <div class="box-tools">
           
             </div>
@@ -51,7 +51,7 @@
         var myChart = new Chart(ctx, {
             type: 'line', // เลือกประเภทกราฟเป็น 'line'
             data: {
-                labels: ['January', 'February', 'March', 'April', 'May'], // ใส่ชื่อของแกน X
+                labels: ['กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม', 'มกราคม'], // ใส่ชื่อของแกน X
                 datasets: [{
                     label: 'สรุปรายงาน',
                     data: datas, // ข้อมูลในกราฟ (ค่า Y)
