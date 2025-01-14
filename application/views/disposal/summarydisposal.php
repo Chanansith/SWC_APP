@@ -33,7 +33,8 @@
           <div class="box-body table-responsive no-padding">
           <canvas id="myChart" width="400" height="200"></canvas>
           <br>
-        
+          กราฟแท่ง
+          <canvas id="myBarChart" width="400" height="200"></canvas>
           </div><!-- /.box-body -->
          
         </div><!-- /.box -->
@@ -73,6 +74,28 @@
                 scales: {
                     y: {
                         beginAtZero: true // แสดงแกน Y เริ่มจาก 0
+                    }
+                }
+            }
+        });
+
+        var ctx_bar = document.getElementById('myBarChart').getContext('2d');
+        var myBarChart = new Chart(ctx_bar, {
+            type: 'bar', // ประเภทกราฟที่ต้องการ
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'], // Label ของแกน X
+                datasets: [{
+                    label: 'Sales', // ชื่อของ dataset
+                    data: [10, 20, 30, 40, 50], // ข้อมูลที่จะแสดงบนแกน Y
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // สีพื้นหลังของแท่ง
+                    borderColor: 'rgba(54, 162, 235, 1)', // สีขอบของแท่ง
+                    borderWidth: 1 // ความหนาของขอบ
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // กำหนดให้แกน Y เริ่มต้นจาก 0
                     }
                 }
             }
