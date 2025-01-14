@@ -51,12 +51,13 @@
    
 <script type="text/javascript">
     var datas = <?php echo json_encode($summary_dis1); ?>;
+    var x_label = <?php echo json_encode($x_label); ?>;
    var ctx = document.getElementById('myChart').getContext('2d');
         
         var myChart = new Chart(ctx, {
             type: 'line', // เลือกประเภทกราฟเป็น 'line'
             data: {
-                labels: ['กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม', 'มกราคม'], // ใส่ชื่อของแกน X
+                labels: x_label, // ใส่ชื่อของแกน X
                 datasets: [{
                     label: 'สรุปรายงาน',
                     data: datas, // ข้อมูลในกราฟ (ค่า Y)
@@ -87,7 +88,7 @@
         var myBarChart = new Chart(ctx_bar, {
             type: 'bar', // ประเภทกราฟที่ต้องการ
             data: {
-                labels: ['January', 'February', 'March', 'April', 'May'], // Label ของแกน X
+                labels: x_label, // Label ของแกน X
                 datasets: [{
                     label: 'Sales', // ชื่อของ dataset
                     data:datas, // ข้อมูลที่จะแสดงบนแกน Y

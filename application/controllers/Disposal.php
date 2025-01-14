@@ -88,6 +88,7 @@ class Disposal extends Admin_Controller
 		$userid=$_SESSION["userId"];
 		$data["id"]=0;
 		$data["summary_dis1"] = [65, 59, 80, 81, 56];
+		$data["x_label"] = ['กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม', 'มกราคม'];
 		
         $this->loadDisposalViews('disposal/summarydisposal', $this->global, $data, NULL);
     }
