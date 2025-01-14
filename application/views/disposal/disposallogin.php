@@ -61,22 +61,7 @@
   <footer></footer>
   </p>
 </div>
-    <div class="container">
-   
-      <div class="alert alert-primary">
-        <a href="<?php echo base_url(); ?>">SWC System </a>
-      </div><!-- /.login-logo -->
-     
-        <p class="login-box-msg">Sign In</p>
-      
-        
-      
-
-       
-        
-     
-   
-        </div>
+  
     <script src="<?php echo base_url(); ?>assets/js/jQuery-2.1.4.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
   </body>
