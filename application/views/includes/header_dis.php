@@ -210,7 +210,22 @@
               </li>
             </ul> 
           </li>
-            
+          <li class="treeview">
+            <a href="#">
+              <!-- <i class="fa fa-cubes"></i> -->
+              <span>รายงาน</span>
+               <i class="fa fa-angle-right pull-right"></i> 
+            </a>
+            <ul class="treeview-menu">
+             
+              <li class="treeview">
+                <a href="<?php echo base_url_api; ?>disposal/summarydisposal">
+                  <i class="fa fa-cubes"></i>
+                  <span>สรุปยอดขยะติดเชื้อ</span>
+                </a>
+              </li>
+            </ul> 
+          </li>
         </ul>
       </section>
       <!-- /.sidebar -->
