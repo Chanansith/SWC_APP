@@ -30,7 +30,10 @@
           <div class="box-header">
             <h3 class="box-title">รายงานสรุปขยะติดเชื้อ</h3>
             <div class="box-tools">
-          
+              <form action="" method="get">
+            ปี <input type="number" value=""> <a href="" class="btn btn-info">แสดง</a>
+
+            </form>
             </div>
           </div><!-- /.box-header -->
           <div class="box-body table-responsive no-padding">

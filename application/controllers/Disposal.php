@@ -67,7 +67,8 @@ class Disposal extends Admin_Controller
     {
         $this->not_logged_in_transport();
 		$data = array(
-			'approve_status' => 3
+			'approve_status' => 3,
+			'tran_date' =>date('Y-m-d')
 		);
 		$this->transport_model->updateTransport($data,$id);
 		$this->disposal_model->updateDaily($disposal_qty,$_SESSION["userId"]);
