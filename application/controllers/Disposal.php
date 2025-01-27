@@ -35,8 +35,15 @@ class Disposal extends Admin_Controller
     	$data["approve_count"]=$approve_count;
 		$userid=$_SESSION["userId"];
 		$data["id"]=0;
-		$data["summary_dis1"] = [65, 59, 80, 81, 56];
-		$data["x_label"] = ['กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม', 'มกราคม'];
+		$data["summary_dis1"] = [65, 59, 80, 81, 56, 72, 60, 75, 90, 88, 95, 70];
+		$data["x_label"] = [
+			'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
+			'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'
+		];
+		/* SELECT sum(disposal_qty) as sum_dis,month(tran_date)
+FROM swc_logictic.transport_item
+WHERE YEAR(tran_date) = YEAR(curdate())
+group by Month(tran_date)*/
     
         $this->loadDisposalViews('disposal/disposaldashboard', $this->global, $data, NULL);
     }
