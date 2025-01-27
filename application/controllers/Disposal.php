@@ -33,6 +33,10 @@ class Disposal extends Admin_Controller
         $data["monitoring_record"]=$monitoring_record;
 		$data["pending_count"]=$pending_count;
     	$data["approve_count"]=$approve_count;
+		$userid=$_SESSION["userId"];
+		$data["id"]=0;
+		$data["summary_dis1"] = [65, 59, 80, 81, 56];
+		$data["x_label"] = ['กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม', 'มกราคม'];
     
         $this->loadDisposalViews('disposal/disposaldashboard', $this->global, $data, NULL);
     }
