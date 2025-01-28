@@ -33,6 +33,7 @@ class Disposal extends Admin_Controller
 				echo "<br>";
 			}
 		}
+		print_r($data["summary_dis1"]);
 	}
 
     /* 
