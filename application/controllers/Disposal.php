@@ -21,20 +21,20 @@ class Disposal extends Admin_Controller
     }
 
 	public function testsum(){
-		$data["summary_dis1"]=[];
+		$datas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 		for ($i=0;$i<=12;$i++){
 			$summary=$this->disposal_model->sumTransport(3,$i+1);
 			if ($summary){
-				$data["summary_dis1"][] = $summary[0]->sum_dis;
+				$data["summary_dis1"][$i] = $summary[0]->sum_dis;
 				//echo ($data["summary_dis1"][$i]);
 				echo "<br>";
 			}else{
-				$data["summary_dis1"][] =0;
+				$data["summary_dis1"][$i] =0;
 			//	echo ($data["summary_dis1"][$i]);
 				echo "<br>";
 			}
 		}
-		print_r($data["summary_dis1"]);
+		print_r($datas);
 	}
 
     /* 
