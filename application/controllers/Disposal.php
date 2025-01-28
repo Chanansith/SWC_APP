@@ -27,6 +27,10 @@ class Disposal extends Admin_Controller
 				$data["summary_dis1"][$i] = $summary[0]->sum_dis;
 				echo ($data["summary_dis1"][$i]);
 				echo "<br>";
+			}else{
+				$data["summary_dis1"][$i] =0;
+				echo ($data["summary_dis1"][$i]);
+				echo "<br>";
 			}
 		}
 	}
