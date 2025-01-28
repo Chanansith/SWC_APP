@@ -6,8 +6,11 @@ $approved_count=0;
 $receive_count=0;
 if (!empty($monitoring_record)) {
  $max_per_day=$monitoring_record[0]->max_per_day;
- $imw_status_daily=$monitoring_record[0]->imw_status_daily;
+ 
 
+}
+if (!empty($sum_daily_received)) {
+$imw_status_daily=$sum_daily_received[0]->sum_dis;
 }
 ?>
 

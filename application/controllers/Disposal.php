@@ -46,7 +46,8 @@ class Disposal extends Admin_Controller
 		$monitoring_record=$this->disposal_model->getMonitoring(1);
 		$pending_count=$this->disposal_model->countTransport($_SESSION["userId"],1);
 		$approve_count=$this->disposal_model->countTransport($_SESSION["userId"],1);
-       
+		$sum_daily_received=$this->disposal_model->sumDailyTransport(3);
+        $data["sum_daily_received"]=$sum_daily_received;
         $data["monitoring_record"]=$monitoring_record;
 		$data["pending_count"]=$pending_count;
     	$data["approve_count"]=$approve_count;

@@ -97,7 +97,23 @@ class Disposal_model extends CI_Model
         return $query->result();
     }
 
-
+    function sumDailyTransport($approve_status)
+    {
+        $this->db->select('sum(disposal_qty) as sum_dis');
+        $this->db->from('transport_item');
+        // $this->db->join('contracts t2', 't1.contract_id = t2.id');
+        // $this->db->where('t2.disposalid ', $id);
+        $this->db->where('YEAR(tran_date)=YEAR(curdate())');
+        $this->db->where('MONTH(tran_date)=MONTH(curdate())');
+        $this->db->where('DAY(tran_date)=DAY(curdate())');
+        if ($approve_status>0){
+            $this->db->where('approve_status ', $approve_status);
+        }
+       
+        $query = $this->db->get();
+      
+        return $query->result();
+    }
 
     function getContract($id)
     {
