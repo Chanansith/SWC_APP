@@ -143,7 +143,7 @@ if (!empty($monitoring_record)) {
             data: {
                 labels: x_label, // ใส่ชื่อของแกน X
                 datasets: [{
-                    label: 'สรุปรายงาน',
+                    label: 'ปริมาณขยะติดเชื้อ',
                     data: datas, // ข้อมูลในกราฟ (ค่า Y)
                     fill: false, // กราฟไม่เติมสีด้านล่าง
                     borderColor: 'rgb(75, 192, 192)', // สีของเส้น
@@ -174,7 +174,7 @@ if (!empty($monitoring_record)) {
             data: {
                 labels: x_label, // Label ของแกน X
                 datasets: [{
-                    label: 'Sales', // ชื่อของ dataset
+                    label: 'ปริมาณขยะติดเชื้อ', // ชื่อของ dataset
                     data:datas, // ข้อมูลที่จะแสดงบนแกน Y
                     backgroundColor: 'rgba(54, 162, 235, 0.2)', // สีพื้นหลังของแท่ง
                     borderColor: 'rgba(54, 162, 235, 1)', // สีขอบของแท่ง
