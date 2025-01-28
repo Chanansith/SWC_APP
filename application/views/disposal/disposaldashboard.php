@@ -6,8 +6,6 @@ $approved_count=0;
 $receive_count=0;
 if (!empty($monitoring_record)) {
  $max_per_day=$monitoring_record[0]->max_per_day;
- 
-
 }
 if (!empty($sum_daily_received)) {
 $imw_status_daily=$sum_daily_received[0]->sum_dis;
@@ -34,7 +32,7 @@ $imw_status_daily=$sum_daily_received[0]->sum_dis;
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?php echo $imw_status_daily ?> kg</h3>
+              <h3><?php echo $sum_daily_received ?> kg</h3>
 
               <p>IMW Status Daily</p>
             </div>

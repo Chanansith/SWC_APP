@@ -46,12 +46,16 @@ class Transport extends Admin_Controller
             $this->global['pageTitle'] = 'Add Transport';
             $data['header'] ="Transport";
             $contract=$this->contract_model->getContract($contract_id);
-            $monitoring_record=$this->disposal_model->getMonitoring($contract[0]->disposalid);;
+            $monitoring_record=$this->disposal_model->getMonitoring(1);
+
+            $sum_daily_received=$this->disposal_model->sumDailyTransport(3);
+
             $imw_status_daily=0;
             $max_per_day=0;
          
-			
-            $imw_status_daily=$monitoring_record[0]->imw_status_daily;
+			if (!empty($sum_daily_received)){
+             $imw_status_daily=$sum_daily_received[0]->sum_dis;
+            }
             $max_per_day=$monitoring_record[0]->max_per_day;
             if ($imw_status_daily>=$max_per_day){
                 //alert;
@@ -61,6 +65,7 @@ class Transport extends Admin_Controller
 			$data["contract_code"]=$contract[0]->contract_code;
             $data["contract_id"]=$contract_id;
             $data["request_id"]=$request_id;
+            $data["imw_status_daily"]=$imw_status_daily;
 
 			
             $this->loadTransportViews("transport/addNewTran", $this->global, $data, NULL);

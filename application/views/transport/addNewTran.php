@@ -5,7 +5,6 @@ $max_tran=0;
 $imw_status_daily=0;
 if (!empty($monitoring_record)) {
  $max_per_day=$monitoring_record[0]->max_per_day;
- $imw_status_daily=$monitoring_record[0]->imw_status_daily;
  $max_tran=$max_per_day-$imw_status_daily;
 }
 ?>
