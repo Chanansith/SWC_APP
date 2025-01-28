@@ -20,6 +20,17 @@ class Disposal extends Admin_Controller
         $this->load->model('log_model');
     }
 
+	public function testsum(){
+		for ($i=0;$i<=12;$i++){
+			$summary=$this->disposal_model->sumTransport(3,$i+1);
+			if ($summary){
+				$data["summary_dis1"][$i] = $summary[0]->sum_dis;
+				echo ($data["summary_dis1"][$i]);
+				echo "<br>";
+			}
+		}
+	}
+
     /* 
     * It only redirects to the manage product page
     */
@@ -36,6 +47,14 @@ class Disposal extends Admin_Controller
 		$userid=$_SESSION["userId"];
 		$data["id"]=0;
 		$data["summary_dis1"] = [65, 59, 80, 81, 56, 72, 60, 75, 90, 88, 95, 70];
+
+		for ($i=1;$i<=12;$i++){
+			$summary=$this->disposal_model->sumTransport(3,$i);
+			if ($summary){
+				$data["summary_dis1"][$i-1] = $summary[0]->sum_dis;
+			}
+		}
+
 		$data["x_label"] = [
 			'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
 			'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'
