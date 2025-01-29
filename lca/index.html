@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCA Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<h2>LCA Project</h2>
+
+<select id="material-select">
+    <option value="">Select a material</option>
+</select>
+
+<table id="excelTable">
+    <thead>
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+            <th>I</th>
+            <th>J</th>
+            <th>K</th>
+            <th>L</th>
+            <th>M</th>
+            <th>N</th>
+            <th>O</th>
+            <th>P</th>
+            <th>Q</th>
+            <th>R</th>
+            <th>S</th>
+            <th>T</th>
+            <th>U</th>
+            <th>V</th>
+            <th>W</th>
+            <th>X</th>
+            <th>Y</th>
+            <th>Z</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+            <td><input type="text" oninput="updateCell(this)"></td>
+     
+        </tr>
+       
+    </tbody>
+</table>
+
+<script>
+
+    const materials = [
+  "All steel",
+  "Aluminium",
+  "Battery",
+  "Brass",
+  "Clay",
+  "Concrete",
+  "Copper",
+  "Glass",
+  "Glass wool mat",
+  "Gypsum fibreboard",
+  "Lubricating oil",
+  "Paint",
+  "Plastic and rubber",
+  "Sand",
+  "Sanitary ceramics",
+  "Silica",
+  "Wood, sawnwood",
+  "Working fluid"
+];
+
+const select = document.getElementById('material-select');
+
+// วนลูปเพื่อเพิ่ม <option> ใน <select>
+materials.forEach(material => {
+    const option = document.createElement('option');
+    option.value = material;
+    option.textContent = material;
+    select.appendChild(option);
+});
+
+    var col_count=26;
+    function updateCell(input) {
+        const cell = input.parentElement;
+        const row = cell.parentElement;
+        const rowIndex = row.rowIndex - 1; // Subtract 1 to account for the header row
+        const cellIndex = cell.cellIndex;
+
+        console.log(`Updated cell at row ${rowIndex}, column ${cellIndex}: ${input.value}`);
+    }
+
+    // Example function to add a new row
+    function addRow() {
+        const table = document.getElementById('excelTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        for (let i = 0; i < 26; i++) {
+            const newCell = newRow.insertCell(i);
+            newCell.innerHTML = '<input type="text" oninput="updateCell(this)">';
+        }
+    }
+
+    // Example function to add a new column
+    function addColumn() {
+        const table = document.getElementById('excelTable');
+        const rows = table.getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++) {
+            const newCell = rows[i].insertCell(-1);
+            if (i === 0) {
+                newCell.innerHTML = String.fromCharCode(65 + rows[i].cells.length - 1);
+                newCell.style.backgroundColor = '#f2f2f2';
+            } else {
+                newCell.innerHTML = '<input type="text" oninput="updateCell(this)">';
+            }
+        }
+    }
+</script>
+
+<button onclick="addRow()">เพิ่มรายการ</button>
+<button onclick="addColumn()">เพิ่มคอลัมน์ผลลัพธ์</button>
+
+</body>
+</html>
