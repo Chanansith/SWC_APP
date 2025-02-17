@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 function getFactor(){
     include "connection.php";
     $sql = "SELECT * FROM lca_factor";
