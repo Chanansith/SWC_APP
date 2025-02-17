@@ -18,6 +18,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            min-width:100px;
         }
         th {
             background-color: #f2f2f2;
@@ -36,79 +37,73 @@
 <div class="mb-3">
     <label for="material-select" class="form-label">Select a Material</label>
     <select id="material-select1" class="form-select">
-        <option value="">Select a material</option>
+      
     </select>
 </div>
 
+
+
+<div class="mt-3">
+    <button class="btn btn-primary" onclick="addRow()">เพิ่มรายการ</button>
+  
+</div>
 <!-- ใช้ Bootstrap สำหรับตาราง -->
 <table id="excelTable" class="table table-bordered">
     <thead>
         <tr>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th>D</th>
-            <th>E</th>
-            <th>F</th>
-            <th>G</th>
-            <th>H</th>
-            <th>I</th>
-            <th>J</th>
-            <th>K</th>
-            <th>L</th>
-            <th>M</th>
-            <th>N</th>
-            <th>O</th>
-            <th>P</th>
-            <th>Q</th>
-            <th>R</th>
-            <th>S</th>
-            <th>T</th>
-            <th>U</th>
-            <th>V</th>
-            <th>W</th>
-            <th>X</th>
-            <th>Y</th>
-            <th>Z</th>
+            <th>No</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Unit</th>
+            <th>CC</th>
+                <th>OD</th>
+                <th>TA</th>
+                <th>FE</th>
+                <th>ME</th>
+                <th>HT</th>
+                <th>POF</th>
+                <th>PMF</th>
+                <th>TET</th>
+                <th>FET</th>
+                <th>MET</th>
+                <th>IR</th>
+                <th>ALO</th>
+                <th>ULO</th>
+                <th>NLT</th>
+                <th>WD</th>
+                <th>MD</th>
+                <th>FD</th>
+                <th>CC</th>
+                <th>OD</th>
+                <th>TA</th>
+                <th>FE</th>
+                <th>ME</th>
+                <th>HT</th>
+                <th>POF</th>
+                <th>PMF</th>
+                <th>TET</th>
+                <th>FET</th>
+                <th>MET</th>
+                <th>IR</th>
+                <th>ALO</th>
+                <th>ULO</th>
+                <th>NLT</th>
+                <th>WD</th>
+                <th>MD</th>
+                <th>FD</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-            <td><input type="text" oninput="updateCell(this)"></td>
-        </tr>
+      
     </tbody>
 </table>
 
 <!-- เพิ่มปุ่มเพื่อเพิ่มแถวและคอลัมน์ -->
-<div class="mt-3">
-    <button class="btn btn-primary" onclick="addRow()">เพิ่มรายการ</button>
-    <button class="btn btn-secondary" onclick="addColumn()">เพิ่มคอลัมน์ผลลัพธ์</button>
-</div>
+
 
 <script>
+
+    var currentrow=0;
     const materials = [
         "All steel",
         "Aluminium",
@@ -127,10 +122,69 @@
         "Sanitary ceramics",
         "Silica",
         "Wood, sawnwood",
-        "Working fluid"
+        "Working fluid",
+        "xxxx"
     ];
+
+    const materials_type = [
+    "Aluminium",
+    "Brass",
+    "Cement",
+    "Ceramic",
+    "Clay",
+    "Concrete",
+    "Copper",
+    "Electronic",
+    "Glass",
+    "Glass wool",
+    "Gypsum",
+    "Lead",
+    "Lubricating oil",
+    "Paint",
+    "Photovoltaic cell",
+    "Plastic",
+    "Sand",
+    "Silicon",
+    "Silver",
+    "Steel",
+    "Water",
+    "Wood",
+    "Zinc"
+];
+
+
+const materials_type = [
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0"
+];
+
+
     getRawDropdown('material-select1');
+  
  
+
+
 
     function getRawDropdown(id){
         const select = document.getElementById(id);
@@ -144,8 +198,19 @@
         });
     
     }
+    function getRawDropdownType(id){
+        const select = document.getElementById(id);
 
-    var col_count = 26;
+        // วนลูปเพื่อเพิ่ม <option> ใน <select>
+        materials_type.forEach(material => {
+            const option = document.createElement('option');
+            option.value = material;
+            option.textContent = material;
+            select.appendChild(option);
+        });
+    
+    }
+    var col_count = 36;
     function updateCell(input) {
         const cell = input.parentElement;
         const row = cell.parentElement;
@@ -157,12 +222,39 @@
 
     // Function to add a new row
     function addRow() {
+        currentrow++;
         const table = document.getElementById('excelTable').getElementsByTagName('tbody')[0];
         const newRow = table.insertRow();
 
-        for (let i = 0; i < 26; i++) {
+        material=document.getElementById('material-select1').value
+        const newCell1 = newRow.insertCell(0);
+        newCell1.innerHTML = currentrow;
+
+        const newCell2 = newRow.insertCell(1);
+        newCell2.innerHTML = material;
+
+        const newCell3 = newRow.insertCell(2);
+        newCell3.innerHTML = '<input type="text" oninput="calculate(this)">';;
+
+        const newCell4 = newRow.insertCell(3);
+        newCell4.innerHTML = "kg";
+
+        for (let i = 4; i < 36; i++) {
             const newCell = newRow.insertCell(i);
-            newCell.innerHTML = '<input type="text" oninput="updateCell(this)">';
+            if (i>21){
+                newCell.style.backgroundColor = 'blue';
+                newCell.innerHTML = '<input type="text" value="0" readonly>';
+                }else{
+                    newCell.style.backgroundColor = 'pink';
+                    newCell.innerHTML = '<input type="text" value="200" readonly>';
+                }
+          
+        }
+    }
+
+    function testAddRow(){
+        for (let i = 0; i < 36; i++) {
+            addRow();
         }
     }
 
@@ -175,12 +267,39 @@
             const newCell = rows[i].insertCell(-1);
             if (i === 0) {
                 newCell.innerHTML = String.fromCharCode(65 + rows[i].cells.length - 1);
-                newCell.style.backgroundColor = '#f2f2f2';
+
+             
             } else {
-                newCell.innerHTML = '<input type="text" oninput="updateCell(this)">';
+                newCell.innerHTML = '<input type="text" oninput="updateCell(this)" >';
             }
         }
     }
+
+    function calculate(input) {
+        const cell = input.parentElement;
+        const row = cell.parentElement;
+
+        // Get values from Amount (column 3) and CC (column 5)
+        const amountInput = row.cells[2].querySelector('input');
+        const ccInput = row.cells[4].querySelector('input');
+
+        const amount = parseFloat(amountInput.value) || 0;
+        const cc = parseFloat(ccInput.value) || 0;
+
+        // Calculate the product
+        const result = amount * cc;
+
+        // Display the result in column 6 (or any other column)
+        const resultCell = row.cells[22]; // Column 6 (OD)
+        resultCell.innerHTML = result.toFixed(2); // Show result with 2 decimal places
+
+        for (let i = 22; i < 36; i++) {
+            
+           
+        }
+    }
+   
+
 </script>
 
 <!-- เพิ่ม Bootstrap JS และ Popper.js (จำเป็นสำหรับบางฟีเจอร์ของ Bootstrap) -->
