@@ -12,6 +12,6 @@ $_SESSION['midpoint_unit'] = $_POST['midpoint_unit'];
 $_SESSION['netoutput'] = $_POST['netoutput'];
 
 // Redirect or display success message
-header("location:step1.php");
+header("location:step.php?step=1");
 die();
 ?>
