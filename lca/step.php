@@ -77,9 +77,6 @@ $savedata=$_SESSION['tableData'];
     <label for="description">Description:</label>
     <span id="description"><?php echo htmlspecialchars($description); ?></span><br>
 
-
-
-
 <div class="mb-3"></div>
 <label for="material-select" class="form-label">Select Phase</label>
 <select>
