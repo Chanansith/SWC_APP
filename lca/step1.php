@@ -88,45 +88,47 @@ $description = $_SESSION['description'] ?? 'No data';
     <thead>
         <tr>
             <th>No</th>
-            <th>Description</th>
+            <th>Raw Group</th>
+            <th>Raw Type</th>
+            <th>Substance</th>
             <th>Amount</th>
             <th>Unit</th>
-            <th>CC</th>
-                <th>OD</th>
-                <th>TA</th>
-                <th>FE</th>
-                <th>ME</th>
-                <th>HT</th>
-                <th>POF</th>
-                <th>PMF</th>
-                <th>TET</th>
-                <th>FET</th>
-                <th>MET</th>
-                <th>IR</th>
-                <th>ALO</th>
-                <th>ULO</th>
-                <th>NLT</th>
-                <th>WD</th>
-                <th>MD</th>
-                <th>FD</th>
                 <th>CC</th>
                 <th>OD</th>
+                <th>TMF</th>
                 <th>TA</th>
                 <th>FE</th>
                 <th>ME</th>
                 <th>HT</th>
-                <th>POF</th>
-                <th>PMF</th>
                 <th>TET</th>
                 <th>FET</th>
-                <th>MET</th>
+                <th>MD</th>
+                <th>FD</th>
+                <th>POF</th>
                 <th>IR</th>
                 <th>ALO</th>
                 <th>ULO</th>
-                <th>NLT</th>
+                <th>NLO</th>
                 <th>WD</th>
+               
+              
+                <th>CC</th>
+                <th>OD</th>
+                <th>TMF</th>
+                <th>TA</th>
+                <th>FE</th>
+                <th>ME</th>
+                <th>HT</th>
+                <th>TET</th>
+                <th>FET</th>
                 <th>MD</th>
                 <th>FD</th>
+                <th>POF</th>
+                <th>IR</th>
+                <th>ALO</th>
+                <th>ULO</th>
+                <th>NLO</th>
+                <th>WD</th>
         </tr>
     </thead>
     <tbody>
@@ -199,25 +201,32 @@ $description = $_SESSION['description'] ?? 'No data';
         const table = document.getElementById('excelTable').getElementsByTagName('tbody')[0];
         const newRow = table.insertRow();
 
-        material=parseInt(document.getElementById('substance').value)
+        idraw=parseInt(document.getElementById('substance').value)
 
   
-        const raw_item =raw_json.find(item => item.idraw === material);
+        const raw_item =raw_json.find(item => item.idraw === idraw);
+
+        console.log(raw_item)
+
         const newCell1 = newRow.insertCell(0);
         newCell1.innerHTML = currentrow;
-
         const newCell2 = newRow.insertCell(1);
-        newCell2.innerHTML = raw_item.substance;
+        newCell2.innerHTML = raw_item.raw_group;
 
         const newCell3 = newRow.insertCell(2);
-        var amount_id="amount_"+currentrow;
-        newCell3.innerHTML = `<input id="${amount_id}" type="text" oninput="calculate(${currentrow})">`;
-
+        newCell3.innerHTML = raw_item.rawtype;
         const newCell4 = newRow.insertCell(3);
-        newCell4.innerHTML = "kg";
+        newCell4.innerHTML = raw_item.substance;
 
-        const min_group1=4
-        const max_group1=22
+        const newCell5 = newRow.insertCell(4);
+        var amount_id="amount_"+currentrow;
+        newCell5.innerHTML = `<input id="${amount_id}" type="text" oninput="calculate(${currentrow})">`;
+
+        const newCell6 = newRow.insertCell(5);
+        newCell6.innerHTML = "kg";
+
+        const min_group1=6
+        const max_group1=23
         let col_no=1;
         for (let i = min_group1; i < max_group1; i++) {
             const newCell = newRow.insertCell(i);
@@ -251,21 +260,92 @@ $description = $_SESSION['description'] ?? 'No data';
                         cal_data=raw_item.me;
                         row_id=`me_${currentrow}`;
                     }
-                    
+                    if (col_no==6)
+                    {
+                        cal_data=raw_item.ht;
+                        row_id=`me_${currentrow}`;
+                    }
+                    if (col_no==7)
+                    {
+                        cal_data=raw_item.tet;
+                        row_id=`me_${currentrow}`;
+                    }
+                 
+                    if (col_no==8)
+                    {
+                        cal_data=raw_item.tet;
+                        row_id=`me_${currentrow}`;
+                    }
+                 
+                    if (col_no==9)
+                    {
+                        cal_data=raw_item.tet;
+                        row_id=`me_${currentrow}`;
+                    }
+                 
+                    if (col_no==10)
+                    {
+                        cal_data=raw_item.met;
+                        row_id=`me_${currentrow}`;
+                    }
+                 
+                    if (col_no==11)
+                    {
+                        cal_data=raw_item.md;
+                        row_id=`me_${currentrow}`;
+                    }
+                 
+                    if (col_no==12)
+                    {
+                        cal_data=raw_item.fd;
+                        row_id=`me_${currentrow}`;
+                    }
+                 
+                    if (col_no==13)
+                    {
+                        cal_data=raw_item.pof;
+                        row_id=`me_${currentrow}`;
+                    }
+                    if (col_no==14)
+                    {
+                        cal_data=raw_item.ir;
+                        row_id=`me_${currentrow}`;
+                    }
+                    if (col_no==15)
+                    {
+                        cal_data=raw_item.alo;
+                        row_id=`me_${currentrow}`;
+                    }
+                    if (col_no==16)
+                    {
+                        cal_data=raw_item.ulo;
+                        row_id=`me_${currentrow}`;
+                    } 
+                    if (col_no==17)
+                    {
+                        cal_data=raw_item.nlo;
+                        row_id=`me_${currentrow}`;
+                    }
+                    if (col_no==18)
+                    {
+                        cal_data=raw_item.wd;
+                        row_id=`me_${currentrow}`;
+                    }
+                 
                     
                     newCell.style.backgroundColor = 'pink';
-                    newCell.innerHTML = `<input id="${row_id}" type="text" value="${cal_data}" readonly>`;
+                    newCell.innerHTML = `<input id="${row_id}" type="text" value="${cal_data}" readonly  >`;
                 
                     col_no++;
           
         }
-        const min_group2=22
+        const min_group2=23
         const max_group2=40
 
         for (let i = min_group2; i < max_group2; i++) {
             const newCell = newRow.insertCell(i);
          
-                newCell.style.backgroundColor = 'blue';
+                newCell.style.backgroundColor = 'green';
                 newCell.innerHTML = '<input type="text" value="0" readonly>';
           
           
