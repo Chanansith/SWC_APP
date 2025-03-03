@@ -36,12 +36,10 @@ include "config.php";
 </head>
 <body class="container mt-4">
 
-<h2>LCA Project</h2>
+<h2>LCA </h2>
 <form action="addproject.php" method="post">
         <label for="projectname">Project name:</label>
         <input type="text" id="projectname" name="projectname" placeholder="กรอกชื่อโครงการ">
-
-      
         <label for="projectname">description:</label>
         <input type="text" id="description" name="description">
         <label for="projectname">Quantity:</label>
